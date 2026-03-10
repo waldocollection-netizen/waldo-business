@@ -416,63 +416,73 @@ button:hover {
 }
     
 #reviewsDisplay .review {
-  background:#0a0a0a;
+  background:#FFFFF0;
   border:1px solid var(--border);
   padding:15px;
-  color:#eaeaea;
+  color:#800020;
 }
 
 .review .review-name {
   font-weight:600;
-  color: var(--gold);
+  color:#800020;
   letter-spacing:1px;
 }
 
 .review .review-rating {
   margin:5px 0;
-  color: #ffd700; /* gold stars */
+  color:#c1121f; /* red stars */
 }
 
 .review img {
   max-width:100px;
   margin-top:10px;
-  border:1px solid #222;
-}   
-  
-/* SCREENS */  
+  border:1px solid var(--border);
+}
+
+/* SCREENS */
+
 .cart, .screen{  
   position:fixed;  
   inset:0;  
-  background:#000;  
+  background:#800020;
   display:none;  
   overflow:auto;  
-  padding: 30px 20px;  
-  z-index: 10001;  
-}  
+  padding:30px 20px;  
+  z-index:10001;  
+}
+
 .cart h2, .screen h2{  
-    text-align:center;  
-    letter-spacing: 6px;   
-    text-transform: uppercase;   
-    font-size: 16px;   
-    font-weight: 400;  
-    margin: 40px 0;  
-}  
-  
-.cart-item{padding:20px; border: 1px solid var(--border); margin-bottom: 10px;}  
-  
+  text-align:center;  
+  letter-spacing:6px;   
+  text-transform:uppercase;   
+  font-size:16px;   
+  font-weight:400;  
+  margin:40px 0;  
+  color:var(--text);
+}
+
+.cart-item{
+  padding:20px;
+  border:1px solid var(--border);
+  margin-bottom:10px;
+  background:#FFFFF0;
+  color:#800020;
+}
+
 .summary-item-box {  
-    display: flex;  
-    align-items: center;  
-    gap: 15px;  
-    padding: 15px 0;  
-    border-bottom: 1px solid var(--border);  
-}  
+  display:flex;  
+  align-items:center;  
+  gap:15px;  
+  padding:15px 0;  
+  border-bottom:1px solid var(--border);  
+}
+
 .summary-thumb {  
-    width: 70px;  
-    height: 70px;  
-    object-fit: cover;  
-    border: 1px solid var(--border);  
-}  
+  width:70px;  
+  height:70px;  
+  object-fit:cover;  
+  border:1px solid var(--border);  
+}
   
 .whatsapp{   
     background:#fff;   
@@ -489,52 +499,71 @@ button:hover {
   
 .summary-row{ display:flex; justify-content:space-between; padding:12px 0; font-size: 11px; letter-spacing: 2px;}  
   
-/* TOAST */  
-#toast {  
-  visibility: hidden;  
-  min-width: 250px;  
-  background-color: #fff;  
-  color: #000;  
-  text-align: center;  
-  padding: 18px;  
-  position: fixed;  
-  z-index: 30000;  
-  bottom: 40px;  
-  left: 50%;  
-  transform: translateX(-50%);  
-  font-size: 9px;  
-  letter-spacing: 3px;  
-  text-transform: uppercase;  
-}  
-#toast.show { visibility: visible; animation: fadein 0.5s, fadeout 0.5s 2.5s; }  
-#toast {  
-  box-shadow: 0 0 25px rgba(201,162,77,0.4);  
-}  
-@keyframes fadein { from {bottom: 0; opacity: 0;} to {bottom: 40px; opacity: 1;} }  
-@keyframes fadeout { from {bottom: 40px; opacity: 1;} to {bottom: 0; opacity: 0;} }  
-  
-.social-home{  
-  display:flex;  
-  justify-content:center;  
-  gap:25px;  
-  margin: 25px 0 50px 0;  
-}  
-.social-home.shifted {
-  transform: translateY(20px);   /* was 30 or 40, make it subtle */
+/* TOAST */
+
+#toast {
+  visibility: hidden;
+  min-width: 250px;
+  background-color: #FFFFF0;   /* ivory */
+  color: #800020;              /* burgundy */
+  text-align: center;
+  padding: 18px;
+  position: fixed;
+  z-index: 30000;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  box-shadow: 0 0 25px rgba(128,0,32,0.25);
 }
-  
-.social-home img{  
-  width:22px;  
-  height:22px;  
-  cursor:pointer;  
-  opacity:0.7;  
-  transition:0.3s;  
-}  
-  
-.social-home img:hover{  
-  opacity:1;  
-  transform:scale(1.1);  
-}  
+
+#toast.show {
+  visibility: visible;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 40px; opacity: 1;}
+}
+
+@keyframes fadeout {
+  from {bottom: 40px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+
+/* SOCIAL ICONS */
+
+.social-home{
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  margin:25px 0 50px 0;
+}
+
+.social-home.shifted {
+  transform: translateY(20px);
+}
+
+.social-home img{
+  width:22px;
+  height:22px;
+  cursor:pointer;
+  opacity:0.7;
+  transition:0.3s;
+}
+
+.social-home img:hover{
+  opacity:1;
+  transform:scale(1.1);
+}
+
+
+/* OFFER BANNER */
+
 #offerBanner {
   position: fixed;
   top: 70px;
@@ -544,8 +573,8 @@ button:hover {
   font-size: 11px;
   letter-spacing: 2px;
   padding: 10px 0;
-  background: linear-gradient(90deg, #000, #111, #000);
-  color: #c9a24d;
+  background: linear-gradient(90deg,#800020,#6a001a,#800020);
+  color: #FFFFF0;
   z-index: 9999;
   opacity: 0;
   animation: slideFade 10s infinite;
@@ -553,61 +582,75 @@ button:hover {
 
 @keyframes slideFade {
   0%   { left:-100%; opacity:0; }
-  15%  { left:0;     opacity:1; }
-  70%  { left:0;     opacity:1; }
-  85%  { left:50%;   opacity:0.5; }
-  100% { left:100%;  opacity:0; }
+  15%  { left:0; opacity:1; }
+  70%  { left:0; opacity:1; }
+  85%  { left:50%; opacity:0.5; }
+  100% { left:100%; opacity:0; }
 }
 
+
+/* DISCOUNT TEXT */
+
 .discount-line {
-  font-size: 11px;
-  text-align: center;
-  margin-top: 6px;
-  color: #c9a24d;
-  letter-spacing: 1px;
+  font-size:11px;
+  text-align:center;
+  margin-top:6px;
+  color:#800020;
+  letter-spacing:1px;
 }
+
+
+/* TRUST STRIP */
+
 .trust-strip {
-  overflow: hidden;
-  border: none;
-  padding: 10px 0;
-  background: transparent;
+  overflow:hidden;
+  border:none;
+  padding:10px 0;
+  background:transparent;
 }
 
 .trust-track {
-  display: flex;
-  width: max-content;
+  display:flex;
+  width:max-content;
   animation: scroll-left 22s linear infinite;
 }
 
 .trust-track span {
-  white-space: nowrap;
-  margin-right: 50px;
-  font-size: 10px;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: #cfa75a;   /* your gold tone */
-  font-weight: 400;
+  white-space:nowrap;
+  margin-right:50px;
+  font-size:10px;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+  color:#800020;
+  font-weight:400;
 }
 
 @keyframes scroll-left {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
+
+
+/* CART TRUST */
+
 .cart-trust {
-  font-size: 11px;
-  padding: 8px 0;
-  opacity: 0.9;
+  font-size:11px;
+  padding:8px 0;
+  opacity:0.9;
+  color:#FFFFF0;
 }
+
 .cart .trust-strip {
-  margin-top: 12px;
+  margin-top:12px;
 }
+
+
+/* CHECKOUT BUTTON SPACING */
+
 .checkout-btn {
-  margin-top: 10px;
+  margin-top:10px;
 }
+ 
 /* TOTAL BEFORE DISCOUNT */
 .total-before {
   text-decoration: line-through;

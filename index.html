@@ -66,20 +66,23 @@ html {
   scroll-behavior: smooth;  
 }  
 
+/* HEADER */
+
 header{  
   position: fixed;  
   top: 0;  
   left: 0;  
   width: 100%;  
   height: 70px;  
-  background: #5a0018;  
+  background: #1a0f12; /* different premium contrast */
   z-index: 9999;  
   transform: translateY(0);  
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);  
   border-bottom: 1px solid rgba(255,255,240,0.25);
   display: flex;  
-  justify-content: center;  
   align-items: center;  
+  justify-content: space-between;
+  padding: 0 20px;
 }
   
 .store-title{  
@@ -102,8 +105,6 @@ header{
 }  
   
 .cart-btn{  
-  position: absolute;  
-  right: 15px;  
   font-size: 9px;  
   letter-spacing: 1px;  
   text-transform: uppercase;  
@@ -117,7 +118,7 @@ header{
   
 header.hide { transform: translateY(-100%); }  
   
-body{ padding-top: 90px; }  
+body{ padding-top: 90px; }
   
 /* HERO TEXT */  
 .welcome-text{   

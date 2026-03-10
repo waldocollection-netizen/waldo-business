@@ -1,106 +1,130 @@
- <!DOCTYPE html>  <html lang="en">  
+ <!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
 
-  <title>AETHEL COLLECTIVE – Premium Accessories Store</title>
-  <!-- Favicon for browser tab -->
-  <link rel="icon" href="/favicon.ico" sizes="any">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+
+<title>WALDO INN – Premium Accessories Store</title>
+
+<!-- Favicon for browser tab -->
+<link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
 <link rel="apple-touch-icon" href="/favicon.png">
 
-  <meta name="description" content="Aethel Collective offers premium fashion accessories and curated collections for modern style lovers. Shop exclusive designs now." />
+<meta name="description" content="Waldo Inn offers premium fashion products and curated accessories for modern style lovers. Discover trending collections today.">
 
-  <meta name="robots" content="index, follow" />  
-  
-  <!-- Add this JSON-LD here -->
-  <script> type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "AETHEL COLLECTIVE",
-    "url": "https://aethelcollective.com",
-    "logo": "/favicon.png" }
-  </script>
-  <style>
-/* PREMIUM BLACK & WHITE THEME */  
-:root {  
-  --gold: #000000;  
-  --dark-grey: #f8f8f8;
-  --border: #e5e5e5;  
-}  
-  
+<meta name="robots" content="index, follow">
+
+<!-- Structured Data for SEO -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Organization",
+ "name": "WALDO INN",
+ "url": "https://waldoinn.vercel.app",
+ "logo": "https://waldoinn.vercel.app/favicon.png"
+}
+</script>
+
+</head>
+
+<style>
+
+/* WALDO INN BURGUNDY THEME */
+
+:root{
+  --primary:#800020;
+  --text:#FFFFF0;
+  --border:rgba(255,255,240,0.25);
+}
+
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family: 'Times New Roman', serif;
-}  
-
-body {  
-  font-family: 'Poppins', sans-serif;  
-  background: #ffffff;  
-  color: #111111;  
-}  
-
-html {  
-  scroll-behavior: smooth;  
-}  
-
-/* HEADER */      
-header{  
-  position: fixed;  
-  top: 0;  
-  left: 0;  
-  width: 100%;  
-  height: 70px;  
-  background:#ffffff;  
-  z-index: 9999;  
-  transform: translateY(0);  
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);  
-  border-bottom: 1px solid var(--border);
-  display: flex;  
-  justify-content: center;  
-  align-items: center;  
-}  
-  
-.store-title{  
-  display: flex;  
-  align-items: center;  
-  gap: 12px;  
-  font-size: 18px;  
-  letter-spacing: 6px;  
-  font-weight: 400;  
-  cursor: pointer;  
-  text-transform: uppercase;  
-  color: #000000;
+  font-family:'Times New Roman', serif;
 }
-  
-.store-logo {  
-  height: 28px;  
-  width: auto;  
-  object-fit: contain;  
-}  
-  
-.cart-btn{  
-  position: absolute;  
-  right: 15px;  
-  font-size: 9px;  
-  letter-spacing: 1px;  
-  text-transform: uppercase;  
-  border: 1px solid #000000;  
-  color: #000000;
-  background: transparent;
-  padding: 5px 10px;  
-  cursor: pointer;  
-  display: none;  
-}  
-  
-header.hide { transform: translateY(-100%); }  
-  
-body{ padding-top: 90px; }  
-  
+
+body{
+  font-family:'Poppins', sans-serif;
+  background:#800020;
+  color:var(--text);
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+
+/* HEADER */
+
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:70px;
+  background:#800020;
+  z-index:9999;
+  transform:translateY(0);
+  transition:transform 0.4s cubic-bezier(0.4,0,0.2,1);
+  border-bottom:1px solid var(--border);
+
+  display:flex;
+  justify-content:space-between;   /* left + right layout */
+  align-items:center;
+  padding:0 18px;
+}
+
+
+/* STORE TITLE + LOGO (LEFT SIDE) */
+
+.store-title{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-size:18px;
+  letter-spacing:6px;
+  font-weight:400;
+  cursor:pointer;
+  text-transform:uppercase;
+  color:var(--text);
+}
+
+.store-logo{
+  height:28px;
+  width:auto;
+  object-fit:contain;
+}
+
+
+/* CART BUTTON (RIGHT SIDE) */
+
+.cart-btn{
+  font-size:9px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  border:1px solid var(--text);
+  color:var(--text);
+  background:transparent;
+  padding:5px 10px;
+  cursor:pointer;
+  display:none;
+}
+
+
+header.hide{
+  transform:translateY(-100%);
+}
+
+
+body{
+  padding-top:90px;
+}
+ 
 /* HERO TEXT */  
 .welcome-text{   
     text-align:center;   

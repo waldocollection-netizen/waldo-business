@@ -1,43 +1,71 @@
-<!DOCTYPE html>  <html lang="en">  
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>WALDO INN - The complete store</title>
-  <!-- Favicon for browser tab -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>WALDO INN | Curated Fashion & Accessories</title>
+
+<!-- Favicon -->
 <link rel="icon" href="https://i.ibb.co/d0R4ythg/46902-photoaidcom-cropped-jpg.png" type="image/png">
 <link rel="apple-touch-icon" href="https://i.ibb.co/d0R4ythg/46902-photoaidcom-cropped-jpg.png">
 
-  <meta name="description" content="Aethel Collective offers premium fashion accessories and curated collections for modern style lovers. Shop exclusive designs now." />
+<!-- SEO Meta -->
+<meta name="description" content="Discover trending fashion, watches, and accessories at WALDO INN. Carefully selected pieces designed to elevate your everyday style." />
 
-  <meta name="robots" content="index, follow" />  
-  <!-- Add this JSON-LD here -->
-  <script> type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Aethel Collective",
-    "url": "https://aethelcollective.com",
-    "logo": "https://i.ibb.co/d0R4ythg/46902-photoaidcom-cropped-jpg.png"
-  }
-  </script>
-  <style>
-/* PREMIUM DARK THEME */  
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph (for WhatsApp / Instagram sharing) -->
+<meta property="og:title" content="WALDO INN | Curated Fashion & Accessories">
+<meta property="og:description" content="Explore trending fashion pieces, watches and accessories selected to upgrade your style.">
+<meta property="og:image" content="https://i.ibb.co/d0R4ythg/46902-photoaidcom-cropped-jpg.png">
+<meta property="og:url" content="https://waldoinn.vercel.app">
+<meta property="og:type" content="website">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Organization",
+ "name": "WALDO INN",
+ "url": "https://waldoinn.vercel.app",
+ "logo": "https://i.ibb.co/d0R4ythg/46902-photoaidcom-cropped-jpg.png",
+ "description": "WALDO INN offers carefully selected fashion, watches, and accessories for modern style enthusiasts.",
+ "sameAs": [
+   "https://instagram.com/"
+ ]
+}
+</script>
+  
+<style>
+
+/* IMPORT PREMIUM FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Poppins:wght@300;400;500&display=swap');
+
+/* PREMIUM BURGUNDY THEME */  
 :root {  
-  --gold: #c5a059;  
-  --dark-grey: #1a1a1a;
-  --border: #222;  
+  --primary: #800020;  
+  --text: #FFFFF0;
+  --border: rgba(255,255,240,0.2);  
 }  
   
-*{margin:0;padding:0;box-sizing:border-box;font-family: 'Times New Roman', serif;}  
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
 body {  
   font-family: 'Poppins', sans-serif;  
-  background: radial-gradient(circle at top, #0a0a0a 0%, #000 60%);  
-  color: #eaeaea;  
+  background: radial-gradient(circle at top, #800020 0%, #5c0017 60%);  
+  color: var(--text);  
 }  
+
 html {  
   scroll-behavior: smooth;  
 }  
+
 /* HEADER */      
 header{  
   position: fixed;  
@@ -45,7 +73,7 @@ header{
   left: 0;  
   width: 100%;  
   height: 70px;  
-  background:rgba(0,0,0,0.98);  
+  background: rgba(128,0,32,0.98);  
   z-index: 9999;  
   transform: translateY(0);  
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);  
@@ -58,16 +86,18 @@ header{
 .store-title{  
   display: flex;  
   align-items: center;  
-  gap: 12px; /* Space between logo and text */  
+  gap: 12px;  
   font-size: 18px;  
   letter-spacing: 6px;  
-  font-weight: 400;  
+  font-weight: 500;  
   cursor: pointer;  
   text-transform: uppercase;  
+  color: var(--text);
+  font-family: 'Playfair Display', serif;
 }  
   
 .store-logo {  
-  height: 28px; /* Adjusted logo size to match title */  
+  height: 28px;  
   width: auto;  
   object-fit: contain;  
 }  
@@ -75,18 +105,22 @@ header{
 .cart-btn{  
   position: absolute;  
   right: 15px;  
-  font-size: 9px; /* Decreased font size */  
-  letter-spacing: 1px; /* Decreased spacing */  
+  font-size: 9px;  
+  letter-spacing: 1px;  
   text-transform: uppercase;  
-  border: 1px solid #333;  
-  padding: 5px 10px; /* Decreased padding for a smaller box */  
+  border: 1px solid var(--border);  
+  padding: 5px 10px;  
   cursor: pointer;  
   display: none;  
+  color: var(--text);
+  font-family: 'Poppins', sans-serif;
 }  
   
 header.hide { transform: translateY(-100%); }  
   
 body{ padding-top: 90px; }  
+
+</style> 
   
 /* HERO TEXT */  
 .welcome-text{   

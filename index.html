@@ -214,7 +214,7 @@ body{ padding-top: 90px; }
   top: 50%;  
   left: 50%;  
   transform: translate(-50%, -50%);  
-  color: var(--gold);  
+  color: var(--text);  
   font-size: 14px;  
   letter-spacing: 8px;  
   text-transform: uppercase;  
@@ -224,26 +224,28 @@ body{ padding-top: 90px; }
   pointer-events: none;  
 }  
   
-.coming-soon {filter: brightness(40%) !important;  
-}  
+.coming-soon {
+  filter: brightness(40%) !important;  
+}
+
 /* This hides the explore text specifically for the coming soon category */  
 .coming-soon:hover::before {  
   display: none;  
 }  
   
 /* PRODUCTS */  
-.section{padding:15px;display:none}  
+.section{padding:15px;display:none}
+
 .products{  
   display:grid;  
   grid-template-columns:repeat(2,1fr);  
   gap:15px;  
 }  
+
 .product {  
-  background: #050505;  
-  border: 1px solid #111;  
+  background: #5c0017;  
+  border: 1px solid var(--border);  
   box-shadow: 0 20px 60px rgba(0,0,0,0.9);  
-}  
-.product {  
   transition: all 0.3s ease;  
 }  
   
@@ -251,41 +253,62 @@ body{ padding-top: 90px; }
   transform: translateY(-4px);  
   box-shadow: 0 10px 30px rgba(0,0,0,0.4);  
 }  
-.product img{width:100%; aspect-ratio:1/1; object-fit:cover; cursor: pointer;}  
-.product img {  
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);  
-}  
-  
+
+.product img{
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  cursor: pointer;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
 .product img:hover {  
   transform: scale(1.05);  
-}  
-.info{padding:15px; text-align: center;}  
-.info b { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; height: 32px; overflow: hidden; font-weight: 400;}  
+}
+
+.info{
+  padding:15px;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.info b {
+  display:block;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  margin-bottom:8px;
+  height:32px;
+  overflow:hidden;
+  font-weight:400;
+}
+
+/* PRICE */
+
 .price-tag {
-  display: flex;
-  align-items: center;      /* vertically center both prices */
-  gap: 12px;                /* space between old and new price */
-  white-space: nowrap;      /* keep on one line */
-  margin-left: 8px;         /* move the whole price block slightly right */
+  display:flex;
+  align-items:center;
+  gap:12px;
+  white-space:nowrap;
+  margin-left:8px;
 }
 
 .old-price {
-  text-decoration: line-through;
-  color: #888;
-  font-size: 13px;
+  text-decoration:line-through;
+  color:#c9bdbd;
+  font-size:13px;
 }
 
 .new-price {
-  color: #d27b2f;
-  font-weight: 600;
-  font-size: 14px;
+  color:#FFFFF0;
+  font-weight:600;
+  font-size:14px;
 }
-.info {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-    
+
+/* THUMBNAILS */
+
 .thumbs {  
   display:flex;  
   gap:6px;  
@@ -297,46 +320,49 @@ body{ padding-top: 90px; }
   width:40px;  
   height:40px;  
   object-fit:cover;  
-  border:1px solid #222;  
+  border:1px solid var(--border);  
   cursor:pointer;  
   opacity:0.6;  
 }  
   
 .thumb:hover {  
   opacity:1;  
-  border-color: var(--gold);  
-}  
-/* INPUTS/BUTTONS */  
+  border-color: var(--text);  
+}
+
+/* INPUTS / BUTTONS */
+
 select, input, textarea{  
   width:100%;  
   padding:12px;  
   margin-top:8px;  
-  border: 1px solid var(--border);  
-  background: #000;  
-  color: #fff;  
-  font-size: 10px;  
-  text-transform: uppercase;  
-  border-radius: 0;  
-  letter-spacing: 1px;  
+  border:1px solid var(--border);  
+  background:#5c0017;  
+  color:var(--text);  
+  font-size:10px;  
+  text-transform:uppercase;  
+  border-radius:0;  
+  letter-spacing:1px;  
 }  
   
 button {  
-  border: 1px solid var(--gold);  
-  color: var(--gold);  
-  background: transparent;  
-  padding: 14px 18px;  
-  font-size: 10px;  
-  letter-spacing: 3px;  
-  text-transform: uppercase;  
-  cursor: pointer;  
-  transition: 0.3s ease;  
+  border:1px solid var(--text);  
+  color:var(--text);  
+  background:transparent;  
+  padding:14px 18px;  
+  font-size:10px;  
+  letter-spacing:3px;  
+  text-transform:uppercase;  
+  cursor:pointer;  
+  transition:0.3s ease;  
 }  
   
 button:hover {  
-  background: var(--gold);  
-  color: #000;  
-  transform: translateY(-1px);  
-}  
+  background:var(--text);  
+  color:#800020;  
+  transform:translateY(-1px);  
+}
+
 /* Container for checkout buttons */
 .checkout-buttons {
   display: flex;

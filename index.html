@@ -1,60 +1,731 @@
-  margin-top:6px;
-  color:#800020;
+ <!DOCTYPE html>  <html lang="en">  
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+
+  <title>AETHEL COLLECTIVE – Premium Accessories Store</title>
+  <!-- Favicon for browser tab -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
+<link rel="apple-touch-icon" href="/favicon.png">
+
+  <meta name="description" content="Aethel Collective offers premium fashion accessories and curated collections for modern style lovers. Shop exclusive designs now." />
+
+  <meta name="robots" content="index, follow" />  
+  
+  <!-- Add this JSON-LD here -->
+  <script> type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "AETHEL COLLECTIVE",
+    "url": "https://aethelcollective.com",
+    "logo": "/favicon.png" }
+  </script>
+  <style>
+/* PREMIUM BLACK & WHITE THEME */  
+:root {  
+  --gold: #000000;  
+  --dark-grey: #f8f8f8;
+  --border: #e5e5e5;  
+}  
+  
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Times New Roman', serif;
+}  
+
+body {  
+  font-family: 'Poppins', sans-serif;  
+  background: #ffffff;  
+  color: #111111;  
+}  
+
+html {  
+  scroll-behavior: smooth;  
+}  
+
+/* HEADER */      
+header{  
+  position: fixed;  
+  top: 0;  
+  left: 0;  
+  width: 100%;  
+  height: 70px;  
+  background:#ffffff;  
+  z-index: 9999;  
+  transform: translateY(0);  
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);  
+  border-bottom: 1px solid var(--border);
+  display: flex;  
+  justify-content: center;  
+  align-items: center;  
+}  
+  
+.store-title{  
+  display: flex;  
+  align-items: center;  
+  gap: 12px;  
+  font-size: 18px;  
+  letter-spacing: 6px;  
+  font-weight: 400;  
+  cursor: pointer;  
+  text-transform: uppercase;  
+  color: #000000;
+}
+  
+.store-logo {  
+  height: 28px;  
+  width: auto;  
+  object-fit: contain;  
+}  
+  
+.cart-btn{  
+  position: absolute;  
+  right: 15px;  
+  font-size: 9px;  
+  letter-spacing: 1px;  
+  text-transform: uppercase;  
+  border: 1px solid #000000;  
+  color: #000000;
+  background: transparent;
+  padding: 5px 10px;  
+  cursor: pointer;  
+  display: none;  
+}  
+  
+header.hide { transform: translateY(-100%); }  
+  
+body{ padding-top: 90px; }  
+  
+/* HERO TEXT */  
+.welcome-text{   
+    text-align:center;   
+    font-size:10px;   
+    text-transform: uppercase;   
+    letter-spacing:6px;   
+    margin: 40px 0 10px 0;   
+    color: #000000;  
+}  
+  
+.how-link{   
+    text-align:center;   
+    font-size: 9px;  
+    letter-spacing: 3px;  
+    text-transform: uppercase;  
+    margin-bottom: 40px;   
+    cursor:pointer;   
+    opacity: 0.5;  
+    color: #555555;
+}
+  
+/* PREMIUM CATEGORY GRID */  
+.categories{  
+  padding:20px;  
+  display:grid;  
+  grid-template-columns: 1fr;  
+  gap:25px;  
+}  
+  
+.category{  
+  position:relative;  
+  overflow:hidden;  
+  cursor:pointer;  
+  aspect-ratio: 16 / 9;  
+  border: 1px solid #e5e5e5; /* premium light border */
+}  
+  
+.category::after {  
+  content: '';  
+  position: absolute;  
+  inset: 0;  
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.1) 60%);
+  pointer-events: none;  
+  z-index: 1;  
+}  
+  
+.category img{   
+  width:100%;   
+  height:100%;   
+  object-fit:cover;   
+  filter: brightness(70%) grayscale(20%);
+  transition: transform 1.5s cubic-bezier(0.2, 1, 0.3, 1), filter 0.8s ease;  
+}  
+  
+.category:hover img {   
+  filter: brightness(90%) grayscale(0%);
+  transform: scale(1.06);  
+}
+  
+.category span{  
+  position:absolute;  
+  bottom: 30px;  
+  left: 30px;  
+  color:#ffffff;  
+  font-size: 11px;  
+  letter-spacing: 5px;  
+  text-transform: uppercase;  
+  z-index: 2;  
+  border-bottom: 1px solid rgba(255,255,255,0.6);  
+  padding-bottom: 10px;  
+}  
+  
+.category::before {  
+  content: 'EXPLORE COLLECTION';  
+  position: absolute;  
+  top: 50%;  
+  left: 50%;  
+  transform: translate(-50%, -50%);  
+  z-index: 3;  
+  font-size: 9px;  
+  letter-spacing: 4px;  
+  opacity: 0;  
+  transition: 0.4s ease;  
+  border: 1px solid rgba(255,255,255,0.7);  
+  color: #ffffff;  
+  padding: 12px 20px;  
+}  
+  
+.category:hover::before { opacity: 1; }
+  
+/* AESTHETIC COMING SOON OVERLAY */  
+.coming-soon-overlay {  
+  position: absolute;  
+  top: 50%;  
+  left: 50%;  
+  transform: translate(-50%, -50%);  
+  color: #ffffff;  
+  font-size: 14px;  
+  letter-spacing: 8px;  
+  text-transform: uppercase;  
+  z-index: 5;  
+  font-weight: 300;  
+  white-space: nowrap;  
+  pointer-events: none;  
+}  
+  
+.coming-soon {
+  filter: brightness(40%) !important;  
+}  
+
+/* This hides the explore text specifically for the coming soon category */  
+.coming-soon:hover::before {  
+  display: none;  
+}
+  
+/* PRODUCTS */  
+.section{
+  padding:15px;
+  display:none;
+}  
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.product {
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03); /* very soft depth */
+  transition: transform 0.3s ease;
+}
+
+.product:hover {
+  transform: translateY(-3px); /* slight lift only */
+}
+
+.product img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  cursor: pointer;
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.5s ease;
+}
+
+.product img.loaded {
+  opacity: 1;
+}
+
+.product img:hover {
+  transform: scale(1.04); /* subtle zoom */
+}
+
+.product button {
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 8px 14px;
+  margin-top: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.product button:hover {
+  background: #111111;
+}
+
+.info{
+  padding:15px; 
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.info b { 
+  display: block; 
+  font-size: 11px; 
+  text-transform: uppercase; 
+  letter-spacing: 1px; 
+  margin-bottom: 8px; 
+  height: 32px; 
+  overflow: hidden; 
+  font-weight: 400;
+  color: #111111;
+}  
+
+.price-tag {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  white-space: nowrap;
+  margin-left: 8px;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #999999;
+  font-size: 13px;
+}
+
+.new-price {
+  color: #000000;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.thumbs {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.thumb {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border: 1px solid #e5e5e5;
+  cursor: pointer;
+  opacity: 0.6;
+  border-radius: 4px;
+  transition: transform 0.2s, opacity 0.2s, border-color 0.2s;
+}
+
+.thumb:hover {
+  opacity: 1;
+  transform: scale(1.08);
+  border-color: #000000;
+}
+
+.scrollable-thumbs {
+  overflow-x: auto;
+  justify-content: flex-start !important;
+  padding-bottom: 5px; 
+}
+
+.scrollable-thumbs::-webkit-scrollbar {
+  height: 6px;
+}
+
+.scrollable-thumbs::-webkit-scrollbar-track {
+  background: #f2f2f2;
+}
+
+.scrollable-thumbs::-webkit-scrollbar-thumb {
+  background: #cccccc;
+  border-radius: 3px;
+}
+    
+/* INPUTS/BUTTONS */  
+select, input, textarea{  
+  width:100%;  
+  padding:12px;  
+  margin-top:8px;  
+  border: 1px solid #e5e5e5;  
+  background: #ffffff;  
+  color: #111111;  
+  font-size: 10px;  
+  text-transform: uppercase;  
+  border-radius: 0;  
+  letter-spacing: 1px;  
+}  
+
+select:focus, input:focus, textarea:focus{
+  outline: none;
+  border-color: #000000;
+}
+
+button {  
+  border: 1px solid #000000;  
+  color: #000000;  
+  background: transparent;  
+  padding: 14px 18px;  
+  font-size: 10px;  
+  letter-spacing: 3px;  
+  text-transform: uppercase;  
+  cursor: pointer;  
+  transition: 0.3s ease;  
+}  
+
+button:hover {  
+  background: #000000;  
+  color: #ffffff;  
+  transform: translateY(-1px);  
+}  
+
+/* Container for checkout buttons */
+.checkout-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+/* WhatsApp button style */
+.checkout-whatsapp {
+  width: 100%;
+  padding: 14px 0;
+  border-radius: 8px;
+  border: 2px solid #25D366;
+  background: #25D366;
+  color: #ffffff;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.checkout-whatsapp:hover {
+  background: #1ebe57;
+  transform: translateY(-2px);
+}
+
+/* Instagram button style */
+.checkout-instagram {
+  width: 100%;
+  padding: 14px 0;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
+  color: #ffffff;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.checkout-instagram:hover {
+  transform: translateY(-2px);
+}
+    
+/* REVIEWS */
+#reviewsDisplay .review {
+  background:#ffffff;
+  border:1px solid #e5e5e5;
+  padding:15px;
+  color:#111111;
+}
+
+.review .review-name {
+  font-weight:600;
+  color:#000000;
   letter-spacing:1px;
 }
 
+.review .review-rating {
+  margin:5px 0;
+  color: #000000; /* clean black stars */
+}
+
+.review img {
+  max-width:100px;
+  margin-top:10px;
+  border:1px solid #e5e5e5;
+  border-radius:4px;
+}
+/* SUBMIT REVIEW BUTTON */
+#submitReviewBtn {
+  display: inline-block;
+  background: #000000;         /* solid black button */
+  color: #ffffff;              /* white text */
+  border: 1px solid #111111;   /* subtle dark border */
+  padding: 10px 20px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+}
+
+#submitReviewBtn:hover {
+  background: #111111;          /* slightly lighter black on hover */
+  color: #FFD700;               /* subtle gold hint on hover */
+  transform: translateY(-1px);
+}
+
+/* SCREENS */
+.cart, .screen{  
+  position:fixed;  
+  inset:0;  
+  background:#ffffff;  
+  display:none;  
+  overflow:auto;  
+  padding: 30px 20px;  
+  z-index: 10001;  
+}  
+
+.cart h2, .screen h2{  
+    text-align:center;  
+    letter-spacing: 6px;   
+    text-transform: uppercase;   
+    font-size: 16px;   
+    font-weight: 400;  
+    margin: 40px 0;  
+    color:#000000;
+}  
+
+.cart-item{
+  padding:20px; 
+  border: 1px solid #e5e5e5; 
+  margin-bottom: 10px;
+  background:#ffffff;
+}
+
+.summary-item-box {  
+    display: flex;  
+    align-items: center;  
+    gap: 15px;  
+    padding: 15px 0;  
+    border-bottom: 1px solid #e5e5e5;  
+}  
+
+.summary-thumb {  
+    width: 70px;  
+    height: 70px;  
+    object-fit: cover;  
+    border: 1px solid #e5e5e5;  
+}  
+
+.whatsapp{   
+    background:#000000;   
+    color:#ffffff;   
+    padding:18px;   
+    text-align:center;   
+    margin-top:20px;   
+    cursor:pointer;   
+    text-transform: uppercase;  
+    letter-spacing: 3px;  
+    font-size: 10px;  
+    transition: background 0.3s ease;
+}  
+
+.whatsapp:hover{
+    background:#111111;
+}
+
+.whatsapp.disabled{ 
+  opacity:0.3; 
+  pointer-events: none; 
+}  
+
+.summary-row{ 
+  display:flex; 
+  justify-content:space-between; 
+  padding:12px 0; 
+  font-size: 11px; 
+  letter-spacing: 2px;
+  color:#111111;
+}
+   
+/* TOAST */
+#toast {  
+  visibility: hidden;  
+  min-width: 250px;  
+  background-color: #007BFF;  /* premium blue background */
+  color: #ffffff;              /* white text */
+  text-align: center;  
+  padding: 16px;  
+  position: fixed;  
+  z-index: 30000;  
+  bottom: 40px;  
+  left: 50%;  
+  transform: translateX(-50%);  
+  font-size: 9px;  
+  letter-spacing: 3px;  
+  text-transform: uppercase;  
+  border: 1px solid #0056b3;  /* slightly darker blue border for depth */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08); /* soft subtle depth */
+  border-radius: 4px;  
+}
+
+#toast.show { 
+  visibility: visible; 
+  animation: fadein 0.5s, fadeout 0.5s 2.5s; 
+}
+
+@keyframes fadein { 
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 40px; opacity: 1;} 
+}
+
+@keyframes fadeout { 
+  from {bottom: 40px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;} 
+}
+
+
+/* SOCIAL ICONS */
+.social-home {  
+  display: flex;  
+  justify-content: center;  
+  gap: 25px;  
+  margin: 15px 0 15px 0;  
+  min-height: 40px;           /* ensures container doesn’t collapse */
+  align-items: center;        /* vertically centers the icons */
+}
+
+.social-home.shifted {
+  transform: translateY(15px);
+}
+
+.social-home img {  
+  width: 28px;                /* slightly bigger for visibility */
+  height: 28px;  
+  cursor: pointer;  
+  opacity: 0.8;               /* visible even without hover */
+  transition: transform 0.3s ease, opacity 0.3s ease;  
+  border: 1px solid #000;     /* subtle black border for premium feel */
+  border-radius: 50%;          /* rounded icons */
+  padding: 4px;               /* adds touchable space */
+  background: #fff;           /* white background for contrast */
+}
+
+.social-home img:hover {  
+  opacity: 1;  
+  transform: scale(1.2);      /* subtle zoom on hover */
+  border-color: #FFD700;      /* gold highlight on hover */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25); /* soft shadow for depth */
+}
+
+
+/* OFFER BANNER */
+#offerBanner {
+  position: fixed;
+  top: 70px;
+  left: -100%;
+  width: 100%;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 2px;
+  padding: 10px 0;
+  background: #000000; /* clean black */
+  color: #ffffff;       /* clean white text */
+  z-index: 9999;
+  opacity: 0;
+  animation: slideFade 10s infinite;
+}
+
+@keyframes slideFade {
+  0%   { left:-100%; opacity:0; }
+  15%  { left:0;     opacity:1; }
+  70%  { left:0;     opacity:1; }
+  85%  { left:50%;   opacity:0.5; }
+  100% { left:100%;  opacity:0; }
+}
+
+/* DISCOUNT LINE */
+.discount-line {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 6px;
+  color: #2563eb;          /* bright premium blue */
+  letter-spacing: 1px;
+  font-weight: 600;
+}
 
 /* TRUST STRIP */
-
 .trust-strip {
-  overflow:hidden;
-  border:none;
-  padding:10px 0;
-  background:transparent;
+  overflow: hidden;
+  border: none;
+  padding: 8px 0;                 /* slightly taller for better visibility */
+  background: #1e40af;             /* royal blue background */
+  min-height: 40px;                 /* prevents collapse */
+  display: flex;                    
+  align-items: center;              /* vertically center the content */
 }
 
 .trust-track {
-  display:flex;
-  width:max-content;
+  display: flex;
+  width: max-content;
   animation: scroll-left 22s linear infinite;
+  gap: 50px;                        /* spacing between points */
 }
 
 .trust-track span {
-  white-space:nowrap;
-  margin-right:50px;
-  font-size:10px;
-  letter-spacing:2.5px;
-  text-transform:uppercase;
-  color:#800020;
-  font-weight:400;
+  white-space: nowrap;
+  font-size: 11px;                  /* slightly bigger for readability */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ffffff;                   /* white text for contrast */
+  font-weight: 600;
+  padding: 4px 8px;                 /* adds a little padding for touch feel */
+  background: rgba(0,0,0,0.1);      /* subtle background for premium feel */
+  border-radius: 4px;               /* rounded edges */
+  flex-shrink: 0;                    /* prevent shrinking */
 }
 
+/* SCROLL ANIMATION */
 @keyframes scroll-left {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
 
 
-/* CART TRUST */
-
+/* CART TRUST TEXT */
 .cart-trust {
-  font-size:11px;
-  padding:8px 0;
-  opacity:0.9;
-  color:#FFFFF0;
+  font-size: 11px;
+  padding: 8px 0;
+  letter-spacing: 1px;
+  color: #2563eb;
 }
 
 .cart .trust-strip {
-  margin-top:12px;
+  margin-top: 12px;
 }
 
 
 /* CHECKOUT BUTTON SPACING */
-
 .checkout-btn {
-  margin-top:10px;
+  margin-top: 10px;
 }
- 
+   
 /* TOTAL BEFORE DISCOUNT */
 .total-before {
   text-decoration: line-through;
@@ -73,13 +744,15 @@
 .subtotal-row {
   font-weight: 600;
   font-size: 16px;
+  color: #000;
 }
 
-/* Discount row styling */
+/* DISCOUNT ROW */
 #discountRow span {
-  color: #d27b2f;
-  font-weight: 500;
+  color: #2563eb;      /* same bright blue as discount line */
+  font-weight: 600;
 }
+
 
 /* Smooth animation */
 @keyframes fadeSlideIn {
@@ -88,65 +761,473 @@
     transform: translateY(0);
   }
 }
+
+
+/* MODAL BOX */
 .modal-box {
-  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15); /* softer, premium shadow */
+  border-radius: 8px;
 }
 
+
+/* UNDERSTOOD BUTTON */
 .how-understood-btn {
   margin-top:20px;
   width:100%;
-  padding:10px 0;
+  padding:12px 0;
   border:none;
   border-radius:8px;
-  background:#d27b2f;
-  color:#000;
+  background:#1e40af;      /* royal blue */
+  color:#ffffff;           /* white text */
   font-weight:600;
   letter-spacing:1.5px;
   cursor:pointer;
   text-transform:uppercase;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .how-understood-btn:hover {
+  background:#2563eb;      /* slightly brighter blue */
   transform: translateY(-2px);
-  opacity:0.9;
 }
 
+/* SUGGESTION BOX */
 .suggest-box{
   position:absolute;
-  top:100%;          /* sit just below input */
+  top:100%;
   left:0;
   width:100%;
-  background:#000;
-  border:1px solid #222;
+  background:#ffffff;
+  border:1px solid #e5e5e5;
   max-height:200px;
   overflow-y:auto;
   z-index:9999;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
 }
 
 .suggest-item{
-  padding:10px 12px;
+  padding:12px 14px;
   cursor:pointer;
-  opacity:.8;
-  font-size:9px;
+  font-size:10px;
   letter-spacing:2px;
   text-transform:uppercase;
+  color:#000;
+  opacity:.7;
+  transition: all 0.2s ease;
 }
 
 .suggest-item:hover{
-  background:#111;
+  background:#f5f5f5;
   opacity:1;
 }
-    
-/* FOOTER */  
-.footer{ text-align:center; padding:80px 20px; font-size:9px; letter-spacing: 3px; color:#333; text-transform: uppercase;}  
-.footer a{ color: #555; text-decoration: none;}  
-  
-</style>  </head>  <body>  <header>  
+
+
+/* FULL-SCREEN LOADER */
+#pageLoader {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #ffffff; /* clean white */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999999;
+}
+
+
+/* CENTERED CONTENT */
+.loader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #000;
+  font-family: 'Cinzel', serif;
+}
+
+
+/* LOGO ANIMATION */
+.logo-text {
+  font-size: 3.5em;
+  letter-spacing: 8px;
+  opacity: 0;
+  transform: scale(0.9);
+  animation: fadeInLogo 1.2s forwards;
+}
+
+
+/* TAGLINE */
+.tagline {
+  font-size: 0.9em;
+  margin-top: 18px;
+  letter-spacing: 3px;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInTagline 1.2s forwards;
+  animation-delay: 1.2s;
+  color: #555;
+}
+
+
+/* KEYFRAMES */
+@keyframes fadeInLogo {
+  0% { opacity: 0; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeInTagline {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+
+/* FADE OUT LOADER */
+.fade-out {
+  animation: fadeOutLoader 0.8s forwards;
+}
+
+@keyframes fadeOutLoader {
+  0% { opacity: 1; }
+  100% { opacity: 0; visibility: hidden; }
+}
+
+#aboutAethel {
+  background: #ffffff;
+  padding: 80px 20px 40px 20px; /* top 80px, right 20px, bottom 40px, left 20px */
+  display: flex;
+  justify-content: center;
+}
+
+.about-box {
+  max-width: 720px;
+  text-align: center;
+  color: #000;
+  padding: 60px 40px;
+  border: 1px solid #000;        /* thin black border */
+}
+
+/* TITLE */
+.about-box h1 {
+  letter-spacing: 10px;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+
+/* TAGLINE */
+#aboutAethel .tagline {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  font-style: italic;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+  opacity: 0.7;
+}
+
+/* RESPONSIVE */
+@media (max-width: 400px) {
+  #aboutAethel .tagline {
+    font-size: 15px;
+  }
+}
+
+/* BODY TEXT */
+.about-text {
+  line-height: 1.9;
+  font-size: 14px;
+  opacity: 0.75;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* POINTS */
+.about-points {
+  list-style: none;
+  padding: 0;
+  margin: 40px 0;
+}
+
+.about-points li {
+  margin: 12px 0;
+  letter-spacing: 2px;
+  font-size: 11px;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+/* FOUNDER LINE */
+.founder-line {
+  margin-top: 50px;
+  font-size: 11px;
+  letter-spacing: 3px;
+  opacity: 0.5;
+  text-transform: uppercase;
+}
+
+/* BRAND LINE */
+.brand-line {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.4;
+  margin: 6px 0 10px;
+}
+
+   
+ .reveal {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+}
+
+/* Import a premium serif font for headings */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap');
+
+#trustSection {
+  background: #ffffff;
+  color: #000;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.trust-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.trust-box {
+  background: #ffffff;
+  border: 1px solid #000;
+  padding: 40px 30px;
+  flex: 1 1 280px;
+  min-width: 260px;
+  transition: transform 0.25s ease;
+}
+
+.trust-box:hover {
+  transform: translateY(-4px);
+}
+
+/* HEADINGS */
+.trust-box h2 {
+  margin-bottom: 20px;
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+/* LIST */
+.trust-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.trust-box ul li {
+  margin: 12px 0;
+  font-size: 13px;
+  line-height: 1.8;
+  opacity: 0.8;
+}
+
+/* CLICKABLE LINKS */
+.trust-box a {
+  color: #1f3d2b;                 /* deep premium green */
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1.5px;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.trust-box a:hover {
+  color: #000;                    /* strong hover feedback */
+  text-decoration-thickness: 2px;
+}
+
+/* input error red colour */
+.input-error {
+  border: 2px solid red;
+  box-shadow: 0 0 6px red;
+  transition: all 0.3s ease;
+}
+
+.qty-btn{
+  width:16px;
+  height:16px;
+  border:1px solid #333;
+  background:transparent;
+  color:#ccc;
+  font-size:12px;
+  cursor:pointer;
+  border-radius:2px;
+  padding:0;
+  line-height:14px;
+}
+
+.qty-btn:hover{
+  border-color:#888;
+  color:#fff;
+}
+
+#searchInput {
+  width: 100%;
+  background: #fff;               /* clean white background */
+  border: 1px solid #222;         /* subtle black border */
+  color: #000 !important;         /* black text forced */
+  font-size: 12px;
+  padding: 10px 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  outline: none;
+  text-align: center;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+#searchInput::placeholder {
+  color: #555 !important;         /* visible dark gray placeholder */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+#searchInput:focus {
+  border-color: #000;             /* darker black border on focus */
+  background: #fff;               /* stays white */
+  color: #000 !important;         /* ensure typing text is black */
+}
+
+#continueShoppingBtn {
+  width: 100%;
+  margin-top: 10px;
+  background: #fff;             /* white background matches theme */
+  border: 1px solid #222;       /* subtle black textured border */
+  color: #000;                   /* black text */
+  padding: 12px 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease, transform 0.2s;
+  border-radius: 4px;
+}
+
+#continueShoppingBtn:hover {
+  background: #000;             /* invert background on hover */
+  color: #fff;                   /* invert text for contrast */
+  transform: translateY(-1px);   /* subtle lift effect */
+}
+
+/* SHIPPING BUTTONS */
+#enterShippingBtn {
+  width: 100%;
+  padding: 14px 0;
+  background: #000;             /* black background for premium look */
+  color: #fff;                  /* white text */
+  border: none;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25); /* subtle depth */
+}
+
+#enterShippingBtn:hover {
+  background: #fff;             /* invert colors on hover */
+  color: #000;                  /* black text */
+  transform: translateY(-2px);  /* subtle lift */
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+/* BACK BUTTON */
+#backBtn {
+  width: 100%;
+  padding: 12px 0;
+  background: transparent;
+  color: #000;                  /* black text to be visible */
+  border: 1px solid #000;       /* subtle black border */
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+  font-size: 12px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+#backBtn:hover {
+  background: #000;             /* black background on hover */
+  color: #fff;                  /* text inverts to white */
+  transform: translateY(-1px);
+}
+
+/* SMALL BACK BUTTON */
+.small-back-btn {
+  background: transparent;        /* minimal look */
+  border: 1px solid #000;         /* black border for visibility */
+  color: #000;                     /* black text for white background */
+  padding: 8px 14px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.small-back-btn:hover {
+  background: #000;                /* black background on hover */
+  color: #fff;                     /* text inverts to white */
+  transform: translateY(-1px);     /* subtle lift for touch feel */
+}
+   
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 80px 20px;
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: #ffffff;            /* white text */
+  text-transform: uppercase;
+  background: #000000;       /* solid black background */
+}
+
+.footer a {
+  color: #ffffff;            /* white links */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #FFD700;            /* optional gold hover for premium touch */
+}  
+
+</style>  </head>  <body>
+  <!-- Page Loader -->
+<div id="pageLoader">
+  <div class="loader-content">
+    <span class="logo-text">AETHEL</span>
+    <span class="tagline">Where Trust Meets Style</span>
+  </div>
+</div>
+  <header>  
   <div class="store-title" onclick="goHomeFromHeader()">  
-    <img src="https://i.ibb.co/rR3YmK0p/IMG-20260228-WA0019.jpg" alt="Logo" class="store-logo">  
-    <span>WALDO</span>  
+    <img src="/AETHELCOLLECTIVELOGO.jpg" alt="Logo" class="store-logo">  
+    <span>AETHEL</span>  
   </div>  
   <div class="cart-btn" id="cartBtn" onclick="openCart()">BAG (<span id="cartCount">0</span>)</div>  
 </header>  <div id="toast"></div>  <div id="homeTopBar">    
@@ -177,7 +1258,7 @@
   onclick="showTrending()"  
   style="  
     background:transparent;  
-    border:1px solid rgba(214,179,106,0.6);  
+    border:1px solid rgba(214,54,54,0.6);  
     color:#d6b36a;  
     font-size:9px;  
     letter-spacing:4px;  
@@ -187,62 +1268,69 @@
   TRENDING PRODUCTS
   </button>  
   </div>  
-  <div class="welcome-text">Where Value Meets Style</div>  
+  <div class="welcome-text">Where Trust Meets Style</div>  
   <div class="how-link" onclick="openHow()">How to order?</div>  
-  <div class="trust-strip">
-  <div class="trust-track">
-    <span>⭐ 2+ Happy Customers</span>
-    <span>• Premium Quality</span>
-    <span>• Trusted Store</span>
-    <span>• Fast Support</span>
-
-    <!-- duplicate for seamless loop -->
-    <span>⭐ 2+ Happy Customers</span>
-    <span>• Premium Quality</span>
-    <span>• Trusted Store</span>
-    <span>• Fast Support</span>
-  </div>
-  </div>
+  
 </div>  <div class="social-home">  
   <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"  
-       onclick="openInstagram()" alt="Instagram"> 
-  
-  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"  
+       onclick="openInstagram()" alt="Instagram">  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"  
 onclick="openWhatsApp()" alt="WhatsApp">
 
 <img src="https://i.postimg.cc/Kj0Mm9F1/26c7089c48f9bb763e9cca3db502bd57.jpg"  
 onclick="openEmail()" alt="Email">
-  
-</div>  <div class="categories" id="categoryScreen">
-  <div class="category" onclick="openCategory('mensWear')">  
+
+</div>  
+ <div class="trust-strip">
+  <div class="trust-track">
+    <span>⭐ 12+ Happy Customers</span>
+    <span>• Premium Quality Products</span>
+    <span>• Trusted & Verified Store</span>
+    <span>• Fast Support & Assistance</span>
+    <span>• Secure Payments</span>
+    <span>• Free Shipping Across Kerala</span>
+    <span>• Exclusive Limited Editions</span>
+
+    <!-- duplicate for seamless loop -->
+    <span>⭐ 12+ Happy Customers</span>
+    <span>• Premium Quality Products</span>
+    <span>• Trusted & Verified Store</span>
+    <span>• Fast Support & Assistance</span>
+    <span>• Secure Payments</span>
+    <span>• Free Shipping Across Kerala</span>
+    <span>• Exclusive Limited Editions</span>
+  </div>
+</div>  
+ 
+ <div class="categories" id="categoryScreen">
+  <div class="category reveal" onclick="openCategory('mensWear')">  
     <img src="https://i.ibb.co/ZpZs0r0y/1605feca3b5e85f5f70493bb6b7b015a.jpg">  
     <span>Mens Wear</span>  
   </div>  
-  <div class="category" onclick="openCategory('mensShoes')">  
+  <div class="category reveal" onclick="openCategory('mensShoes')">  
     <img src="https://i.ibb.co/V0Rnyf16/c5570d8073a509174d1b244bafc05c5e-1.jpg">  
     <span>Mens Shoes</span>  
   </div>  
   <div class="category" onclick="openCategory('mensWatches')">  
     <img src="https://i.ibb.co/DPctDGPc/b42b9953e094fcf4905d0dcdd54dffc9.jpg">  
     <span>Mens Watches</span>  
-  </div>    <div class="category" onclick="openCategory('gadgets')">  
+  </div>    <div class="category reveal" onclick="openCategory('gadgets')">  
     <img src="https://i.ibb.co/D0YvHDP/1394b92cd9222ad3827348a2f1728b1a.jpg">  
     <span>Gadgets</span>  
-  </div>    <div class="category" onclick="openCategory('ladiesWatches')">  
+  </div>    <div class="category reveal" onclick="openCategory('ladiesWatches')">  
   <img src="https://i.postimg.cc/43VB4VWZ/flat-lay-coffee-keyboard-decoration.jpg">  
   <span>Ladies Watches</span>  
-  </div>    <div class="category" onclick="openCategory('ladiesShoes')">  
+  </div>    <div class="category reveal" onclick="openCategory('ladiesShoes')">  
     <img src="https://i.ibb.co/q3FK5GmR/5abb6b0fe4b6153e506fc30774cd7e9a.jpg">  
     <span>Ladies Shoes</span>  
   </div>  
-  <div class="category" onclick="openCategory('accessories')">  
+  <div class="category reveal" onclick="openCategory('accessories')">  
     <img src="https://i.ibb.co/HL2SdgZ8/948da70bec8894e8a968fd04cf455a7c.jpg">  
     <span>Accessories</span>  
   </div>  
-  <div class="category" onclick="openCategory('coupleAccessories')">  
+  <div class="category reveal" onclick="openCategory('coupleAccessories')">  
     <img src="https://i.ibb.co/GQGg1rhp/9ee44bd2a1a83107c02332a52a46fd85.jpg">  
     <span>Couple Items</span>  
-  </div>    <div class="category coming-soon" onclick="showToast('COMING SOON')">  
+  </div>    <div class="category reveal coming-soon" onclick="showToast('COMING SOON')">  
   <img src="https://i.ibb.co/SD7bTSYH/0808e1fb7ee460268f8e885c1af1fbba.jpg">  
   <div class="coming-soon-overlay">COMING SOON</div>  
   <span>Ladies Wear</span>  
@@ -267,38 +1355,46 @@ onclick="openEmail()" alt="Email">
     
     <input id="reviewPhoto" type="file" accept="image/*" style="margin-bottom:10px;">
     
-    <button onclick="submitReview()" style="width:100%;">Submit Review</button>
+    <button id="submitReviewBtn" onclick="submitReview()" style="width:100%;">Submit Review</button>
   </div>
   
   <!-- Display Reviews -->
   <div id="reviewsDisplay" style="margin-top:30px; display:flex; flex-direction:column; gap:15px;"></div>
 </div>
-</div>  <div class="section" id="productSection">    <!-- EXIT BUTTON -->    <div style="display:flex; justify-content:flex-start; margin:10px 0;">  
-    <button onclick="exitProducts()"  
-      style="  
-        background:transparent;  
-        border:1px solid #333;  
-        color:#fff;  
-        padding:8px 14px;  
-        font-size:9px;  
-        letter-spacing:2px;  
-        text-transform:uppercase;  
-      ">  
-      ← Back  
-    </button>  
-  </div>    <h3 id="sectionTitle"  
+</div>  <div class="section" id="productSection"> 
+    <!-- EXIT BUTTON --> 
+ <div style="display:flex; justify-content:flex-start; margin:10px 0;">
+  <button class="small-back-btn" onclick="exitProducts()">
+    ← Back
+  </button>
+ </div>
+ <h3 id="sectionTitle"  
       style="text-align:center; letter-spacing:6px; text-transform:uppercase;  
              margin:20px 0 40px; font-weight:normal; font-size:14px; color:var(--gold);">  
     Collection  
-  </h3>    <div id="filterBar" style="text-align:center; margin:15px 0;">  
-  <select id="priceFilter" onchange="applyFilters()">  
-    <option value="">FILTER BY PRICE</option>  
-    <option value="under500">UNDER 500</option>  
-    <option value="500-999">500 – 999</option>  
-    <option value="1000-1499">1000 – 1499</option>  
-    <option value="1500plus">1500+</option>  
-  </select>  
-  </div>    <div class="products" id="productGrid"></div>  
+  </h3>   
+  <div id="filterBar" style="text-align:center; margin:15px 0; display:flex; justify-content:center; gap:10px; flex-wrap:wrap;">
+  
+  <!-- Price Filter -->
+  <select id="priceFilter" onchange="applyFilters()" style="padding:6px 10px; border-radius:4px; border:1px solid #333; background:#111; color:#eee; cursor:pointer;">
+    <option value="">FILTER BY PRICE</option>
+    <option value="under500">UNDER 500</option>
+    <option value="500-999">500 – 999</option>
+    <option value="1000-1499">1000 – 1499</option>
+    <option value="1500plus">1500+</option>
+  </select>
+
+  <!-- Sort By -->
+  <select id="sortSelect" onchange="sortProducts()" style="padding:6px 10px; border-radius:4px; border:1px solid #333; background:#111; color:#eee; cursor:pointer;">
+    <option value="default">SORT BY</option>
+    <option value="priceLow">Price: Low → High</option>
+    <option value="priceHigh">Price: High → Low</option>
+    <option value="name">Name: A → Z</option>
+    <option value="trending">Trending First</option>
+  </select>
+
+  </div>
+  <div class="products" id="productGrid"></div>  
 </div>  <div class="cart" id="cart">  
   <h2>Shopping Bag</h2>  
   <div id="cartItems"></div>  
@@ -320,34 +1416,64 @@ onclick="openEmail()" alt="Email">
   <div id="discountLine" class="discount-line"></div>
   <div class="trust-strip">
   <div class="trust-track">
-    <span>⭐ 2+ Happy Customers</span>
-    <span>• Premium Quality</span>
-    <span>• Trusted Store</span>
-    <span>• Fast Support</span>
+    <span>⭐ 12+ Happy Customers</span>
+    <span>• Premium Quality Products</span>
+    <span>• Trusted & Verified Store</span>
+    <span>• Fast Support & Assistance</span>
+    <span>• Secure Payments</span>
+    <span>• Free Shipping Across Kerala</span>
+    <span>• Exclusive Limited Editions</span>
 
     <!-- duplicate for seamless loop -->
-    <span>⭐ 2+ Happy Customers</span>
-    <span>• Premium Quality</span>
-    <span>• Trusted Store</span>
-    <span>• Fast Support</span>
+    <span>⭐ 12+ Happy Customers</span>
+    <span>• Premium Quality Products</span>
+    <span>• Trusted & Verified Store</span>
+    <span>• Fast Support & Assistance</span>
+    <span>• Secure Payments</span>
+    <span>• Free Shipping Across Kerala</span>
+    <span>• Exclusive Limited Editions</span>
+  </div>
+</div>  
+  <div class="whatsapp disabled" id="waBtn" onclick="checkout()">Checkout</div>
+  <button id="continueShoppingBtn" onclick="closeCart()">Continue Shopping</button>
+  <div style="margin-top:10px; font-size:11px; letter-spacing:1px; opacity:0.8;">
+    🛡️ No payment required now. Pay upon confirmation.
   </div>
   </div> 
-  <div class="whatsapp disabled" id="waBtn" onclick="checkout()">Checkout</div>
-  <button onclick="closeCart()" style="width:100%; margin-top:10px; background:transparent; border:1px solid #333; color:#fff;">
-    Continue Shopping
-  </button>
-  </div> 
-</div>  <div class="screen" id="summaryScreen">  
-  <h2>Order Summary</h2>  
-  <div id="summaryItems" style="margin-bottom: 20px;"></div>  
-  <div class="summary-row"><span>Items Total</span><span>₹<span id="basePrice">0</span></span></div>  
-  <div class="summary-row"><span>Shipping</span><span>₹0</span></div>  
-  <div class="summary-row" style="border-top: 1px solid #222; color: var(--gold); margin-top:10px; padding-top:10px;"><span>GRAND TOTAL</span><span>₹<span id="summaryTotal">0</span></span></div>  
-  <div style="display:flex; flex-direction:column; gap:10px; margin-top: 40px;">  
-    <button onclick="openDetails()">Enter Shipping Address</button>  
-    <button onclick="goProducts()" style="background:transparent; color:#fff; border:1px solid #333;">Back</button>  
-  </div>  
-</div>  <div class="screen" id="detailsScreen">  
+</div>  
+ <div class="screen" id="summaryScreen" style="display:none; background:#fff; color:#000; padding:30px 20px; text-align:center;">    
+  <h2 style="letter-spacing:6px; text-transform:uppercase; font-weight:500; font-size:18px; margin-bottom:25px; color:#000;">Order Summary</h2>    
+
+  <div id="summaryItems" style="margin-bottom: 20px;"></div>    
+
+  <div class="summary-row" style="justify-content:space-between; font-size:14px; letter-spacing:1px;">
+    <span>Items Total</span>
+    <span>₹<span id="basePrice">0</span></span>
+  </div>    
+
+  <div class="summary-row" style="justify-content:space-between; font-size:14px; letter-spacing:1px;">
+    <span>Shipping</span>
+    <span>Free</span>
+  </div>    
+
+  <div class="summary-row" style="border-top:1px solid #ddd; margin-top:10px; padding-top:10px; font-size:16px; font-weight:600; color:#000; justify-content:space-between; letter-spacing:1px;">
+    <span>GRAND TOTAL</span>
+    <span>₹<span id="summaryTotal">0</span></span>
+  </div>    
+
+  <div style="display:flex; flex-direction:column; gap:8px; margin-top:40px;">
+     <button id="enterShippingBtn" style="padding:14px 0; font-size:12px; background:#000; color:#fff; border:none; border-radius:4px; cursor:pointer; text-transform:uppercase; letter-spacing:2px; font-weight:600; transition:0.3s ease;"
+             onclick="openDetails()">Enter Shipping Address</button>  
+      <button id="backBtn" class="small-back-btn" onclick="openCart()" style="width:100%;">
+       Back
+     </button>     
+  </div>    
+
+  <div style="margin-top:10px; font-size:11px; letter-spacing:1px; opacity:0.8;">
+    🛡️ No payment required now. Pay upon confirmation.
+  </div>
+ </div>
+ <div class="screen" id="detailsScreen">  
   <h2>Shipping Details</h2>  
   <form onsubmit="confirmOrder(event)">  
     <input id="name" placeholder="Your Name" required>  
@@ -375,71 +1501,197 @@ onclick="openEmail()" alt="Email">
   </button>
 </div>
     
-<button type="button" onclick="openDetails(false)" style="background:transparent; color:#fff; border:1px solid #333; margin-top:10px;">Back</button>
-
+<button id="backBtn" class="small-back-btn" type="button" onclick="openDetails(false)">
+  Back
+</button>
   </form>  
+ <!-- Info line under Instagram -->
+<div style="text-align:center; font-size:10px; color:#888; margin-top:6px; letter-spacing:1px;">
+  🛡️ No payment required now. Pay upon confirmation.
+</div>
 </div>  
 
- <div class="modal" id="howModal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.9); z-index:20000; align-items:center; justify-content:center;">  
-  <div class="modal-box" style="background:#111; padding:25px 20px; width:85%; max-width:480px; border-radius:12px; border:1px solid #333; text-align:center;">  
-    <h3 style="letter-spacing:4px; margin-bottom:20px; font-weight:500; font-size:16px; color:#d27b2f;">HOW TO PLACE AN ORDER</h3>  
+ <!-- HOW TO PLACE AN ORDER MODAL -->
+<div class="modal" id="howModal" style="display:flex; position:fixed; inset:0; background:rgba(0,0,0,0.85); z-index:20000; align-items:center; justify-content:center;">
+  <div class="modal-box" style="background:#fff; padding:25px 20px; width:85%; max-width:480px; border-radius:12px; border:1px solid #000; box-shadow:0 10px 25px rgba(0,0,0,0.2); text-align:left; color:#000;">
+    
+    <h3 style="letter-spacing:4px; margin-bottom:20px; font-weight:500; font-size:16px; text-align:center; color:#000;">
+      HOW TO PLACE AN ORDER
+    </h3>
 
-    <div style="font-size:12px; line-height:1.8; opacity:0.8; letter-spacing:0.5px; text-align:left;">  
-      <ol style="padding-left:18px;">  
-        <li>Explore our curated collection and choose the products you like.</li>  
-        <li>Select your product, choose the correct size (if applicable), and add it to your bag.</li>  
-        <li>You can add multiple products from different categories in the same order.</li>  
-        <li>Choose colours/themes if the product has multiple options.</li>  
-        <li>Free shipping is available all over Kerala (orders accepted only from India).</li>  
-        <li>Go to your bag and review all selected items carefully.</li>  
-        <li>Click "Checkout" and read the order summary thoroughly.</li>  
-        <li>Enter your shipping address accurately in the provided fields.</li>  
-        <li>Double-check your address and order details to avoid mistakes.</li>  
-        <li>Click "Complete via WhatsApp" or "Complete via Instagram" to place your order.</li>  
-        <li>Wait for confirmation – our team will contact you shortly after receiving your order.</li>  
+    <div style="font-size:12px; line-height:1.8; letter-spacing:0.5px; color:#111;">
+      <ol style="padding-left:18px;">
+        <li>Explore our curated collection and choose the products you like.</li>
+        <li>Select your product, choose the correct size (if applicable), and add it to your bag.</li>
+        <li>You can add multiple products from different categories in the same order.</li>
+        <li>Choose colours/themes if the product has multiple options.</li>
+        <li>Free shipping is available all over Kerala (orders accepted only from India).</li>
+        <li>Go to your bag and review all selected items carefully.</li>
+        <li>Click "Checkout" and read the order summary thoroughly.</li>
+        <li>Enter your shipping address accurately in the provided fields.</li>
+        <li>Double-check your address and order details to avoid mistakes.</li>
+        <li>Click "Complete via WhatsApp" or "Complete via Instagram" to place your order.</li>
+        <li>Wait for confirmation – our team will contact you shortly after receiving your order.</li>
         <li>For any queries, reach out via WhatsApp, Instagram, or Email using the icons on the homepage.</li>
       </ol>
-    </div>  
+    </div>
 
-    <button onclick="closeHow()" class="how-understood-btn">
+    <button onclick="closeHow()" style="margin-top:20px; width:100%; padding:12px 0; border:1px solid #000; background:transparent; color:#000; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; border-radius:6px; cursor:pointer; transition: all 0.3s ease;"
+            onmouseover="this.style.background='#000'; this.style.color='#fff';" 
+            onmouseout="this.style.background='transparent'; this.style.color='#000';">
       I UNDERSTOOD
-    </button>  
-  </div>  
- </div>
-  
-    <div id="imageModal" class="img-modal" style="display:none; position:fixed; inset:0; background:#000; z-index:20000; flex-direction:column; align-items:center; justify-content:center;">  
-    <span style="position:absolute; top:30px; right:30px; font-size:30px; cursor:pointer; opacity:0.5;" onclick="closeImageModal()">×</span>  
-    <img id="modalMainImg" style="max-width:90%; max-height:65vh; border: 1px solid #222;">  
+    </button>
+
+  </div>
+</div>
+  <div id="imageModal" class="img-modal" style="display:none; position:fixed; inset:0; background:#000; z-index:20000; flex-direction:column; align-items:center; justify-content:center;">  
+    <span 
+        style="
+            position:absolute; 
+            top:20px; 
+            right:20px; 
+            font-size:32px; 
+            font-weight:bold; 
+            cursor:pointer; 
+            color:#fff;          /* white × */
+            background:#000;     /* black background */
+            width:45px; 
+            height:45px; 
+            border-radius:50%; 
+            display:flex; 
+            align-items:center; 
+            justify-content:center; 
+            box-shadow: 0 2px 12px rgba(0,0,0,0.5); 
+            opacity:1;            /* fully visible */
+            transition: transform 0.2s ease, background 0.2s ease;
+        " 
+        onmouseover="this.style.background='#222'; this.style.transform='scale(1.1)';" 
+        onmouseout="this.style.background='#000'; this.style.transform='scale(1)';" 
+        onclick="closeImageModal()"
+    >
+        ×
+    </span>  
+    <img id="modalMainImg" style="max-width:90%; max-height:65vh; border:1px solid #222;">  
     <div id="modalThumbs" style="display:flex; gap:10px; margin-top:25px;"></div> 
-</div> <div id="offerBanner">
-  🎁 BUY 2+ ITEMS GET ₹100 OFF  
+  </div>
+<div id="offerBanner">
+  EID OFFER🥳🎁 BUY 2+ ITEMS GET ₹100 OFF  
   <br>
-  + ₹20 EXTRA OFF FOR EACH ADDITIONAL ITEM
-</div>  <div class="footer">  
-  WALDO INN© 2026<br><br>  
-  FOUNDED BY <a href="https://www.instagram.com/abhyyy.y._" target="_blank">ABHISHEK</a><br><br>  
-  DEVELOPED BY <a href="https://www.instagram.com/shua.iibb" target="_blank">ROADEO</a>  
-</div>  <script>  
+  + ₹50 EXTRA OFF FOR EACH ADDITIONAL ITEM
+</div> 
+  <section id="aboutAethel" class="reveal">
+  <div class="about-box">
+    <h1>AETHEL COLLECTIVE</h1>
+    <p class="tagline">Where trust meets style.</p>
+
+    <p class="about-text">
+      Aethel Collective was born with a simple vision — to bring premium accessories with honest pricing and real trust.
+      <br><br>
+      We believe style should feel effortless, not complicated. Every product we curate is chosen for quality, design, and value.
+      <br><br>
+      Curated pieces for those who value trust over trends. Your happiness is our responsibility.
+      <br><br>
+      From daily essentials to statement pieces, Aethel is where modern style meets reliability.
+      <br><br>
+      Currently curating premium products. Original Aethel designs coming soon.
+    </p>
+
+    <ul class="about-points">
+      <li>Exclusive Quality Picks</li>
+      <li>Transparent Pricing</li>
+      <li>Dedicated Customer Support</li>
+    </ul>
+
+    <p class="founder-line">
+      Founded by a young entrepreneur driven by design and trust.
+    </p>
+  </div>
+  </section>
+ <div class="trust-strip">
+  <div class="trust-track">
+    <span>⭐ 12+ Happy Customers</span>
+    <span>• Premium Quality Products</span>
+    <span>• Trusted & Verified Store</span>
+    <span>• Fast Support & Assistance</span>
+    <span>• Hassle-Free Returns</span>
+    <span>• Secure Payments</span>
+    <span>• Free Shipping Across Kerala</span>
+    <span>• Exclusive Limited Editions</span>
+
+    <!-- duplicate for seamless loop -->
+    <span>⭐ 12+ Happy Customers</span>
+    <span>• Premium Quality Products</span>
+    <span>• Trusted & Verified Store</span>
+    <span>• Fast Support & Assistance</span>
+    <span>• Hassle-Free Returns</span>
+    <span>• Secure Payments</span>
+    <span>• Free Shipping Across Kerala</span>
+    <span>• Exclusive Limited Editions</span>
+  </div>
+ </div>
+  <section id="trustSection" class="reveal">
+  <div class="trust-container">
+    <div class="trust-box">
+      <h2>Why Aethel?</h2>
+      <ul>
+        <li>Premium curated products</li>
+        <li>Honest pricing</li>
+        <li>Customer-first support</li>
+      </ul>
+    </div>
+
+    <div class="trust-box">
+      <h2>Shipping & Returns</h2>
+      <ul>
+        <li>Fast, reliable shipping across India</li>
+        <li>We will share the 'Tracking ID' within 24 hours</li>
+        <li>No hidden charges, always transparent</li>
+      </ul>
+    </div>
+
+    <div class="trust-box">
+      <h2>Contact & Support</h2>
+      <ul>
+        <li>WhatsApp: <a href="https://wa.me/919074002303" target="_blank">Chat Now</a></li>
+        <li>Instagram: <a href="https://www.instagram.com/aethel_collective" target="_blank">@aethel_collective</a></li>
+        <li>Email: <a href="mailto:aethelcollective@gmail.com">support@aethelcollective.com</a></li>
+      </ul>
+    </div>
+  </div>
+  </section>
+  <div class="footer reveal">  
+  AETHEL COLLECTIVE © 2025<br><br>  
+  FOUNDED BY <a href="https://www.instagram.com/shua.iibb" target="_blank">SHUAIB</a><br><br>  
+  DEVELOPED BY 
+<a href="https://www.instagram.com/_heyhhh_" target="_blank">HEYHHH</a> 
+& 
+<a href="https://www.instagram.com/shua.iibb" target="_blank">SHUAIB</a> 
+</div>  
+<script>  
 let recent = [];  
 const SHIPPING = 0;  
 let searchCache = [];
 let trendingCache = [];
 let cart = JSON.parse(localStorage.getItem("cart")) || [];  
 function calculateCartTotal() {
-    let subtotal = 0;
 
-    // Sum all item prices
+    let subtotal = 0;
+    let totalQty = 0; // ✅ total quantity
+
+    // Sum all item prices and qty
     cart.forEach(item => {
-        subtotal += item.price;
+        subtotal += item.price * item.qty;
+        totalQty += item.qty; // count qty
     });
 
-    // TOTAL BEFORE DISCOUNT is the subtotal before discount
+    // TOTAL BEFORE DISCOUNT
     document.getElementById("totalBefore").innerText = subtotal.toFixed(0);
 
-    // Combo discount logic
+    // Combo discount based on total quantity
     let discount = 0;
-    if(cart.length >= 2){
-        discount = 100 + (cart.length - 2) * 20;
+
+    if(totalQty >= 2){
+        discount = 100 + (totalQty - 2) * 50;
     }
 
     // Safety
@@ -451,6 +1703,7 @@ function calculateCartTotal() {
     // UI update
     document.getElementById("total").innerText = total.toFixed(0);
     document.getElementById("discountAmount").innerText = discount.toFixed(0);
+
     document.getElementById("discountLine").innerText =
         discount > 0
         ? `🎉 You saved ₹${discount} with combo offer!`
@@ -461,13 +1714,14 @@ function calculateCartTotal() {
 
     // WhatsApp button
     const waBtn = document.getElementById("waBtn");
-    if(cart.length > 0){
+
+    if(totalQty > 0){
         waBtn.classList.remove("disabled");
     } else {
         waBtn.classList.add("disabled");
     }
 
-    // Persist
+    // Save
     localStorage.setItem("cart", JSON.stringify(cart));
 }
 let currentCategory = "";  
@@ -497,8 +1751,7 @@ const productsData = {
       ],   
       sizes: ["M", "L", "XL", "XXL"]
     },  
-
-   {  
+    {  
       id: 102,   
       name: "PREMIUM QUALITY JACKET",
       oldPrice: 1499,
@@ -511,7 +1764,52 @@ const productsData = {
         "https://i.postimg.cc/Gp6pJNvT/IMG-20260101-WA0074.jpg"
       ],   
       sizes: ["L", "XXL", "3XL"]
-    },  
+    }, 
+    {  
+      id: 103,   
+      name: "PREMIUM PUMA JACKET",
+      oldPrice: 899,
+      price: 799,  
+      colors: ["BROWN", "BLACK", "BLUE", "GREEN", "WHITE"],
+      tags: ["jacket", "menswear", "winter", "puma"],
+      images: [  
+        "https://i.postimg.cc/9Q5H03mR/IMG-20260220-013808-523.jpg",
+        "https://i.postimg.cc/Mp2JHk6n/IMG-20260220-013811-292.jpg",
+        "https://i.postimg.cc/kg3PGrJD/IMG-20260220-013813-125.jpg",
+        "https://i.postimg.cc/T3Mv18d1/IMG-20260220-013815-019.jpg",
+        "https://i.postimg.cc/52dWyc4x/IMG-20260220-013816-907.jpg"
+      ],   
+      sizes: ["M", "L", "XL", "XXL"]
+    }, 
+    {  
+      id: 104,   
+      name: "PREMIUM ADIDAS JACKET",
+      oldPrice: 999,
+      price: 899,  
+      colors: ["BLACK", "GREY", "WHITE"],
+      tags: ["jacket", "menswear", "winter", "Adidas"],
+      images: [  
+        "https://i.postimg.cc/43Hc59Cb/IMG-20260220-014042-141.jpg",
+        "https://i.postimg.cc/vHP6wzGw/IMG-20260220-014032-979.jpg",
+        "https://i.postimg.cc/yYfSCPsM/IMG-20260220-014034-745.jpg"
+      ],   
+      sizes: ["M", "L", "XL", "XXL"]
+    }, 
+    {  
+      id: 105,   
+      name: "PREMIUM WATERPROOF JACKET",
+      oldPrice: 899,
+      price: 799,  
+      colors: ["BLACK", "RED", "WHITE", "GREY"],
+      tags: ["jacket", "menswear", "winter", "puma"],
+      images: [  
+        "https://i.postimg.cc/YCbRVgy5/IMG-20260220-014414-720.jpg",
+        "https://i.postimg.cc/TP10XwzW/IMG-20260220-014416-552.jpg",
+        "https://i.postimg.cc/zfv71Bsh/IMG-20260220-014418-612.jpg",
+        "https://i.postimg.cc/mrkjGDv1/IMG-20260220-014420-351.jpg"
+      ],   
+      sizes: ["M", "L", "XL", "XXL"]
+    }, 
   ],  
   mensShoes: [  
     {  
@@ -519,6 +1817,7 @@ const productsData = {
       name: "CHELSEA BOOT",  
       oldPrice: 1299,
       price: 1099,  
+      tags: ["boot", "mens", "boys", "style shoes"],
       images: [  
         "https://i.postimg.cc/fbK7HcfC/IMG-20260126-WA0705.jpg",  
         "https://i.postimg.cc/Xv7x61q6/IMG-20260126-WA0706.jpg"  
@@ -527,9 +1826,10 @@ const productsData = {
     },  
     {  
       id: 202,   
-      name: "INPORTED SHOE",  
+      name: "IMPORTED SHOE",  
       oldPrice: 1899,
       price: 1499,  
+      tags: ["adidas", "mens", "boys", "style shoes"],
       images: [  
         "https://i.postimg.cc/pLHVTzPt/IMG-20260215-WA0135.jpg",
         "https://i.postimg.cc/8zmprczx/IMG-20260215-WA0139.jpg"
@@ -541,6 +1841,7 @@ const productsData = {
       name: "IMPORTED SHOE",  
       oldPrice: 1999,
       price: 1599,  
+      tags: ["luxury", "mens", "boys", "style shoes"],
       images: [  
         "https://i.postimg.cc/WzbPRHYc/IMG-20260209-WA0035.jpg",  
         "https://i.postimg.cc/NFfwhzCq/IMG-20260209-WA0041.jpg",  
@@ -554,6 +1855,7 @@ const productsData = {
       name: "P 6000",  
       oldPrice: 1799,
       price: 1499,  
+      tags: ["super", "mens", "boys", "style shoes"],
       images: [  
         "https://i.postimg.cc/JnPMY2X1/IMG-20260211-WA0172.jpg",
         "https://i.postimg.cc/mkkRvy3r/IMG-20260211-WA0173.jpg",
@@ -567,6 +1869,7 @@ const productsData = {
       name: "CHELSEA BOOT", 
       oldPrice: 1699,
       price: 1499,  
+      tags: ["boot", "mens", "boys", "style shoes"],
       images: [  
         "https://i.postimg.cc/QMt5t8BJ/IMG-20260204-WA0107.jpg",  
         "https://i.postimg.cc/yNbR3M9y/IMG-20260204-WA0110.jpg"  
@@ -578,6 +1881,7 @@ const productsData = {
       name: "SAMBA GLOSSY GOLD", 
       oldPrice: 1299,
       price: 1049,  
+      tags: ["sneakers", "mens", "boys", "style shoes"],
       images: [  
         "https://i.postimg.cc/PrTCJX9C/IMG-20260209-WA0059.jpg",  
         "https://i.postimg.cc/8P4j68gj/IMG-20260209-WA0060.jpg"  
@@ -589,6 +1893,7 @@ const productsData = {
       name: "SAMBA SILVER",   
       oldPrice: 1299,
       price: 999,  
+      tags: ["sneakers", "mens", "boys", "style shoes"],
       images: [  
         "https://i.postimg.cc/KjJxR23j/IMG-20260209-WA0036.jpg",  
         "https://i.postimg.cc/5N2fD6Dq/IMG-20260209-WA0037.jpg",  
@@ -602,6 +1907,7 @@ const productsData = {
       name: "STUSSY",  
       oldPrice: 1299,
       price: 999,  
+      tags: ["sneakers", "mens", "boys", "style shoes"],
       images: [  
         "https://i.postimg.cc/WzbPRHYc/IMG-20260209-WA0035.jpg",  
         "https://i.postimg.cc/NFfwhzCq/IMG-20260209-WA0041.jpg",  
@@ -615,6 +1921,7 @@ const productsData = {
       name: "GLOSSY CHELSEA",   
       oldPrice: 1299,
       price: 999, 
+      tags: ["boot", "mens", "boys", "style shoes"],
       trending: true,
       images: [  
         "https://i.postimg.cc/j5cGhhx1/IMG-20260208-WA0022.jpg",  
@@ -631,6 +1938,7 @@ const productsData = {
       name: "SPEEDCAT",  
       oldPrice: 1299,
       price: 899,  
+      tags: ["sneakers", "mens", "boys", "style shoes"],
       images: [  
         "https://i.postimg.cc/7L9V537T/IMG-20260213-WA0044.jpg",
         "https://i.postimg.cc/NF97CZnw/IMG-20260213-WA0045.jpg",
@@ -645,6 +1953,7 @@ const productsData = {
       name: "IMPORTED SHOE",  
       oldPrice: 1999,
       price: 1599,  
+      tags: ["sneakers", "mens", "boys", "style shoes"],
       images: [  
         "https://i.postimg.cc/ncwMhCCc/IMG-20260214-WA0123.jpg",
         "https://i.postimg.cc/FHMR08yx/IMG-20260214-WA0124.jpg",
@@ -653,6 +1962,82 @@ const productsData = {
       ],   
       sizes: ["6", "7", "8", "9", "10"]  
     }, 
+    {  
+      id: 212,   
+      name: "NIKE STUSSY",  
+      oldPrice: 1499,
+      price: 1399,  
+      colors: ["GREEN", "BLACK"],
+      tags: ["sneakers", "mens", "boys", "style shoes"],
+      images: [  
+        "https://i.postimg.cc/C5mxKRjD/IMG-20260217-WA0192.jpg",
+        "https://i.postimg.cc/PJtqhW8w/IMG-20260217-WA0191.jpg"
+      ],   
+      sizes: ["6", "7", "8", "9", "10"]  
+    }, 
+    {  
+      id: 213,   
+      name: "PREMIUM SHOES",  
+      oldPrice: 1499,
+      price: 1249,  
+      colors: ["MULTI"],
+      tags: ["sneakers", "mens", "boys", "style shoes"],
+      images: [  
+        "https://i.postimg.cc/rmqHWc31/IMG-20260219-WA0062.jpg",
+        "https://i.postimg.cc/nznW7ZgB/IMG-20260219-WA0063.jpg",
+        "https://i.postimg.cc/pT0sFjKY/IMG-20260219-WA0066.jpg",
+        "https://i.postimg.cc/rmhfr459/IMG-20260219-WA0069.jpg",
+        "https://i.postimg.cc/RFPgHtc9/IMG-20260219-WA0070.jpg",
+        "https://i.postimg.cc/sXnThW5K/IMG-20260219-WA0071.jpg",
+        "https://i.postimg.cc/50PsCz8R/IMG-20260219-WA0072.jpg",
+        "https://i.postimg.cc/vTc3LmvJ/IMG-20260219-WA0073.jpg",
+        "https://i.postimg.cc/XqpQcv8S/IMG-20260219-WA0074.jpg"
+      ],   
+      sizes: ["6", "7", "8", "9", "10"]  
+    }, 
+    {  
+      id: 214,   
+      name: "PREMIUM SHOES",  
+      oldPrice: 1699,
+      price: 1499,  
+      colors: ["RED", "WHITE","BROWN"],
+      tags: ["sneakers", "mens", "boys", "style shoes"],
+      images: [  
+        "https://i.postimg.cc/Qtjz5swX/IMG-20260219-WA0061.jpg",
+        "https://i.postimg.cc/rmqHWc31/IMG-20260219-WA0062.jpg",
+        "https://i.postimg.cc/nznW7ZgB/IMG-20260219-WA0063.jpg"
+      ],   
+      sizes: ["6", "7", "8", "9", "10"]  
+    }, 
+    {  
+      id: 215,   
+      name: "PREMIUM SHOE",  
+      oldPrice: 1499,
+      price: 1299,  
+      colors: ["BROWN"],
+      tags: ["sneakers", "mens", "boys", "style shoes"],
+      images: [  
+        "https://i.postimg.cc/nrRNp5dv/IMG-20260219-WA0046.jpg",
+        "https://i.postimg.cc/v83JrgQm/IMG-20260219-WA0047.jpg",
+        "https://i.postimg.cc/59nhBYxj/IMG-20260219-WA0048.jpg"
+      ],   
+      sizes: ["6", "7", "8", "9", "10"]  
+    }, 
+    {  
+      id: 216,   
+      name: "IMPORTED SHOE",  
+      oldPrice: 1299,
+      price: 1199,  
+      colors: ["MULTI"],
+      tags: ["sneakers", "mens", "boys", "style shoes"],
+      images: [  
+        "https://i.postimg.cc/HsLCR0Sx/IMG-20260219-WA0036.jpg",
+        "https://i.postimg.cc/4N3Tqv85/IMG-20260219-WA0035.jpg",
+        "https://i.postimg.cc/BQwG08yF/IMG-20260219-WA0038.jpg"
+      ],   
+      sizes: ["6", "7", "8", "9", "10"]  
+    }, 
+    
   ],  
     mensWatches: [  
     {  
@@ -660,6 +2045,7 @@ const productsData = {
       name: "HUBLOT",   
       oldPrice: 1299,
       price: 999,  
+      tags: ["premium", "mens", "boys", "style watch"],
       images: [  
         "https://i.postimg.cc/h4bGkFvK/IMG-20260209-WA0047.jpg",  
         "https://i.postimg.cc/PrXqh6vd/IMG-20260209-WA0049.jpg",  
@@ -673,7 +2059,7 @@ const productsData = {
       name: "HUBLOT",  
       oldPrice: 1299,
       price: 999,  
-      trending: true,
+      tags: ["premium", "mens", "boys", "style watch"],
       images: [  
         "https://i.postimg.cc/ZK4LmhLZ/IMG-20260207-WA0063.jpg",    
         "https://i.postimg.cc/05pChN7b/IMG-20260207-WA0065.jpg",  
@@ -687,6 +2073,7 @@ const productsData = {
       name: "CASIO CLOTH STRAP",   
       oldPrice: 999,
       price: 799,  
+      tags: ["budget", "mens", "boys", "style watch"],
       images: [  
         "https://i.postimg.cc/hthT44Qt/IMG-20260205-WA0055.jpg",  
         "https://i.postimg.cc/dVDrQQZy/IMG-20260205-WA0057.jpg",  
@@ -700,6 +2087,7 @@ const productsData = {
       name: "NIKE WATCH",   
       oldPrice: 999,
       price: 699,  
+      tags: ["budget", "mens", "boys", "style watch"],
       images: [  
         "https://i.postimg.cc/SQCG8bcr/IMG-20260212-WA0134.jpg",
         "https://i.postimg.cc/L6S33QV7/IMG-20260212-WA0136.jpg",
@@ -712,6 +2100,7 @@ const productsData = {
       name: "CASIO G-SHOCK",   
       oldPrice: 1499,
       price: 1399,  
+      tags: ["premium", "mens", "boys", "style watch"],
       images: [  
         "https://i.postimg.cc/hv1xYgrj/IMG-20260211-WA0158.jpg",
         "https://i.postimg.cc/wxXhMcdk/IMG-20260211-WA0160.jpg",
@@ -726,6 +2115,7 @@ const productsData = {
       name: "POLISH - BUDGET WATCH",   
       oldPrice: 799,
       price: 499,  
+      tags: ["budget", "mens", "boys", "style watch"],
       images: [  
         "https://i.postimg.cc/qMF91C15/IMG-20260212-WA0063.jpg",
         "https://i.postimg.cc/vHKp06P1/IMG-20260212-WA0064.jpg",
@@ -739,6 +2129,7 @@ const productsData = {
       name: "FIXEN SPIN WATCH",   
       oldPrice: 899,
       price: 599,  
+      tags: ["budget", "mens", "boys", "style watch"],
       images: [  
         "https://i.postimg.cc/FsJX0RTs/IMG-20260212-WA0070.jpg",
         "https://i.postimg.cc/c48GfHFx/IMG-20260212-WA0071.jpg",
@@ -753,6 +2144,7 @@ const productsData = {
       name: "GAISO",   
       oldPrice: 599,
       price: 399,  
+      tags: ["budget", "mens", "boys", "style watch"],
       images: [  
         "https://i.postimg.cc/wjqKZV6d/IMG-20260215-WA0126.jpg",
         "https://i.postimg.cc/wjqKZV67/IMG-20260215-WA0127.jpg",
@@ -768,17 +2160,124 @@ const productsData = {
       name: "FIRE BUDGET WATCH",   
       oldPrice: 499,
       price: 399,  
+      tags: ["budget", "mens", "boys", "style watch"],
       img: "https://i.postimg.cc/gc8f05jm/IMG-20260115-WA0083.jpg",  
+      sizes:["Universal"]  
+    },
+    {  
+      id: 310,   
+      name: "CASIO",   
+      oldPrice: 999,
+      price: 799,  
+      tags: ["budget", "mens", "boys", "style watch", "most wanted"],
+      images: [  
+        "https://i.ibb.co/d0rZTc69/IMG-20260216-234334-502.jpg",
+        "https://i.ibb.co/VYnX0BqZ/IMG-20260216-234336-694.jpg",
+        "https://i.ibb.co/HTfPLdSg/IMG-20260216-234338-590.jpg",
+        "https://i.ibb.co/cKv7b3mH/IMG-20260216-234407-460.jpg"
+      ],   
+      sizes:["Universal"]  
+    },
+    {  
+      id: 311,   
+      name: "ROLEX",   
+      oldPrice: 1299,
+      price: 999,  
+      tags: ["premium", "mens", "boys", "style watch", "most wanted"],
+      trending: true,
+      images: [  
+        "https://i.postimg.cc/Fzcx5Q3k/IMG-20260217-WA0173.jpg",
+        "https://i.postimg.cc/bY2g21MM/IMG-20260217-WA0172.jpg",
+        "https://i.postimg.cc/59FgF8GD/IMG-20260217-WA0174.jpg"
+      ],   
+      sizes:["Universal"]  
+    },
+    {  
+      id: 312,   
+      name: "CASIO",   
+      oldPrice: 899,
+      price: 799,  
+      tags: ["budget", "mens", "boys", "style watch", "most wanted"],
+      images: [  
+        "https://i.postimg.cc/1tCZ3ftk/IMG-20260220-013855-557.jpg",
+        "https://i.postimg.cc/L5JFY2gs/IMG-20260220-013857-878.jpg",
+        "https://i.postimg.cc/qqNHh46R/IMG-20260220-013900-096.jpg",
+        "https://i.postimg.cc/sX6Rgvx7/IMG-20260220-013902-407.jpg",
+        "https://i.postimg.cc/nrXfjp9X/IMG-20260220-013904-314.jpg",
+        "https://i.postimg.cc/hvXRzcQm/IMG-20260220-013906-237.jpg"
+      ],   
+      sizes:["Universal"]  
+    },
+    {  
+      id: 313,   
+      name: "ARABIC AURA",   
+      oldPrice: 599,
+      price: 499,  
+      tags: ["budget", "mens", "boys", "style watch", "most wanted"],
+      images: [  
+        "https://i.postimg.cc/13qR7ctM/IMG-20260220-013938-462.jpg",
+        "https://i.postimg.cc/9MJcwL8f/IMG-20260220-013942-910.jpg",
+        "https://i.postimg.cc/vTTbr5kh/IMG-20260220-013944-635.jpg"
+      ],   
+      sizes:["Universal"]  
+    },
+    {  
+      id: 314,   
+      name: "CAOMI",   
+      oldPrice: 599,
+      price: 549,  
+      tags: ["budget", "mens", "boys", "style watch", "most wanted"],
+      images: [  
+        "https://i.postimg.cc/RZ6q5xPv/IMG-20260220-014007-077.jpg",
+        "https://i.postimg.cc/Nj9LqvNx/IMG-20260220-014009-209.jpg",
+        "https://i.postimg.cc/nhjMbfd4/IMG-20260220-014011-006.jpg",
+        "https://i.postimg.cc/9QRz5Hxp/IMG-20260220-014012-912.jpg",
+        "https://i.postimg.cc/3x4W5QL1/IMG-20260220-014014-926.jpg"
+      ],   
+      sizes:["Universal"]  
+    },
+    {  
+      id: 315,   
+      name: "ROLEX",   
+      oldPrice: 1499,
+      price: 1399,  
+      tags: ["premium", "mens", "boys", "style watch", "most wanted"],
+      images: [  
+        "https://i.postimg.cc/hjqB5HY6/IMG-20260219-WA0029.jpg",
+        "https://i.postimg.cc/hjqB5HYY/IMG-20260219-WA0030.jpg",
+        "https://i.postimg.cc/pdjvk20b/IMG-20260219-WA0033.jpg",
+        "https://i.postimg.cc/nztJP6W5/IMG-20260219-WA0034.jpg"
+      ],   
+      sizes:["Universal"]  
+    },
+    {  
+      id: 316,   
+      name: "FIRE",   
+      oldPrice: 499,
+      price: 399,  
+      tags: ["budget", "mens", "boys", "style watch", "most wanted"],
+      images: [  
+        "https://i.postimg.cc/mg5Z8pB2/IMG-20260219-WA0012.jpg",
+        "https://i.postimg.cc/zGcD0259/IMG-20260219-WA0013.jpg",
+        "https://i.postimg.cc/3xcrnf7V/IMG-20260219-WA0014.jpg",
+        "https://i.postimg.cc/x14jtpnr/IMG-20260219-WA0015.jpg",
+        "https://i.postimg.cc/FHRsbX59/IMG-20260219-WA0016.jpg",
+        "https://i.postimg.cc/qvRMcHfG/IMG-20260219-WA0017.jpg"
+      ],   
       sizes:["Universal"]  
     },
   ],  
   gadgets: [  
-    {id:401, name:"Wireless Headphone",oldPrice: 999, price:699, img:"https://i.postimg.cc/bJHmXGcB/IMG-20260126-WA0814.jpg", sizes:["One Size"]},  
-    {id:402, name:"Wireless Earbuds",oldPrice: 999, price:799, img:"https://i.postimg.cc/C5cJ1W1T/IMG-20260126-WA0816.jpg", sizes:["One Size"]},  
+    {id:401, name:"Wireless Headphone",oldPrice: 999, price:699, tags: ["bluetooth", "mens", "boys", "headphone"],
+     img:"https://i.postimg.cc/bJHmXGcB/IMG-20260126-WA0814.jpg", sizes:["One Size"]},  
+    {id:402, name:"Wireless Earbuds",oldPrice: 999, price:799, tags: ["bluetooth", "mens", "boys", "headphone"],
+     img:"https://i.postimg.cc/C5cJ1W1T/IMG-20260126-WA0816.jpg", sizes:["One Size"]},  
     {id:403, name:"Powerbank",oldPrice: 999, price:649, img:"https://i.postimg.cc/rFYQLX3G/IMG-20260126-WA0815.jpg", sizes:["One Size"]},  
-    {id:404, name:"Bluetooth Speaker",oldPrice: 999, price:699, img:"https://i.postimg.cc/ydBTTVgy/IMG-20260126-WA0820.jpg", sizes:["One Size"]},  
+    {id:404, name:"Bluetooth Speaker",oldPrice: 999, price:699, tags: ["bluetooth", "mens", "boys", "headphone"],
+     img:"https://i.postimg.cc/ydBTTVgy/IMG-20260126-WA0820.jpg", sizes:["One Size"]},  
     {id:405, name:"Massage Gun",oldPrice: 1299, price:749, img:"https://i.postimg.cc/T2tcrvRS/IMG-20260126-WA0822.jpg", sizes:["One Size"]},  
-    {id:406, name:"Wireless Headphone",oldPrice: 1499, price:999, trending: true, img:"https://i.postimg.cc/KvdBNZCD/IMG-20260126-WA0824.jpg", sizes:["One Size"]},  
+    {id:406, name:"Wireless Headphone",oldPrice: 1499, price:999, tags: ["bluetooth", "mens", "boys", "headphone"],
+     trending: true, img:"https://i.postimg.cc/KvdBNZCD/IMG-20260126-WA0824.jpg", sizes:["One Size"]},  
   ],  
   ladiesWatches: [  
   {  
@@ -786,7 +2285,7 @@ const productsData = {
       name: "FOSSIL",  
       oldPrice: 1299,
       price: 999,  
-      trending: true,
+      tags: ["premium", "ladies", "girls", "style watch"],
       images: [  
         "https://i.postimg.cc/Hn3PQW2C/IMG-20251208-WA0040.jpg",  
         "https://i.postimg.cc/nrTwvV13/IMG-20251208-WA0041.jpg"  
@@ -797,7 +2296,8 @@ const productsData = {
       id: 502,   
       name: "FOSSIL",   
       oldPrice: 1299,
-      price: 999,  
+      price: 999, 
+      tags: ["premium", "ladies", "girls", "style watch"],
       images: [  
         "https://i.postimg.cc/vHgW7HXg/IMG-20251221-WA0116.jpg",
         "https://i.postimg.cc/FKm3QbvC/IMG-20251221-WA0119.jpg",
@@ -811,6 +2311,7 @@ const productsData = {
       name: "VERSACE",   
       oldPrice: 999,
       price: 799,  
+      tags: ["premium", "ladies", "girls", "style watch"],
       images: [  
         "https://i.postimg.cc/pybYhgwk/IMG-20260202-WA0153.jpg",
         "https://i.postimg.cc/xqDyJwr9/IMG-20260202-WA0154.jpg",
@@ -825,6 +2326,7 @@ const productsData = {
       name: "CASIO NEW MODEL",   
       oldPrice: 899,
       price: 699,  
+      tags: ["premium", "ladies", "girls", "style watch"],
       images: [  
         "https://i.postimg.cc/J4zBK7xw/IMG-20260127-WA0198.jpg",
         "https://i.postimg.cc/fWK9xSx3/IMG-20260127-WA0199.jpg",
@@ -839,6 +2341,7 @@ const productsData = {
       name: "DW WATCH",   
       oldPrice: 1299,
       price: 999,  
+      tags: ["premium", "ladies", "girls", "style watch"],
       images: [  
         "https://i.postimg.cc/26q2gqbN/IMG-20260212-WA0058.jpg",
         "https://i.postimg.cc/d1z4FqrG/IMG-20260212-WA0059.jpg",
@@ -847,6 +2350,70 @@ const productsData = {
       ],   
       sizes:["Universal"]  
     },  
+    {  
+      id: 506,   
+      name: "CASIO",   
+      oldPrice: 999,
+      price: 799,  
+      tags: ["budget", "mens", "boys", "style watch", "most wanted"],
+      images: [  
+        "https://i.ibb.co/d0rZTc69/IMG-20260216-234334-502.jpg",
+        "https://i.ibb.co/VYnX0BqZ/IMG-20260216-234336-694.jpg",
+        "https://i.ibb.co/HTfPLdSg/IMG-20260216-234338-590.jpg",
+        "https://i.ibb.co/cKv7b3mH/IMG-20260216-234407-460.jpg"
+      ],   
+      sizes:["Universal"]  
+    },
+    {  
+      id: 507,   
+      name: "COMBO OFFER (BUY 1 GET 1 FREE)",   
+      oldPrice: 1299,
+      price: 799,  
+      tags: ["premium", "ladies", "girls", "style watch", "combo offer"],
+      trending: true,
+      images: [  
+        "https://i.postimg.cc/wjRGqSzL/IMG-20251215-WA0303.jpg",
+        "https://i.postimg.cc/T1PtZsQx/IMG-20251215-WA0262.jpg",
+        "https://i.postimg.cc/VvNK3h4Q/IMG-20251215-WA0299.jpg",
+        "https://i.postimg.cc/T1HtGcHg/IMG-20251215-WA0301.jpg",
+        "https://i.postimg.cc/c1D9Qs4D/IMG-20251215-WA0305.jpg",
+        "https://i.postimg.cc/Nf3x4Lh0/IMG-20251215-WA0306.jpg",
+        "https://i.postimg.cc/CLBNkk2h/IMG-20251215-WA0307.jpg",
+        "https://i.postimg.cc/15kKH4xn/IMG-20251215-WA0315.jpg",
+        "https://i.postimg.cc/Dw1PYFnV/IMG-20251215-WA0318.jpg"
+      ],   
+      sizes:["Universal"]  
+    },
+    {  
+      id: 508,   
+      name: "FOR HER",   
+      oldPrice: 699,
+      price: 599,  
+      tags: ["budget", "ladies", "girls", "style watch"],
+      images: [  
+        "https://i.postimg.cc/nzL6gp2Z/IMG-20260220-013735-871.jpg",
+        "https://i.postimg.cc/ydNwtsjY/IMG-20260220-013739-160.jpg"
+      ],   
+      sizes:["Universal"]  
+    },
+    {  
+      id: 509,   
+      name: "GUCCI",   
+      oldPrice: 1299,
+      price: 999,  
+      tags: ["premium", "ladies", "girls", "style watch"],
+      images: [  
+        "https://i.postimg.cc/135cpX3R/IMG-20260220-014158-628.jpg",
+        "https://i.postimg.cc/cL97TWvf/IMG-20260220-014200-629.jpg",
+        "https://i.postimg.cc/6pjVzK87/IMG-20260220-014202-472.jpg",
+        "https://i.postimg.cc/sg6PKzMY/IMG-20260220-014204-669.jpg",
+        "https://i.postimg.cc/Jz63K8sb/IMG-20260220-014206-676.jpg",
+        "https://i.postimg.cc/R0W7DYt1/IMG-20260220-014209-562.jpg",
+        "https://i.postimg.cc/MGn7FLBP/IMG-20260220-014211-704.jpg",
+        "https://i.postimg.cc/Gp4F5fD6/IMG-20260220-014215-884.jpg"
+      ],   
+      sizes:["Universal"]  
+    },
   ],  
   ladiesShoes: [  
     {  
@@ -854,6 +2421,7 @@ const productsData = {
       name: "ZARA LOAFERS",   
       oldPrice: 1299,
       price: 999,  
+      tags: ["premium", "ladies", "girls", "style shoe"],
       trending: true,
       images: [  
         "https://i.postimg.cc/pdZGNXwp/IMG-20260209-WA0031.jpg",  
@@ -877,7 +2445,9 @@ const productsData = {
       ],   
       sizes: ["Adjustable"]  
     },  
-    {id:702, name:"LOVE PEARL",oldPrice: 599, price:499, trending: true,  
+    {id:702, name:"LOVE PEARL",oldPrice: 599, price:499,
+     tags: ["premium", "ladies", "girls", "style", "gift", "lover", "valentines"], 
+     trending: true,  
      images: [  
         "https://i.postimg.cc/QdNK48J6/IMG-20260210-WA0101.jpg",  
         "https://i.postimg.cc/CxMnPhsG/IMG-20260210-WA0102.jpg",
@@ -887,15 +2457,34 @@ const productsData = {
     },  
    ],  
   coupleAccessories: [  
-    {id:801, name:"Cute teddy",oldPrice: 999, price:499, img:"https://i.postimg.cc/PrtVbMnk/SKU-4302-0-1731380980771.webp.jpg", sizes:["Pair"]},  
-    {id:802, name:"CASIO COUPLE WATCH",oldPrice: 1699, price:999, img:"https://i.postimg.cc/Jnp2X4x3/IMG-20260206-WA0090.jpg", sizes:["Pair"]},  
-    {id:803, name:"CASIO COUPLE WATCH",oldPrice: 1699, price:999, img:"https://i.postimg.cc/RFgDtVdQ/IMG-20260206-WA0091.jpg", sizes:["Pair"]},  
-    {id:804, name:"CASIO COUPLE WATCH",oldPrice: 1699, price:999, img:"https://i.postimg.cc/cHxz68R7/IMG-20260206-WA0092.jpg", sizes:["Pair"]},  
-    {id:805, name:"CASIO COUPLE WATCH",oldPrice: 1699, price:999, img:"https://i.postimg.cc/LXxbP6DV/IMG-20260206-WA0093.jpg", sizes:["Pair"]},  
-    {id:806, name:"Coming Soon",oldPrice: 0, price:0, img:"https://i.postimg.cc/Lsr0zK2q/6835e538a140292e4940a0ae06d81bfa.jpg", sizes:["Pair"]},  
+    {id:801, name:"Cute teddy",oldPrice: 999, price:499,
+     tags: ["premium", "ladies", "girls", "style", "gift", "lover", "valentines"], 
+     img:"https://i.postimg.cc/PrtVbMnk/SKU-4302-0-1731380980771.webp.jpg", sizes:["Pair"]},  
+    
+    {id:802, name:"CASIO COUPLE WATCH",oldPrice: 1699, price:999,
+     tags: ["premium", "ladies", "girls", "style", "gift", "lover", "valentines"],
+     img:"https://i.postimg.cc/Jnp2X4x3/IMG-20260206-WA0090.jpg", sizes:["Pair"]},  
+    
+    {id:803, name:"CASIO COUPLE WATCH",oldPrice: 1699, price:999,
+     tags: ["premium", "ladies", "girls", "style", "gift", "lover", "valentines"],
+     img:"https://i.postimg.cc/RFgDtVdQ/IMG-20260206-WA0091.jpg", sizes:["Pair"]},  
+    
+    {id:804, name:"CASIO COUPLE WATCH",oldPrice: 1699, price:999,
+     tags: ["premium", "ladies", "girls", "style", "gift", "lover", "valentines"],
+     img:"https://i.postimg.cc/cHxz68R7/IMG-20260206-WA0092.jpg", sizes:["Pair"]},  
+    
+    {id:805, name:"CASIO COUPLE WATCH",oldPrice: 1699, price:999,
+     tags: ["premium", "ladies", "girls", "style", "gift", "lover", "valentines"],
+     img:"https://i.postimg.cc/LXxbP6DV/IMG-20260206-WA0093.jpg", sizes:["Pair"]},  
+   
+    {id:806, name:"Coming Soon",oldPrice: 0, price:0,
+     tags: ["premium", "ladies", "girls", "style", "gift", "lover", "valentines"],
+     img:"https://i.postimg.cc/Lsr0zK2q/6835e538a140292e4940a0ae06d81bfa.jpg", sizes:["Pair"]},  
     ],  
   ladiesWear: [  
-    {id:901, name:"Ladies Summer Top",oldPrice: 1699, price:0, img:"https://i.ibb.co/RTt1RZk7/IMG-20260123-195442.jpg", sizes:["S","M","L","XL"]},  
+    {id:901, name:"Ladies Summer Top",oldPrice: 1699, price:0,
+     tags: ["premium", "ladies", "girls", "style", "gift", "lover", "valentines"],
+     img:"https://i.ibb.co/RTt1RZk7/IMG-20260123-195442.jpg", sizes:["S","M","L","XL"]},  
   ]  
 };  
   
@@ -922,14 +2511,22 @@ function goHomeFromHeader() {
   document.getElementById("homeTopBar").style.display = "block";  
   document.getElementById("cartBtn").style.display = "block";  
   window.scrollTo(0,0);  
+  // Reset sort and filter
+  const sortSelect = document.getElementById("sortSelect");
+  if (sortSelect) sortSelect.value = "default"; // back to default
+
+  const priceFilter = document.getElementById("priceFilter");
+  if (priceFilter) priceFilter.value = ""; // reset price filter if needed
   
   currentScreen = "home";  
   history.pushState({ screen: "home" }, "", "");  
+  runReveal();
 }
 
  function openCategory(catKey) {
     hideAll();
     currentCategory = catKey;
+    loadCategoryProducts();
 
     document.getElementById("productSection").style.display = "block";
     document.getElementById("cartBtn").style.display = "block";
@@ -958,22 +2555,23 @@ function goHomeFromHeader() {
         const mainImage = savedVariant || (p.images ? p.images[0] : p.img);
 
         grid.innerHTML += `
-        <div class="product ${p.price === 0 ? "coming-soon" : ""}">
+        <div class="product reveal ${p.price === 0 ? "coming-soon" : ""}">
             
             <img id="main-img-${p.id}" 
                  src="${mainImage}" 
                  onclick='${p.images ? `openImageModal(${JSON.stringify(p.images)})` : ""}'>
 
-            <div class="thumbs">
-                ${p.images ? p.images.slice(0, 4).map(img => `
-                    <img class="thumb" 
-                         src="${img}" 
-                         onclick='selectVariant(${p.id}, "${img}")'>
-                `).join("") : ""}
-            </div>
+            <div class="thumbs ${p.images && p.images.length > 4 ? 'scrollable-thumbs' : ''}">
+  ${p.images ? p.images.map(img => `
+      <img class="thumb" 
+           src="${img}" 
+           onclick='selectVariant(${p.id}, "${img}")'>
+  `).join("") : ""}
+</div>
 
             <div class="info">
   <b>${p.name}</b>
+  <div class="brand-line">Selected by Aethel Collective</div>
   <span class="price-tag">
     ${p.oldPrice ? `<span class="old-price">₹${p.oldPrice}</span>` : ""}
     <span class="new-price">₹${p.price}</span>
@@ -988,90 +2586,212 @@ function goHomeFromHeader() {
         </div>
         `;
     });
+   applyImageFade();
+   runReveal();
  }
 
   
-function applyFilters() {  
-  const priceVal = document.getElementById("priceFilter").value;  
-  const grid = document.getElementById("productGrid");  
-  grid.innerHTML = "";  
-  
-  let filtered = [];
+// GLOBAL STATE
+let currentBaseProducts = [];   // original category products
+let currentFiltered = [];       // filtered + sorted products
+let currentSort = "";
+let currentPriceFilter = "";
 
-if (currentCategory === "trending") {
-  filtered = trendingCache;
-} 
-else if (currentCategory === "search") {
-  filtered = searchCache;
-} 
-else {
-  filtered = productsData[currentCategory] || [];
+// CALL THIS whenever category opens
+function loadCategoryProducts() {
+
+    if (currentCategory === "trending") currentBaseProducts = [...trendingCache];
+    else if (currentCategory === "search") currentBaseProducts = [...searchCache];
+    else currentBaseProducts = [...(productsData[currentCategory] || [])];
+
+    applyFilterAndSort();
 }
-  
-  if (priceVal) {  
-    filtered = filtered.filter(p => {  
-      if (priceVal === "under500") return p.price < 500;  
-      if (priceVal === "500-999") return p.price >= 500 && p.price <= 999;  
-      if (priceVal === "1000-1499") return p.price >= 1000 && p.price <= 1499;  
-      if (priceVal === "1500plus") return p.price >= 1500; return false;
-    });  
-  }  
-  
-  if (filtered.length === 0) {  
-    grid.innerHTML = `  
-      <div style="grid-column:1/-1; text-align:center; opacity:0.6;">  
-        NO PRODUCTS IN THIS RANGE  
-      </div>`;  
-    return;  
-  }  
-  
-  const noSizeCats = [  
-    'mensWatches','ladiesWatches','accessories',  
-    'coupleAccessories','gadgets','trending'  
-  ];  
-  const skipSize = noSizeCats.includes(currentCategory);  
-  
-  filtered.forEach(p => {
-  const selector = skipSize
-    ? `<input type="hidden" id="size-${p.id}" value="${p.sizes[0]}">`
-    : `<select id="size-${p.id}">
-         <option value="">SELECT SIZE</option>
-         ${p.sizes.map(s => `<option>${s}</option>`).join("")}
-       </select>`;
 
-  grid.innerHTML += `
-    <div class="product">
-      <img id="main-${p.id}"
-           src="${localStorage.getItem("variant_" + p.id) || (p.images ? p.images[0] : p.img)}"
-           onclick='openImageModal(${JSON.stringify(p.images || [p.img])})'>
 
-      <div class="thumbs">
-        ${
-          p.images
-            ? p.images.slice(0,4).map((img, i) => `
-                <img src="${img}" class="thumb"
-                     onclick="selectVariant(${p.id}, ${i})">
-              `).join("")
-            : ""
-        }
-      </div>
+// FILTER CHANGE
+function applyFilters() {
 
-      <div class="info">
-        <b>${p.name}</b>
-        <span class="price-tag">
-  ${p.oldPrice ? `<span class="old-price">₹${p.oldPrice}</span>` : ""}
-  <span class="new-price">₹${p.price}</span>
-</span>
-        ${selector}
-        <button onclick='addToCart(${JSON.stringify(p)})'
-                style="width:100%; margin-top:10px;">
-          ADD TO BAG
-        </button>
-      </div>
-    </div>
-  `;
-});
-}  
+    currentPriceFilter = document.getElementById("priceFilter").value;
+
+    applyFilterAndSort();
+}
+
+
+// SORT CHANGE
+function sortProducts() {
+
+    currentSort = document.getElementById("sortSelect").value;
+
+    applyFilterAndSort();
+}
+
+
+// MAIN ENGINE (FILTER + SORT TOGETHER)
+function applyFilterAndSort() {
+
+    let products = [...currentBaseProducts];
+
+    // APPLY PRICE FILTER
+    if (currentPriceFilter) {
+
+        products = products.filter(p => {
+
+            if (currentPriceFilter === "under500") return p.price < 500;
+            if (currentPriceFilter === "500-999") return p.price >= 500 && p.price <= 999;
+            if (currentPriceFilter === "1000-1499") return p.price >= 1000 && p.price <= 1499;
+            if (currentPriceFilter === "1500plus") return p.price >= 1500;
+
+            return true;
+        });
+    }
+
+
+    // APPLY SORT
+    if (currentSort === "priceLow")
+        products.sort((a,b) => a.price - b.price);
+
+    else if (currentSort === "priceHigh")
+        products.sort((a,b) => b.price - a.price);
+
+    else if (currentSort === "name")
+        products.sort((a,b) => a.name.localeCompare(b.name));
+
+    else if (currentSort === "trending")
+        products.sort((a,b) => (b.trending ? 1 : 0) - (a.trending ? 1 : 0));
+
+
+    currentFiltered = products;
+
+    renderProducts(currentFiltered);
+}
+
+
+
+// RENDER PRODUCTS
+function renderProducts(productsArray) {
+
+    const grid = document.getElementById("productGrid");
+
+    grid.innerHTML = "";
+
+    if (!productsArray.length) {
+
+        grid.innerHTML =
+        `<div style="grid-column:1/-1;text-align:center;opacity:0.6;">
+            NO PRODUCTS FOUND
+        </div>`;
+
+        return;
+    }
+
+
+    const noSizeCats =
+    ['mensWatches','ladiesWatches','accessories','coupleAccessories','gadgets','trending'];
+
+
+    productsArray.forEach(p => {
+
+        const selector =
+        noSizeCats.includes(currentCategory)
+
+        ? `<input type="hidden" id="size-${p.id}" value="${p.sizes ? p.sizes[0] : ""}">`
+
+        :
+
+        `<select id="size-${p.id}">
+            <option value="">SELECT SIZE</option>
+            ${p.sizes.map(s => `<option>${s}</option>`).join("")}
+        </select>`;
+
+
+        const mainImage =
+        localStorage.getItem("variant_" + p.id)
+        ||
+        (p.images ? p.images[0] : p.img);
+
+
+        const thumbs =
+        p.images
+        ?
+        p.images.map(img =>
+        `<img class="thumb"
+              src="${img}"
+              onclick='selectVariant(${p.id},"${img}")'>`
+        ).join("")
+        :
+        "";
+
+
+        grid.innerHTML += `
+
+        <div class="product ${p.price===0?"coming-soon":""}">
+
+            <img id="main-img-${p.id}"
+                 src="${mainImage}"
+                 onclick='${p.images?`openImageModal(${JSON.stringify(p.images)})`:""}'>
+
+
+            <div class="thumbs ${p.images && p.images.length>4?"scrollable-thumbs":""}">
+                ${thumbs}
+            </div>
+
+
+            <div class="info">
+
+                <b>${p.name}</b>
+
+                <div class="brand-line">
+                    Selected by Aethel Collective
+                </div>
+
+                <span class="price-tag">
+
+                    ${p.oldPrice
+                    ?
+                    `<span class="old-price">₹${p.oldPrice}</span>`
+                    :
+                    ""}
+
+                    <span class="new-price">₹${p.price}</span>
+
+                </span>
+
+
+                ${selector}
+
+
+                <button onclick='addToCart(${JSON.stringify(p)})'>
+
+                    ${p.price===0?"COMING SOON":"ADD TO BAG"}
+
+                </button>
+
+            </div>
+
+
+            ${p.price===0
+            ?
+            `<div class="coming-soon-overlay">COMING SOON</div>`
+            :
+            ""}
+
+        </div>
+
+        `;
+    });
+
+
+    // FADE IN
+    document.querySelectorAll(".product img").forEach(img=>{
+
+        img.onload = ()=> img.classList.add("loaded");
+
+    });
+}
+        
+  
+
+  
 function updateCartCount() {
     const cartCount = document.getElementById("cartCount");
     cartCount.innerText = cart.length; // Simply show the number of items in cart
@@ -1079,25 +2799,32 @@ function updateCartCount() {
 
 function addToCart(productOrId) {
 
+  // Premium vibration feedback
+  if (navigator.vibrate) {
+    navigator.vibrate(40);
+  }
+
   let product;
 
-  // GET PRODUCT
+  // GET PRODUCT OBJECT
   if (typeof productOrId === "object") {
     product = productOrId;
   } else {
     const categoryProducts = productsData[currentCategory];
     if (!categoryProducts) return;
+
     product = categoryProducts.find(p => p.id === productOrId);
   }
 
   if (!product) return;
 
+  // COMING SOON protection
   if (product.price === 0) {
     showToast("COMING SOON");
     return;
   }
 
-  // FIND SIZE FROM ANY VIEW
+  // DETECT SELECTED SIZE FROM ANY VIEW
   let selectedSize = "";
 
   const sizeSelectors = [
@@ -1114,33 +2841,57 @@ function addToCart(productOrId) {
     }
   }
 
-  // FORCE SIZE IF REQUIRED
+  // REQUIRE SIZE IF MULTIPLE SIZES EXIST
   if (product.sizes && product.sizes.length > 1 && !selectedSize) {
     showToast("SELECT A SIZE");
     return;
   }
 
-  // IMAGE VARIANT
+  // GET SELECTED IMAGE VARIANT
   const selectedImage =
     localStorage.getItem("variant_" + product.id) ||
     (product.images ? product.images[0] : product.img);
 
-  // ADD TO CART
-  cart.push({
-    id: product.id,
-    name: product.name,
-    price: product.price,
-    size: selectedSize || "One Size",
-    selectedImage: selectedImage
-  });
+  const finalSize = selectedSize || "One Size";
 
+  // CHECK IF ITEM ALREADY EXISTS IN CART
+  const existingItem = cart.find(item =>
+  item.id === product.id &&
+  item.size === finalSize &&
+  item.selectedImage === selectedImage
+);
+
+  if (existingItem) {
+
+    // INCREASE QUANTITY
+    existingItem.qty += 1;
+
+    showToast("QTY UPDATED");
+
+  } else {
+
+    // ADD NEW ITEM WITH QTY 1
+    cart.push({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      size: finalSize,
+      selectedImage: selectedImage,
+      qty: 1
+    });
+
+    showToast("ADDED TO BAG");
+  }
+
+  // SAVE CART
   localStorage.setItem("cart", JSON.stringify(cart));
 
-  showToast("ADDED TO BAG");
+  // UPDATE UI
   renderCartItems();
   updateCartCount();
+  calculateCartTotal();
 }
-
+  
 // Renders the cart items inside the cart panel
 function renderCartItems() {
     const cartItemsContainer = document.getElementById("cartItems");
@@ -1179,31 +2930,63 @@ function openCart() {
 
     if (cart.length === 0) {
         container.innerHTML = `
-          <div style="text-align:center; opacity:0.6; margin-top:40px;">
+        <div style="text-align:center; opacity:0.6; margin-top:40px;">
             YOUR BAG IS EMPTY
-          </div>`;
+        </div>`;
+        
         document.getElementById("waBtn").classList.add("disabled");
         setScreen("cart");
         return;
     }
 
     cart.forEach((item, index) => {
+
         container.innerHTML += `
         <div class="cart-item">
-          <div style="display:flex; justify-content:space-between; align-items:center;">
-            <div style="display:flex; gap:10px; align-items:center;">
-              <img src="${item.selectedImage}" width="50">
-              <div style="font-size:10px;">
-                <b>${item.name}</b><br>
-                SIZE: ${item.size}
-              </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+
+                <div style="display:flex; gap:10px; align-items:center;">
+
+                    <img src="${item.selectedImage}" width="50">
+
+                    <div style="font-size:11px; line-height:1.4;">
+
+                        <b>${item.name}</b><br>
+
+                        SIZE: ${item.size}<br>
+
+                        <div style="display:flex; align-items:center; gap:6px; margin-top:3px;">
+
+                            <button onclick="changeQty(${index}, -1)" class="qty-btn">−</button>
+
+                            <span style="min-width:18px; text-align:center;">
+                                ${item.qty}
+                            </span>
+
+                            <button onclick="changeQty(${index}, 1)" class="qty-btn">+</button>
+
+                        </div>
+
+                        <span style="opacity:0.7;">
+                            ₹${item.price * item.qty}
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <span onclick="removeFromCart(${index})" 
+                      style="cursor:pointer; font-size:16px;">
+                      ✕
+                </span>
+
             </div>
-            <span onclick="removeFromCart(${index})" style="cursor:pointer;">✕</span>
-          </div>
+
         </div>`;
     });
 
-    calculateCartTotal();   // 🔥 THIS enables discount
+    calculateCartTotal();
     setScreen("cart");
 }
   
@@ -1238,65 +3021,49 @@ function openDetails(show = true) {
   }  
 }  
     
-function confirmOrder(e) {  
-  e.preventDefault();  
-  
-  const name = document.getElementById("name").value;  
-  const address = document.getElementById("address").value;  
-  const city = document.getElementById("city").value;  
-  const district = document.getElementById("district").value;  
-  const state = document.getElementById("state").value;  
-  const pin = document.getElementById("pin").value;  
-  const phone1 = document.getElementById("phone1").value;  
-  const phone2 = document.getElementById("phone2").value;  
-  
-  if (cart.length === 0) {  
-    showToast("YOUR BAG IS EMPTY");  
-    return;  
-  }  
-  
-  let total = finalPayable;
-  
-  // Premium style WhatsApp message  
-  let message = `\n\n*✨✨  AETHEL COLLECTIVE  NEW ORDER  ✨✨*\n` +  
-                `─────────────────────────────\n` +  
-                `*ORDER DETAILS:*\n`;  
-  
-  cart.forEach((item, i) => {  
-    message += `\n*${i + 1}. ${item.name}*\n` +  
-               `Size: ${item.size} | Price: ₹${item.price}\n` +  
-               `[View Image](${item.selectedImage})\n`;  
-  });  
-  
-  message += `\n*TOTAL:* ₹${total}\n` +  
-             `─────────────────────────────\n` +  
-             `*SHIPPING DETAILS:*\n` +  
-             `─────────────────────────────\n` +  
-             `*Name:* ${name}\n` +  
-             `*Address:* ${address}\n` +  
-             `*City:* ${city}\n` +  
-             `*District:* ${district}\n` +  
-             `*State:* ${state}\n` +  
-             `*Pin code:* ${pin}\n` +  
-             `*Phone number (1):* ${phone1}\n` +  
-             `*Phone number (2):* ${phone2 || 'N/A'}\n` +  
-             `─────────────────────────────\n\n` +  
-             `Thank you for reaching out to Aethel_collective! 🌟\n` +  
-             `We’re always here for you — our team is available anytime, anywhere to assist with your needs.\n` +  
-             `Your comfort and satisfaction are our top priorities, so feel free to contact us anytime!`;  
-  
-  const waURL = `https://wa.me/919074002303?text=${encodeURIComponent(message)}`;  
-  window.open(waURL, "_blank");  
-}  
-
-function confirmInstagramOrder(e) {
+function confirmOrder(e) {
   e.preventDefault();
+
+  const fields = [
+    { id: "name", label: "Name" },
+    { id: "address", label: "Address" },
+    { id: "city", label: "City" },
+    { id: "district", label: "District" },
+    { id: "state", label: "State" },
+    { id: "pin", label: "Pin code" },
+    { id: "phone1", label: "Phone number" }
+  ];
+
+  // Remove previous highlights
+  fields.forEach(f =>
+    document.getElementById(f.id).classList.remove("input-error")
+  );
+
+  // Validate required fields
+  let firstEmpty = null;
+
+  for (let f of fields) {
+    const el = document.getElementById(f.id);
+    if (!el.value.trim()) {
+      firstEmpty = el;
+      break;
+    }
+  }
+
+  if (firstEmpty) {
+    showToast(`Please fill your ${firstEmpty.labels?.[0]?.innerText || firstEmpty.id}`);
+    firstEmpty.classList.add("input-error");
+    firstEmpty.scrollIntoView({ behavior: "smooth", block: "center" });
+    firstEmpty.focus();
+    return;
+  }
 
   if (cart.length === 0) {
     showToast("YOUR BAG IS EMPTY");
     return;
   }
 
+  // Customer details
   const name = document.getElementById("name").value;
   const address = document.getElementById("address").value;
   const city = document.getElementById("city").value;
@@ -1306,26 +3073,199 @@ function confirmInstagramOrder(e) {
   const phone1 = document.getElementById("phone1").value;
   const phone2 = document.getElementById("phone2").value;
 
-  let total = finalPayable;
+  // Calculate totals
+  let subtotal = cart.reduce(
+    (sum, item) => sum + item.price * item.qty,
+    0
+  );
 
-  let message = `✨✨  AETHEL COLLECTIVE  NEW ORDER  ✨✨\n`;
-  message += "─────────────────────────────\n*ORDER DETAILS:*\n";
+  let discount = discountAmount || 0;
+  let finalAmount = finalPayable || subtotal;
+
+  // Build WhatsApp message
+  let message = "";
+
+  message += "*✨ AETHEL COLLECTIVE — ORDER REQUEST ✨*\n";
+  message += "━━━━━━━━━━━━━━━━━━━━━━━\n";
+  message += "EST. 2025\n";
+  message += "━━━━━━━━━━━━━━━━━━━━━━━\n\n";
+
+  message += "*🛍️ ORDER DETAILS*\n";
+  message += "━━━━━━━━━━━━━━━━━━━━━━━\n";
 
   cart.forEach((item, i) => {
-    message += `\n${i + 1}. ${item.name}\nSize: ${item.size} | Price: ₹${item.price}\n[View Image](${item.selectedImage})\n`;
+    message += `\n${i + 1}. ${item.name}\n`;
+    message += `   Size        : ${item.size}\n`;
+    message += `   Quantity    : ${item.qty}\n`;
+    message += `   Unit Price  : ₹${item.price}\n`;
+    message += `   Subtotal    : ₹${item.price * item.qty}\n`;
+    message += `   Product     : ${item.selectedImage}\n`;
   });
 
-  message += `\nTOTAL: ₹${total}\n─────────────────────────────\n*SHIPPING DETAILS:*\n─────────────────────────────\n`;
-  message += `Name: ${name}\nAddress: ${address}\nCity: ${city}\nDistrict: ${district}\nState: ${state}\nPin code: ${pin}\nPhone number (1): ${phone1}\nPhone number (2): ${phone2 || 'N/A'}\n`;
-  message += "─────────────────────────────\n\nThank you for reaching out to Aethel_collective! 🌟";
+  message += "\n━━━━━━━━━━━━━━━━━━━━━━━\n";
+  message += "*💰 PAYMENT SUMMARY*\n";
+  message += "━━━━━━━━━━━━━━━━━━━━━━━\n";
 
+  message += `Subtotal        : ₹${subtotal}\n`;
+
+  if (discount > 0) {
+    message += `Discount        : -₹${discount}\n`;
+  }
+
+  message += `*Final Amount:* ₹${finalAmount}\n`;
+
+  message += "━━━━━━━━━━━━━━━━━━━━━━━\n\n";
+
+  message += "*📦 SHIPPING DETAILS*\n";
+  message += "━━━━━━━━━━━━━━━━━━━━━━━\n";
+
+  message += `*Name:* ${name}\n`;
+  message += `*Address:* ${address}\n`;
+  message += `*City:* ${city}\n`;
+  message += `*District:* ${district}\n`;
+  message += `*State:* ${state}\n`;
+  message += `*PIN Code:* ${pin}\n`;
+  message += `*Phone:* ${phone1}\n`;
+
+  if (phone2) {
+    message += `*Alternate Phone:* ${phone2}\n`;
+  }
+
+  message += "━━━━━━━━━━━━━━━━━━━━━━━\n\n";
+  message += "Thank you for choosing Aethel Collective.\n";
+  message += "Where Trust Meets Style.";
+
+  // Open WhatsApp
+  const waURL = `https://wa.me/919074002303?text=${encodeURIComponent(message)}`;
+  window.open(waURL, "_blank");
+}
+
+function confirmInstagramOrder(e) {
+  e.preventDefault();
+
+  const fields = [
+    { id: "name", label: "Name" },
+    { id: "address", label: "Address" },
+    { id: "city", label: "City" },
+    { id: "district", label: "District" },
+    { id: "state", label: "State" },
+    { id: "pin", label: "Pin code" },
+    { id: "phone1", label: "Phone number" }
+  ];
+
+  // Remove previous highlights
+  fields.forEach(f =>
+    document.getElementById(f.id).classList.remove("input-error")
+  );
+
+  // Validate fields
+  let firstEmpty = null;
+
+  for (let f of fields) {
+    const el = document.getElementById(f.id);
+    if (!el.value.trim()) {
+      firstEmpty = el;
+      break;
+    }
+  }
+
+  if (firstEmpty) {
+    showToast(`Please fill your ${firstEmpty.labels?.[0]?.innerText || firstEmpty.id}`);
+    firstEmpty.classList.add("input-error");
+    firstEmpty.scrollIntoView({ behavior: "smooth", block: "center" });
+    firstEmpty.focus();
+    return;
+  }
+
+  if (cart.length === 0) {
+    showToast("YOUR BAG IS EMPTY");
+    return;
+  }
+
+  // Customer details
+  const name = document.getElementById("name").value;
+  const address = document.getElementById("address").value;
+  const city = document.getElementById("city").value;
+  const district = document.getElementById("district").value;
+  const state = document.getElementById("state").value;
+  const pin = document.getElementById("pin").value;
+  const phone1 = document.getElementById("phone1").value;
+  const phone2 = document.getElementById("phone2").value;
+
+  // Calculate totals
+  let subtotal = cart.reduce(
+    (sum, item) => sum + item.price * item.qty,
+    0
+  );
+
+  let discount = discountAmount || 0;
+  let finalAmount = finalPayable || subtotal;
+
+  // Build message
+  let message = "";
+
+  message += "*✨ AETHEL COLLECTIVE — ORDER REQUEST ✨*\n";
+  message += "━━━━━━━━━━━━━━━━━━━━━━━\n";
+  message += "EST. 2025\n";
+  message += "━━━━━━━━━━━━━━━━━━━━━━━\n\n";
+
+  message += "*🛍️ ORDER DETAILS*\n";
+  message += "━━━━━━━━━━━━━━━━━━━━━━━\n";
+
+  cart.forEach((item, i) => {
+    message += `\n${i + 1}. ${item.name}\n`;
+    message += `   Size        : ${item.size}\n`;
+    message += `   Quantity    : ${item.qty}\n`;
+    message += `   Unit Price  : ₹${item.price}\n`;
+    message += `   Subtotal    : ₹${item.price * item.qty}\n`;
+    message += `   Product     : ${item.selectedImage}\n`;
+  });
+
+  message += "\n━━━━━━━━━━━━━━━━━━━━━━━\n";
+  message += "*💰 PAYMENT SUMMARY*\n";
+  message += "━━━━━━━━━━━━━━━━━━━━━━━\n";
+
+  message += `Subtotal        : ₹${subtotal}\n`;
+
+  if (discount > 0) {
+    message += `Discount        : -₹${discount}\n`;
+  }
+
+  message += `*Final Amount:* ₹${finalAmount}\n`;
+
+  message += "━━━━━━━━━━━━━━━━━━━━━━━\n\n";
+
+  message += "*📦 SHIPPING DETAILS*\n";
+  message += "━━━━━━━━━━━━━━━━━━━━━━━\n";
+
+  message += `*Name:* ${name}\n`;
+  message += `*Address:* ${address}\n`;
+  message += `*City:* ${city}\n`;
+  message += `*District:* ${district}\n`;
+  message += `*State:* ${state}\n`;
+  message += `*PIN Code:* ${pin}\n`;
+  message += `*Phone:* ${phone1}\n`;
+
+  if (phone2) {
+    message += `*Alternate Phone:* ${phone2}\n`;
+  }
+
+  message += "━━━━━━━━━━━━━━━━━━━━━━━\n\n";
+  message += "Thank you for choosing Aethel Collective.\n";
+  message += "Where Trust Meets Style.";
+
+  // Copy to clipboard & open Instagram
   navigator.clipboard.writeText(message).then(() => {
-    showToast("Message copied! Open Instagram and DM @aethel_collective");
-    window.open("https://www.instagram.com/aethel_collective/", "_blank");
+    showToast("MESSAGE COPIED — OPENING INSTAGRAM");
+    window.open(
+      "https://www.instagram.com/aethel_collective/",
+      "_blank"
+    );
   }).catch(() => {
-    showToast("Failed to copy message. Please copy manually and DM @aethel_collective");
+    showToast("COPY FAILED — PLEASE COPY MANUALLY");
   });
 }
+
   
 function openHow() { document.getElementById("howModal").style.display = "flex"; }  
 function closeHow() { document.getElementById("howModal").style.display = "none"; }  
@@ -1376,15 +3316,15 @@ window.addEventListener("scroll", () => {
   }, 500);  
 });  
   function openInstagram(){  
-  window.open("https://www.instagram.com/waldo.inn", "_blank");  
+  window.open("https://www.instagram.com/aethel_collective?igsh=Zmdubmp2OGMxcGxx", "_blank");  
 }  
   
 function openWhatsApp(){  
-  window.open("https://wa.me/919778762507", "_blank");  
+  window.open("https://wa.me/919074002303", "_blank");  
 }  
   
 function openEmail(){  
-  window.location.href = "mailto:waldocollection@gmail.com";  
+  window.location.href = "mailto:aethelcollective@gmail.com";  
 }  
 
 function smartMatch(product, query) {
@@ -1514,19 +3454,17 @@ function searchProducts() {
              src="${mainImage}"
              onclick='openImageModal(${JSON.stringify(p.images || [p.img])})'>
 
-        <div class="thumbs">
-          ${
-            p.images
-              ? p.images.slice(0,4).map(img => `
-                  <img src="${img}" class="thumb"
-                       onclick="selectVariant(${p.id}, '${img}')">
-                `).join("")
-              : ""
-          }
-        </div>
+        <div class="thumbs ${p.images && p.images.length > 4 ? 'scrollable-thumbs' : ''}">
+  ${p.images ? p.images.map(img => `
+      <img class="thumb" 
+           src="${img}" 
+           onclick='selectVariant(${p.id}, "${img}")'>
+  `).join("") : ""}
+</div>
 
         <div class="info">
           <b>${p.name}</b>
+          <div class="brand-line">Selected by Aethel Collective</div>
           <span class="price-tag">
             ${p.oldPrice ? `<span class="old-price">₹${p.oldPrice}</span>` : ""}
             <span class="new-price">₹${p.price}</span>
@@ -1544,7 +3482,9 @@ function searchProducts() {
 
   setScreen("products");
   window.scrollTo(0, 0);
+  applyImageFade();
 }
+  
  // 4. AUTO SUGGEST (THIS PART)
 document.getElementById("searchInput").addEventListener("input", e=>{
   const q = e.target.value.toLowerCase().trim();
@@ -1605,21 +3545,17 @@ function showTrending() {
              src="${mainImage}" 
              onclick='openImageModal(${JSON.stringify(p.images || [p.img])})'>
 
-        <div class="thumbs">
-          ${
-            p.images
-              ? p.images.slice(0,4).map(img => `
-                  <img src="${img}" 
-                       class="thumb" 
-                       onclick="selectVariant(${p.id}, '${img}')">
-                `).join("")
-              : ""
-          }
-        </div>
+        <div class="thumbs ${p.images && p.images.length > 4 ? 'scrollable-thumbs' : ''}">
+  ${p.images ? p.images.map(img => `
+      <img class="thumb" 
+           src="${img}" 
+           onclick='selectVariant(${p.id}, "${img}")'>
+  `).join("") : ""}
+</div>
 
         <div class="info">
           <b>${p.name}</b>
-
+          <div class="brand-line">Selected by Aethel Collective</div>
           <span class="price-tag">
             ${p.oldPrice ? `<span class="old-price">₹${p.oldPrice}</span>` : ""}
             <span class="new-price">₹${p.price}</span>
@@ -1645,7 +3581,8 @@ function showTrending() {
   setScreen("products");
   window.scrollTo(0, 0);
   trendingCache = trending;
-currentCategory = "trending";
+  currentCategory = "trending";
+  applyImageFade();
 }
   
 // NEW helper to safely read data-images
@@ -1751,7 +3688,7 @@ function displayReviews() {
   const container = document.getElementById("reviewsDisplay");
   container.innerHTML = "";
   if (reviews.length === 0) {
-    container.innerHTML = `<p style="text-align:center; opacity:0.6;">No reviews yet.</p>`;
+    container.innerHTML = `<p style="text-align:center; opacity:0.6;">REVIEWS ARE ON OUR INSTAGRAM HIGHLIGHT.</p>`;
     return;
   }
   
@@ -1770,6 +3707,29 @@ function displayReviews() {
 
 // Load reviews on page load
 displayReviews();
+
+// IMAGE FADE-IN EFFECT
+function applyImageFade() {
+  document.querySelectorAll(".product img").forEach(img => {
+    img.onload = () => img.classList.add("loaded");
+    if (img.complete) img.classList.add("loaded"); // for cached images
+  });
+}
+
+ function changeQty(index, change) {
+
+    cart[index].qty += change;
+
+    if (cart[index].qty <= 0) {
+        cart.splice(index, 1);
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    openCart();
+    updateCartCount();
+    calculateCartTotal();
+ }
   
   // 🔙 ANDROID / BROWSER BACK BUTTON HANDLER  
 window.onpopstate = function () {  
@@ -1809,10 +3769,37 @@ window.onpopstate = function () {
 };  
   window.addEventListener("load", () => {  
   document.getElementById("cartCount").innerText = cart.length;  
-});  
-     
-</script>  
+});
+  
+  window.addEventListener('load', () => {
+    // Wait for both logo + tagline animations (~3s)
+    setTimeout(() => {
+      document.getElementById('pageLoader').classList.add('fade-out');
+    }, 3000); // 3.5 seconds
+  });
 
+  window.addEventListener("scroll", runReveal);
+  function runReveal() {
+  document.querySelectorAll(".reveal").forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight - 80) {
+      el.classList.add("active");
+    }
+  });
+  }
+  window.dispatchEvent(new Event("scroll"));
+ 
+  window.addEventListener('DOMContentLoaded', () => {
+    const cartBtn = document.getElementById("cartBtn");
+    const productSection = document.getElementById("productSection");
+
+    if(cartBtn) cartBtn.style.display = "block";           // show cart button
+});
+ 
+</script>  
+ 
+<script defer src="https://va.vercel-scripts.com/v1/script.js" data-auto-track="true"></script>
+ 
+ 
 </body>  
 
-</html>
+  </html>

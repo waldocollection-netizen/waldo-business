@@ -1244,14 +1244,14 @@ button:hover {
   <!-- Page Loader -->
 <div id="pageLoader">
   <div class="loader-content">
-    <span class="logo-text">AETHEL</span>
-    <span class="tagline">Where Trust Meets Style</span>
+    <span class="logo-text">WALDO</span>
+    <span class="tagline">Where Value Meets Style</span>
   </div>
 </div>
   <header>  
   <div class="store-title" onclick="goHomeFromHeader()">  
     <img src="https://i.ibb.co/fGN8Ty7S/IMG-20260228-WA0019.jpg" alt="Logo" class="store-logo">  
-    <span>WALDO INN</span>  
+    <span>WALDO</span>  
   </div>  
   <div class="cart-btn" id="cartBtn" onclick="openCart()">BAG (<span id="cartCount">0</span>)</div>  
 </header>  <div id="toast"></div>  <div id="homeTopBar">    
@@ -1292,7 +1292,7 @@ button:hover {
   TRENDING PRODUCTS
   </button>  
   </div>  
-  <div class="welcome-text">Where Trust Meets Style</div>  
+  <div class="welcome-text">Where Value Meets Style</div>  
   <div class="how-link" onclick="openHow()">How to order?</div>  
   
 </div>  <div class="social-home">  
@@ -1776,65 +1776,6 @@ const productsData = {
       ],   
       sizes: ["M", "L", "XL", "XXL"]
     },  
-    {  
-      id: 102,   
-      name: "PREMIUM QUALITY JACKET",
-      oldPrice: 1499,
-      price: 999,  
-      colors: ["BROWN", "BLACK", "BLUE"],
-      tags: ["jacket", "menswear", "ferrari", "winter", "puma"],
-      images: [  
-        "https://i.postimg.cc/FKwKgq0P/IMG-20260101-WA0071.jpg",
-        "https://i.postimg.cc/fb1bjFY8/IMG-20260101-WA0072.jpg",
-        "https://i.postimg.cc/Gp6pJNvT/IMG-20260101-WA0074.jpg"
-      ],   
-      sizes: ["L", "XXL", "3XL"]
-    }, 
-    {  
-      id: 103,   
-      name: "PREMIUM PUMA JACKET",
-      oldPrice: 899,
-      price: 799,  
-      colors: ["BROWN", "BLACK", "BLUE", "GREEN", "WHITE"],
-      tags: ["jacket", "menswear", "winter", "puma"],
-      images: [  
-        "https://i.postimg.cc/9Q5H03mR/IMG-20260220-013808-523.jpg",
-        "https://i.postimg.cc/Mp2JHk6n/IMG-20260220-013811-292.jpg",
-        "https://i.postimg.cc/kg3PGrJD/IMG-20260220-013813-125.jpg",
-        "https://i.postimg.cc/T3Mv18d1/IMG-20260220-013815-019.jpg",
-        "https://i.postimg.cc/52dWyc4x/IMG-20260220-013816-907.jpg"
-      ],   
-      sizes: ["M", "L", "XL", "XXL"]
-    }, 
-    {  
-      id: 104,   
-      name: "PREMIUM ADIDAS JACKET",
-      oldPrice: 999,
-      price: 899,  
-      colors: ["BLACK", "GREY", "WHITE"],
-      tags: ["jacket", "menswear", "winter", "Adidas"],
-      images: [  
-        "https://i.postimg.cc/43Hc59Cb/IMG-20260220-014042-141.jpg",
-        "https://i.postimg.cc/vHP6wzGw/IMG-20260220-014032-979.jpg",
-        "https://i.postimg.cc/yYfSCPsM/IMG-20260220-014034-745.jpg"
-      ],   
-      sizes: ["M", "L", "XL", "XXL"]
-    }, 
-    {  
-      id: 105,   
-      name: "PREMIUM WATERPROOF JACKET",
-      oldPrice: 899,
-      price: 799,  
-      colors: ["BLACK", "RED", "WHITE", "GREY"],
-      tags: ["jacket", "menswear", "winter", "puma"],
-      images: [  
-        "https://i.postimg.cc/YCbRVgy5/IMG-20260220-014414-720.jpg",
-        "https://i.postimg.cc/TP10XwzW/IMG-20260220-014416-552.jpg",
-        "https://i.postimg.cc/zfv71Bsh/IMG-20260220-014418-612.jpg",
-        "https://i.postimg.cc/mrkjGDv1/IMG-20260220-014420-351.jpg"
-      ],   
-      sizes: ["M", "L", "XL", "XXL"]
-    }, 
   ],  
   mensShoes: [  
     {  
@@ -1842,6 +1783,7 @@ const productsData = {
       name: "CHELSEA BOOT",  
       oldPrice: 1299,
       price: 1099,  
+      trending: true,
       tags: ["boot", "mens", "boys", "style shoes"],
       images: [  
         "https://i.postimg.cc/fbK7HcfC/IMG-20260126-WA0705.jpg",  
@@ -1861,208 +1803,7 @@ const productsData = {
       ],   
       sizes: ["6", "7", "8", "9", "10"]  
     },  
-    {  
-      id: 203,   
-      name: "IMPORTED SHOE",  
-      oldPrice: 1999,
-      price: 1599,  
-      tags: ["luxury", "mens", "boys", "style shoes"],
-      images: [  
-        "https://i.postimg.cc/WzbPRHYc/IMG-20260209-WA0035.jpg",  
-        "https://i.postimg.cc/NFfwhzCq/IMG-20260209-WA0041.jpg",  
-        "https://i.postimg.cc/NFfwhzCh/IMG-20260209-WA0043.jpg",  
-        "https://i.postimg.cc/NFfwhzJn/IMG-20260209-WA0044.jpg"  
-      ],   
-      sizes: ["6", "7", "8", "9", "10"]  
-    },   
-    {  
-      id: 204,   
-      name: "P 6000",  
-      oldPrice: 1799,
-      price: 1499,  
-      tags: ["super", "mens", "boys", "style shoes"],
-      images: [  
-        "https://i.postimg.cc/JnPMY2X1/IMG-20260211-WA0172.jpg",
-        "https://i.postimg.cc/mkkRvy3r/IMG-20260211-WA0173.jpg",
-        "https://i.postimg.cc/WzzjBwmb/IMG-20260211-WA0174.jpg",
-        "https://i.postimg.cc/HnnHq90k/IMG-20260211-WA0175.jpg"
-      ],   
-      sizes: ["6", "7", "8", "9", "10"]  
-    },  
-    {  
-      id: 205,   
-      name: "CHELSEA BOOT", 
-      oldPrice: 1699,
-      price: 1499,  
-      tags: ["boot", "mens", "boys", "style shoes"],
-      images: [  
-        "https://i.postimg.cc/QMt5t8BJ/IMG-20260204-WA0107.jpg",  
-        "https://i.postimg.cc/yNbR3M9y/IMG-20260204-WA0110.jpg"  
-      ],   
-      sizes: ["6", "7", "8", "9", "10"]  
-    },  
-    {  
-      id: 206,   
-      name: "SAMBA GLOSSY GOLD", 
-      oldPrice: 1299,
-      price: 1049,  
-      tags: ["sneakers", "mens", "boys", "style shoes"],
-      images: [  
-        "https://i.postimg.cc/PrTCJX9C/IMG-20260209-WA0059.jpg",  
-        "https://i.postimg.cc/8P4j68gj/IMG-20260209-WA0060.jpg"  
-      ],   
-      sizes: ["6", "7", "8", "9", "10"]  
-    },  
-    {  
-      id: 207,   
-      name: "SAMBA SILVER",   
-      oldPrice: 1299,
-      price: 999,  
-      tags: ["sneakers", "mens", "boys", "style shoes"],
-      images: [  
-        "https://i.postimg.cc/KjJxR23j/IMG-20260209-WA0036.jpg",  
-        "https://i.postimg.cc/5N2fD6Dq/IMG-20260209-WA0037.jpg",  
-        "https://i.postimg.cc/65pBFyF0/IMG-20260209-WA0038.jpg",  
-        "https://i.postimg.cc/Dyp7h7KG/IMG-20260209-WA0039.jpg"  
-      ],   
-      sizes: ["6", "7", "8", "9", "10"]  
-    },  
-    {  
-      id: 208,   
-      name: "STUSSY",  
-      oldPrice: 1299,
-      price: 999,  
-      tags: ["sneakers", "mens", "boys", "style shoes"],
-      images: [  
-        "https://i.postimg.cc/WzbPRHYc/IMG-20260209-WA0035.jpg",  
-        "https://i.postimg.cc/NFfwhzCq/IMG-20260209-WA0041.jpg",  
-        "https://i.postimg.cc/NFfwhzCh/IMG-20260209-WA0043.jpg",  
-        "https://i.postimg.cc/NFfwhzJn/IMG-20260209-WA0044.jpg"  
-      ],   
-      sizes: ["6", "7", "8", "9", "10"]  
-    },  
-    {  
-      id: 209,   
-      name: "GLOSSY CHELSEA",   
-      oldPrice: 1299,
-      price: 999, 
-      tags: ["boot", "mens", "boys", "style shoes"],
-      trending: true,
-      images: [  
-        "https://i.postimg.cc/j5cGhhx1/IMG-20260208-WA0022.jpg",  
-        "https://i.postimg.cc/Jnx9QQrx/IMG-20260208-WA0023.jpg",  
-        "https://i.postimg.cc/SsdwGGSV/IMG-20260208-WA0024.jpg",  
-        "https://i.postimg.cc/0QnLCCkc/IMG-20260208-WA0025.jpg",  
-        "https://i.postimg.cc/MTqCRLSD/IMG-20260208-WA0026.jpg",  
-        "https://i.postimg.cc/hjsH00Dr/IMG-20260208-WA0027.jpg"  
-      ],   
-      sizes: ["6", "7", "8", "9", "10"]  
-    },  
-    {  
-      id: 210,   
-      name: "SPEEDCAT",  
-      oldPrice: 1299,
-      price: 899,  
-      tags: ["sneakers", "mens", "boys", "style shoes"],
-      images: [  
-        "https://i.postimg.cc/7L9V537T/IMG-20260213-WA0044.jpg",
-        "https://i.postimg.cc/NF97CZnw/IMG-20260213-WA0045.jpg",
-        "https://i.postimg.cc/6qkVkYsT/IMG-20260213-WA0046.jpg",
-        "https://i.postimg.cc/Rhk1kXrT/IMG-20260213-WA0048.jpg",
-        "https://i.postimg.cc/NMPk4QdQ/IMG-20260213-WA0049.jpg"
-      ],   
-      sizes: ["6", "7", "8", "9", "10"]  
-    }, 
-    {  
-      id: 211,   
-      name: "IMPORTED SHOE",  
-      oldPrice: 1999,
-      price: 1599,  
-      tags: ["sneakers", "mens", "boys", "style shoes"],
-      images: [  
-        "https://i.postimg.cc/ncwMhCCc/IMG-20260214-WA0123.jpg",
-        "https://i.postimg.cc/FHMR08yx/IMG-20260214-WA0124.jpg",
-        "https://i.postimg.cc/RZkFwy7k/IMG-20260214-WA0125.jpg",
-        "https://i.postimg.cc/8z25L9Rq/IMG-20260214-WA0126.jpg"
-      ],   
-      sizes: ["6", "7", "8", "9", "10"]  
-    }, 
-    {  
-      id: 212,   
-      name: "NIKE STUSSY",  
-      oldPrice: 1499,
-      price: 1399,  
-      colors: ["GREEN", "BLACK"],
-      tags: ["sneakers", "mens", "boys", "style shoes"],
-      images: [  
-        "https://i.postimg.cc/C5mxKRjD/IMG-20260217-WA0192.jpg",
-        "https://i.postimg.cc/PJtqhW8w/IMG-20260217-WA0191.jpg"
-      ],   
-      sizes: ["6", "7", "8", "9", "10"]  
-    }, 
-    {  
-      id: 213,   
-      name: "PREMIUM SHOES",  
-      oldPrice: 1499,
-      price: 1249,  
-      colors: ["MULTI"],
-      tags: ["sneakers", "mens", "boys", "style shoes"],
-      images: [  
-        "https://i.postimg.cc/rmqHWc31/IMG-20260219-WA0062.jpg",
-        "https://i.postimg.cc/nznW7ZgB/IMG-20260219-WA0063.jpg",
-        "https://i.postimg.cc/pT0sFjKY/IMG-20260219-WA0066.jpg",
-        "https://i.postimg.cc/rmhfr459/IMG-20260219-WA0069.jpg",
-        "https://i.postimg.cc/RFPgHtc9/IMG-20260219-WA0070.jpg",
-        "https://i.postimg.cc/sXnThW5K/IMG-20260219-WA0071.jpg",
-        "https://i.postimg.cc/50PsCz8R/IMG-20260219-WA0072.jpg",
-        "https://i.postimg.cc/vTc3LmvJ/IMG-20260219-WA0073.jpg",
-        "https://i.postimg.cc/XqpQcv8S/IMG-20260219-WA0074.jpg"
-      ],   
-      sizes: ["6", "7", "8", "9", "10"]  
-    }, 
-    {  
-      id: 214,   
-      name: "PREMIUM SHOES",  
-      oldPrice: 1699,
-      price: 1499,  
-      colors: ["RED", "WHITE","BROWN"],
-      tags: ["sneakers", "mens", "boys", "style shoes"],
-      images: [  
-        "https://i.postimg.cc/Qtjz5swX/IMG-20260219-WA0061.jpg",
-        "https://i.postimg.cc/rmqHWc31/IMG-20260219-WA0062.jpg",
-        "https://i.postimg.cc/nznW7ZgB/IMG-20260219-WA0063.jpg"
-      ],   
-      sizes: ["6", "7", "8", "9", "10"]  
-    }, 
-    {  
-      id: 215,   
-      name: "PREMIUM SHOE",  
-      oldPrice: 1499,
-      price: 1299,  
-      colors: ["BROWN"],
-      tags: ["sneakers", "mens", "boys", "style shoes"],
-      images: [  
-        "https://i.postimg.cc/nrRNp5dv/IMG-20260219-WA0046.jpg",
-        "https://i.postimg.cc/v83JrgQm/IMG-20260219-WA0047.jpg",
-        "https://i.postimg.cc/59nhBYxj/IMG-20260219-WA0048.jpg"
-      ],   
-      sizes: ["6", "7", "8", "9", "10"]  
-    }, 
-    {  
-      id: 216,   
-      name: "IMPORTED SHOE",  
-      oldPrice: 1299,
-      price: 1199,  
-      colors: ["MULTI"],
-      tags: ["sneakers", "mens", "boys", "style shoes"],
-      images: [  
-        "https://i.postimg.cc/HsLCR0Sx/IMG-20260219-WA0036.jpg",
-        "https://i.postimg.cc/4N3Tqv85/IMG-20260219-WA0035.jpg",
-        "https://i.postimg.cc/BQwG08yF/IMG-20260219-WA0038.jpg"
-      ],   
-      sizes: ["6", "7", "8", "9", "10"]  
-    }, 
-    
+      
   ],  
     mensWatches: [  
     {  
@@ -2092,205 +1833,8 @@ const productsData = {
         "https://i.postimg.cc/HWQtFLbj/IMG-20260207-WA0067.jpg"  
       ],   
       sizes:["Universal"]  
-    },  
-    {  
-      id: 303,   
-      name: "CASIO CLOTH STRAP",   
-      oldPrice: 999,
-      price: 799,  
-      tags: ["budget", "mens", "boys", "style watch"],
-      images: [  
-        "https://i.postimg.cc/hthT44Qt/IMG-20260205-WA0055.jpg",  
-        "https://i.postimg.cc/dVDrQQZy/IMG-20260205-WA0057.jpg",  
-        "https://i.postimg.cc/fRkmWWS7/IMG-20260205-WA0061.jpg",  
-        "https://i.postimg.cc/P5cZCG1C/IMG-20260205-WA0065.jpg"  
-      ],   
-      sizes:["Universal"]  
-    },  
-    {  
-      id: 304,   
-      name: "NIKE WATCH",   
-      oldPrice: 999,
-      price: 699,  
-      tags: ["budget", "mens", "boys", "style watch"],
-      images: [  
-        "https://i.postimg.cc/SQCG8bcr/IMG-20260212-WA0134.jpg",
-        "https://i.postimg.cc/L6S33QV7/IMG-20260212-WA0136.jpg",
-        "https://i.postimg.cc/65Kffbh1/IMG-20260212-WA0138.jpg"
-      ],   
-      sizes:["Universal"]  
-    },  
-    {  
-      id: 305,   
-      name: "CASIO G-SHOCK",   
-      oldPrice: 1499,
-      price: 1399,  
-      tags: ["premium", "mens", "boys", "style watch"],
-      images: [  
-        "https://i.postimg.cc/hv1xYgrj/IMG-20260211-WA0158.jpg",
-        "https://i.postimg.cc/wxXhMcdk/IMG-20260211-WA0160.jpg",
-        "https://i.postimg.cc/66rdqLNc/IMG-20260211-WA0161.jpg",
-        "https://i.postimg.cc/WpGMz6Pn/IMG-20260211-WA0163.jpg",
-        "https://i.postimg.cc/FFyjzgQG/IMG-20260211-WA0164.jpg"
-      ],   
-      sizes:["Universal"]  
-    },  
-    {  
-      id: 306,   
-      name: "POLISH - BUDGET WATCH",   
-      oldPrice: 799,
-      price: 499,  
-      tags: ["budget", "mens", "boys", "style watch"],
-      images: [  
-        "https://i.postimg.cc/qMF91C15/IMG-20260212-WA0063.jpg",
-        "https://i.postimg.cc/vHKp06P1/IMG-20260212-WA0064.jpg",
-        "https://i.postimg.cc/KvWd0g94/IMG-20260212-WA0065.jpg",
-        "https://i.postimg.cc/tCcLBVrJ/IMG-20260212-WA0066.jpg"
-      ],   
-      sizes:["Universal"]  
     },
-    {  
-      id: 307,   
-      name: "FIXEN SPIN WATCH",   
-      oldPrice: 899,
-      price: 599,  
-      tags: ["budget", "mens", "boys", "style watch"],
-      images: [  
-        "https://i.postimg.cc/FsJX0RTs/IMG-20260212-WA0070.jpg",
-        "https://i.postimg.cc/c48GfHFx/IMG-20260212-WA0071.jpg",
-        "https://i.postimg.cc/MKjJ1T9W/IMG-20260212-WA0072.jpg",
-        "https://i.postimg.cc/9FqHyMLX/IMG-20260212-WA0073.jpg",
-        "https://i.postimg.cc/NfrvRMpZ/IMG-20260212-WA0074.jpg"
-      ],   
-      sizes:["Universal"]  
-    },
-    {  
-      id: 308,   
-      name: "GAISO",   
-      oldPrice: 599,
-      price: 399,  
-      tags: ["budget", "mens", "boys", "style watch"],
-      images: [  
-        "https://i.postimg.cc/wjqKZV6d/IMG-20260215-WA0126.jpg",
-        "https://i.postimg.cc/wjqKZV67/IMG-20260215-WA0127.jpg",
-        "https://i.postimg.cc/Mp6kNDWG/IMG-20260215-WA0128.jpg",
-        "https://i.postimg.cc/0ykgFf82/IMG-20260215-WA0129.jpg",
-        "https://i.postimg.cc/fRz4pKwW/IMG-20260215-WA0131.jpg",
-        "https://i.postimg.cc/4xWCg9dn/IMG-20260215-WA0132.jpg"
-      ],   
-      sizes:["Universal"]  
-    },
-    {  
-      id: 309,   
-      name: "FIRE BUDGET WATCH",   
-      oldPrice: 499,
-      price: 399,  
-      tags: ["budget", "mens", "boys", "style watch"],
-      img: "https://i.postimg.cc/gc8f05jm/IMG-20260115-WA0083.jpg",  
-      sizes:["Universal"]  
-    },
-    {  
-      id: 310,   
-      name: "CASIO",   
-      oldPrice: 999,
-      price: 799,  
-      tags: ["budget", "mens", "boys", "style watch", "most wanted"],
-      images: [  
-        "https://i.ibb.co/d0rZTc69/IMG-20260216-234334-502.jpg",
-        "https://i.ibb.co/VYnX0BqZ/IMG-20260216-234336-694.jpg",
-        "https://i.ibb.co/HTfPLdSg/IMG-20260216-234338-590.jpg",
-        "https://i.ibb.co/cKv7b3mH/IMG-20260216-234407-460.jpg"
-      ],   
-      sizes:["Universal"]  
-    },
-    {  
-      id: 311,   
-      name: "ROLEX",   
-      oldPrice: 1299,
-      price: 999,  
-      tags: ["premium", "mens", "boys", "style watch", "most wanted"],
-      trending: true,
-      images: [  
-        "https://i.postimg.cc/Fzcx5Q3k/IMG-20260217-WA0173.jpg",
-        "https://i.postimg.cc/bY2g21MM/IMG-20260217-WA0172.jpg",
-        "https://i.postimg.cc/59FgF8GD/IMG-20260217-WA0174.jpg"
-      ],   
-      sizes:["Universal"]  
-    },
-    {  
-      id: 312,   
-      name: "CASIO",   
-      oldPrice: 899,
-      price: 799,  
-      tags: ["budget", "mens", "boys", "style watch", "most wanted"],
-      images: [  
-        "https://i.postimg.cc/1tCZ3ftk/IMG-20260220-013855-557.jpg",
-        "https://i.postimg.cc/L5JFY2gs/IMG-20260220-013857-878.jpg",
-        "https://i.postimg.cc/qqNHh46R/IMG-20260220-013900-096.jpg",
-        "https://i.postimg.cc/sX6Rgvx7/IMG-20260220-013902-407.jpg",
-        "https://i.postimg.cc/nrXfjp9X/IMG-20260220-013904-314.jpg",
-        "https://i.postimg.cc/hvXRzcQm/IMG-20260220-013906-237.jpg"
-      ],   
-      sizes:["Universal"]  
-    },
-    {  
-      id: 313,   
-      name: "ARABIC AURA",   
-      oldPrice: 599,
-      price: 499,  
-      tags: ["budget", "mens", "boys", "style watch", "most wanted"],
-      images: [  
-        "https://i.postimg.cc/13qR7ctM/IMG-20260220-013938-462.jpg",
-        "https://i.postimg.cc/9MJcwL8f/IMG-20260220-013942-910.jpg",
-        "https://i.postimg.cc/vTTbr5kh/IMG-20260220-013944-635.jpg"
-      ],   
-      sizes:["Universal"]  
-    },
-    {  
-      id: 314,   
-      name: "CAOMI",   
-      oldPrice: 599,
-      price: 549,  
-      tags: ["budget", "mens", "boys", "style watch", "most wanted"],
-      images: [  
-        "https://i.postimg.cc/RZ6q5xPv/IMG-20260220-014007-077.jpg",
-        "https://i.postimg.cc/Nj9LqvNx/IMG-20260220-014009-209.jpg",
-        "https://i.postimg.cc/nhjMbfd4/IMG-20260220-014011-006.jpg",
-        "https://i.postimg.cc/9QRz5Hxp/IMG-20260220-014012-912.jpg",
-        "https://i.postimg.cc/3x4W5QL1/IMG-20260220-014014-926.jpg"
-      ],   
-      sizes:["Universal"]  
-    },
-    {  
-      id: 315,   
-      name: "ROLEX",   
-      oldPrice: 1499,
-      price: 1399,  
-      tags: ["premium", "mens", "boys", "style watch", "most wanted"],
-      images: [  
-        "https://i.postimg.cc/hjqB5HY6/IMG-20260219-WA0029.jpg",
-        "https://i.postimg.cc/hjqB5HYY/IMG-20260219-WA0030.jpg",
-        "https://i.postimg.cc/pdjvk20b/IMG-20260219-WA0033.jpg",
-        "https://i.postimg.cc/nztJP6W5/IMG-20260219-WA0034.jpg"
-      ],   
-      sizes:["Universal"]  
-    },
-    {  
-      id: 316,   
-      name: "FIRE",   
-      oldPrice: 499,
-      price: 399,  
-      tags: ["budget", "mens", "boys", "style watch", "most wanted"],
-      images: [  
-        "https://i.postimg.cc/mg5Z8pB2/IMG-20260219-WA0012.jpg",
-        "https://i.postimg.cc/zGcD0259/IMG-20260219-WA0013.jpg",
-        "https://i.postimg.cc/3xcrnf7V/IMG-20260219-WA0014.jpg",
-        "https://i.postimg.cc/x14jtpnr/IMG-20260219-WA0015.jpg",
-        "https://i.postimg.cc/FHRsbX59/IMG-20260219-WA0016.jpg",
-        "https://i.postimg.cc/qvRMcHfG/IMG-20260219-WA0017.jpg"
-      ],   
-      sizes:["Universal"]  
-    },
+    
   ],  
   gadgets: [  
     {id:401, name:"Wireless Headphone",oldPrice: 999, price:699, tags: ["bluetooth", "mens", "boys", "headphone"],
@@ -2331,114 +1875,7 @@ const productsData = {
       ],   
       sizes:["Universal"]  
     },
-   {  
-      id: 503,   
-      name: "VERSACE",   
-      oldPrice: 999,
-      price: 799,  
-      tags: ["premium", "ladies", "girls", "style watch"],
-      images: [  
-        "https://i.postimg.cc/pybYhgwk/IMG-20260202-WA0153.jpg",
-        "https://i.postimg.cc/xqDyJwr9/IMG-20260202-WA0154.jpg",
-        "https://i.postimg.cc/MX2bMCkS/IMG-20260202-WA0155.jpg",
-        "https://i.postimg.cc/bdcHD7Xp/IMG-20260202-WA0156.jpg",
-        "https://i.postimg.cc/vDFLgJRM/IMG-20260202-WA0157.jpg"
-      ],   
-      sizes:["Universal"]  
-    },
-   {  
-      id: 504,   
-      name: "CASIO NEW MODEL",   
-      oldPrice: 899,
-      price: 699,  
-      tags: ["premium", "ladies", "girls", "style watch"],
-      images: [  
-        "https://i.postimg.cc/J4zBK7xw/IMG-20260127-WA0198.jpg",
-        "https://i.postimg.cc/fWK9xSx3/IMG-20260127-WA0199.jpg",
-        "https://i.postimg.cc/8PzrwkH3/IMG-20260127-WA0207.jpg",
-        "https://i.postimg.cc/28SBTjwM/IMG-20260127-WA0208.jpg",
-        "https://i.postimg.cc/NfjrbG4N/IMG-20260127-WA0211.jpg"
-      ],   
-      sizes:["Universal"]  
-    },
-    {  
-      id: 505,   
-      name: "DW WATCH",   
-      oldPrice: 1299,
-      price: 999,  
-      tags: ["premium", "ladies", "girls", "style watch"],
-      images: [  
-        "https://i.postimg.cc/26q2gqbN/IMG-20260212-WA0058.jpg",
-        "https://i.postimg.cc/d1z4FqrG/IMG-20260212-WA0059.jpg",
-        "https://i.postimg.cc/pTgqv2zL/IMG-20260212-WA0060.jpg",
-        "https://i.postimg.cc/G2ZqRcG9/IMG-20260212-WA0061.jpg"
-      ],   
-      sizes:["Universal"]  
-    },  
-    {  
-      id: 506,   
-      name: "CASIO",   
-      oldPrice: 999,
-      price: 799,  
-      tags: ["budget", "mens", "boys", "style watch", "most wanted"],
-      images: [  
-        "https://i.ibb.co/d0rZTc69/IMG-20260216-234334-502.jpg",
-        "https://i.ibb.co/VYnX0BqZ/IMG-20260216-234336-694.jpg",
-        "https://i.ibb.co/HTfPLdSg/IMG-20260216-234338-590.jpg",
-        "https://i.ibb.co/cKv7b3mH/IMG-20260216-234407-460.jpg"
-      ],   
-      sizes:["Universal"]  
-    },
-    {  
-      id: 507,   
-      name: "COMBO OFFER (BUY 1 GET 1 FREE)",   
-      oldPrice: 1299,
-      price: 799,  
-      tags: ["premium", "ladies", "girls", "style watch", "combo offer"],
-      trending: true,
-      images: [  
-        "https://i.postimg.cc/wjRGqSzL/IMG-20251215-WA0303.jpg",
-        "https://i.postimg.cc/T1PtZsQx/IMG-20251215-WA0262.jpg",
-        "https://i.postimg.cc/VvNK3h4Q/IMG-20251215-WA0299.jpg",
-        "https://i.postimg.cc/T1HtGcHg/IMG-20251215-WA0301.jpg",
-        "https://i.postimg.cc/c1D9Qs4D/IMG-20251215-WA0305.jpg",
-        "https://i.postimg.cc/Nf3x4Lh0/IMG-20251215-WA0306.jpg",
-        "https://i.postimg.cc/CLBNkk2h/IMG-20251215-WA0307.jpg",
-        "https://i.postimg.cc/15kKH4xn/IMG-20251215-WA0315.jpg",
-        "https://i.postimg.cc/Dw1PYFnV/IMG-20251215-WA0318.jpg"
-      ],   
-      sizes:["Universal"]  
-    },
-    {  
-      id: 508,   
-      name: "FOR HER",   
-      oldPrice: 699,
-      price: 599,  
-      tags: ["budget", "ladies", "girls", "style watch"],
-      images: [  
-        "https://i.postimg.cc/nzL6gp2Z/IMG-20260220-013735-871.jpg",
-        "https://i.postimg.cc/ydNwtsjY/IMG-20260220-013739-160.jpg"
-      ],   
-      sizes:["Universal"]  
-    },
-    {  
-      id: 509,   
-      name: "GUCCI",   
-      oldPrice: 1299,
-      price: 999,  
-      tags: ["premium", "ladies", "girls", "style watch"],
-      images: [  
-        "https://i.postimg.cc/135cpX3R/IMG-20260220-014158-628.jpg",
-        "https://i.postimg.cc/cL97TWvf/IMG-20260220-014200-629.jpg",
-        "https://i.postimg.cc/6pjVzK87/IMG-20260220-014202-472.jpg",
-        "https://i.postimg.cc/sg6PKzMY/IMG-20260220-014204-669.jpg",
-        "https://i.postimg.cc/Jz63K8sb/IMG-20260220-014206-676.jpg",
-        "https://i.postimg.cc/R0W7DYt1/IMG-20260220-014209-562.jpg",
-        "https://i.postimg.cc/MGn7FLBP/IMG-20260220-014211-704.jpg",
-        "https://i.postimg.cc/Gp4F5fD6/IMG-20260220-014215-884.jpg"
-      ],   
-      sizes:["Universal"]  
-    },
+   
   ],  
   ladiesShoes: [  
     {  
@@ -2455,7 +1892,7 @@ const productsData = {
       ],   
       sizes: ["6", "7", "8", "9", "10"]  
     },  
-    {id:602, name:"COMING SOON",oldPrice: 0, price:0, img:"https://i.postimg.cc/KzRsTG6c/IMG-20260126-194032-717.jpg", sizes:["5","6","7","8"]},  
+   
   ],  
   accessories: [  
     {  
@@ -2470,41 +1907,14 @@ const productsData = {
       ],   
       sizes: ["Adjustable"]  
     },  
-    {id:702, name:"LOVE PEARL",oldPrice: 599, price:499,
-     tags: ["premium", "ladies", "girls", "style", "gift", "lover", "valentines"], 
-     trending: true,  
-     images: [  
-        "https://i.postimg.cc/QdNK48J6/IMG-20260210-WA0101.jpg",  
-        "https://i.postimg.cc/CxMnPhsG/IMG-20260210-WA0102.jpg",
-        "https://i.postimg.cc/t4K0rHmP/IMG-20251115-WA0017.jpg"
-      ],  
-      sizes: ["Adjustable"]  
-    },  
+    
    ],  
   coupleAccessories: [  
     {id:801, name:"Cute teddy",oldPrice: 999, price:499,
      tags: ["premium", "ladies", "girls", "style", "gift", "lover", "valentines"], 
      img:"https://i.postimg.cc/PrtVbMnk/SKU-4302-0-1731380980771.webp.jpg", sizes:["Pair"]},  
     
-    {id:802, name:"CASIO COUPLE WATCH",oldPrice: 1699, price:999,
-     tags: ["premium", "ladies", "girls", "style", "gift", "lover", "valentines"],
-     img:"https://i.postimg.cc/Jnp2X4x3/IMG-20260206-WA0090.jpg", sizes:["Pair"]},  
-    
-    {id:803, name:"CASIO COUPLE WATCH",oldPrice: 1699, price:999,
-     tags: ["premium", "ladies", "girls", "style", "gift", "lover", "valentines"],
-     img:"https://i.postimg.cc/RFgDtVdQ/IMG-20260206-WA0091.jpg", sizes:["Pair"]},  
-    
-    {id:804, name:"CASIO COUPLE WATCH",oldPrice: 1699, price:999,
-     tags: ["premium", "ladies", "girls", "style", "gift", "lover", "valentines"],
-     img:"https://i.postimg.cc/cHxz68R7/IMG-20260206-WA0092.jpg", sizes:["Pair"]},  
-    
-    {id:805, name:"CASIO COUPLE WATCH",oldPrice: 1699, price:999,
-     tags: ["premium", "ladies", "girls", "style", "gift", "lover", "valentines"],
-     img:"https://i.postimg.cc/LXxbP6DV/IMG-20260206-WA0093.jpg", sizes:["Pair"]},  
-   
-    {id:806, name:"Coming Soon",oldPrice: 0, price:0,
-     tags: ["premium", "ladies", "girls", "style", "gift", "lover", "valentines"],
-     img:"https://i.postimg.cc/Lsr0zK2q/6835e538a140292e4940a0ae06d81bfa.jpg", sizes:["Pair"]},  
+      
     ],  
   ladiesWear: [  
     {id:901, name:"Ladies Summer Top",oldPrice: 1699, price:0,

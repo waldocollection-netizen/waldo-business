@@ -608,39 +608,40 @@ button:hover{
 }
    
 /* TOAST */
-#toast {  
-  visibility: hidden;  
-  min-width: 250px;  
-  background-color: #007BFF;  /* premium blue background */
-  color: #ffffff;              /* white text */
-  text-align: center;  
-  padding: 16px;  
-  position: fixed;  
-  z-index: 30000;  
-  bottom: 40px;  
-  left: 50%;  
-  transform: translateX(-50%);  
-  font-size: 9px;  
-  letter-spacing: 3px;  
-  text-transform: uppercase;  
-  border: 1px solid #0056b3;  /* slightly darker blue border for depth */
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08); /* soft subtle depth */
-  border-radius: 4px;  
+
+#toast{
+  visibility:hidden;
+  min-width:250px;
+  background-color:#800020; /* burgundy */
+  color:#FFFFF0; /* ivory text */
+  text-align:center;
+  padding:16px;
+  position:fixed;
+  z-index:30000;
+  bottom:40px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:9px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  border:1px solid rgba(255,255,240,0.4);
+  box-shadow:0 8px 20px rgba(0,0,0,0.15);
+  border-radius:4px;
 }
 
-#toast.show { 
-  visibility: visible; 
-  animation: fadein 0.5s, fadeout 0.5s 2.5s; 
+#toast.show{
+  visibility:visible;
+  animation:fadein 0.5s, fadeout 0.5s 2.5s;
 }
 
-@keyframes fadein { 
-  from {bottom: 0; opacity: 0;} 
-  to {bottom: 40px; opacity: 1;} 
+@keyframes fadein{
+  from{bottom:0; opacity:0;}
+  to{bottom:40px; opacity:1;}
 }
 
-@keyframes fadeout { 
-  from {bottom: 40px; opacity: 1;} 
-  to {bottom: 0; opacity: 0;} 
+@keyframes fadeout{
+  from{bottom:40px; opacity:1;}
+  to{bottom:0; opacity:0;}
 }
 
 

@@ -148,94 +148,6 @@ body{
     color: #555555;
 }
 
-/* ===== MAIN CATEGORIES PREMIUM GRID ===== */
-.main-categories {
-  padding: 20px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-}
-
-/* Each main category card */
-.main-category {
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  aspect-ratio: 16 / 9;
-  border: 1px solid #e5e5e5; /* subtle premium border */
-  border-radius: 12px;
-  background: #fff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Zoom & shadow on hover */
-.main-category:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-}
-
-/* Gradient overlay for premium feel */
-.main-category::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.1) 60%);
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* Image inside card */
-.main-category img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(70%) grayscale(20%);
-  transition: transform 1.5s cubic-bezier(0.2,1,0.3,1), filter 0.8s ease;
-}
-
-/* Hover effect on image */
-.main-category:hover img {
-  filter: brightness(90%) grayscale(0%);
-  transform: scale(1.06);
-}
-
-/* Category label at bottom */
-.main-category span {
-  position: absolute;
-  bottom: 30px;
-  left: 30px;
-  color: #ffffff;
-  font-size: 12px;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  z-index: 2;
-  border-bottom: 1px solid rgba(255,255,255,0.6);
-  padding-bottom: 10px;
-  font-weight: 600;
-}
-
-/* Explore Collection overlay */
-.main-category::before {
-  content: 'EXPLORE COLLECTION';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 3;
-  font-size: 10px;
-  letter-spacing: 4px;
-  opacity: 0;
-  transition: 0.4s ease;
-  border: 1px solid rgba(255,255,255,0.7);
-  color: #ffffff;
-  padding: 12px 20px;
-  text-transform: uppercase;
-}
-
-/* Show overlay on hover */
-.main-category:hover::before {
-  opacity: 1;
-}
  
 /* PREMIUM CATEGORY GRID */  
 .categories{  
@@ -1489,28 +1401,6 @@ onclick="openEmail()" alt="Email">
   </div>
 </div>  
 
-<!-- ===== MAIN CATEGORIES ===== -->
-<div class="main-categories">
-  <div class="main-category" onclick="openSubCategory('men')">
-    <img src="https://i.ibb.co/ZpZs0r0y/1605feca3b5e85f5f70493bb6b7b015a.jpg" alt="Men">
-    <span>Men</span>
-  </div>
-  <div class="main-category" onclick="openSubCategory('women')">
-    <img src="https://i.postimg.cc/43VB4VWZ/flat-lay-coffee-keyboard-decoration.jpg" alt="Women">
-    <span>Women</span>
-  </div>
-  <div class="main-category" onclick="openSubCategory('others')">
-    <img src="https://i.ibb.co/HL2SdgZ8/948da70bec8894e8a968fd04cf455a7c.jpg" alt="Others">
-    <span>Others</span>
-  </div>
-</div>
-
-<!-- ===== SUBCATEGORY SCREEN ===== -->
-<div class="categories" id="subCategoryScreen" style="display:none;">
-  <button class="back-btn" onclick="goBackHome()">← Back</button>
-  <h2 id="subCategoryTitle"></h2>
-  <div class="subcategory-grid" id="subcategoryGrid"></div>
-</div>
   
 <div class="categories" id="categoryScreen">
   <div class="category reveal" onclick="openCategory('mensWear')">  
@@ -2862,52 +2752,7 @@ function goHomeFromHeader() {
   runReveal();
 }
 
- // Subcategory data
-const subCategories = {
-  men: [
-    { name: "Mens Wear", key: "mensWear", img: "https://i.ibb.co/ZpZs0r0y/1605feca3b5e85f5f70493bb6b7b015a.jpg" },
-    { name: "Mens Shoes", key: "mensShoes", img: "https://i.ibb.co/V0Rnyf16/c5570d8073a509174d1b244bafc05c5e-1.jpg" },
-    { name: "Mens Watches", key: "mensWatches", img: "https://i.ibb.co/DPctDGPc/b42b9953e094fcf4905d0dcdd54dffc9.jpg" },
-  ],
-  women: [
-    { name: "Ladies Watches", key: "ladiesWatches", img: "https://i.postimg.cc/43VB4VWZ/flat-lay-coffee-keyboard-decoration.jpg" },
-    { name: "Ladies Shoes", key: "ladiesShoes", img: "https://i.ibb.co/q3FK5GmR/5abb6b0fe4b6153e506fc30774cd7e9a.jpg" },
-    { name: "Ladies Wear", key: "comingSoon", img: "https://i.ibb.co/SD7bTSYH/0808e1fb7ee460268f8e885c1af1fbba.jpg", comingSoon:true },
-  ],
-  others: [
-    { name: "Gadgets", key: "gadgets", img: "https://i.ibb.co/D0YvHDP/1394b92cd9222ad3827348a2f1728b1a.jpg" },
-    { name: "Accessories", key: "accessories", img: "https://i.ibb.co/HL2SdgZ8/948da70bec8894e8a968fd04cf455a7c.jpg" },
-    { name: "Couple Items", key: "coupleAccessories", img: "https://i.ibb.co/GQGg1rhp/9ee44bd2a1a83107c02332a52a46fd85.jpg" },
-  ]
-};
 
-// Open subcategory for main category
-function openSubCategory(mainCat) {
-  hideAll(); // hide everything first
-
-  const grid = document.getElementById("subcategoryGrid");
-  const title = document.getElementById("subCategoryTitle");
-
-  title.innerText = mainCat.charAt(0).toUpperCase() + mainCat.slice(1);
-  grid.innerHTML = "";
-
-  subCategories[mainCat].forEach(cat => {
-    const div = document.createElement("div");
-    div.className = "category reveal";
-    div.onclick = () => {
-      if (cat.comingSoon) {
-        alert("COMING SOON!");
-      } else {
-        openCategory(cat.key); // your existing product loader
-      }
-    };
-    div.innerHTML = `<img src="${cat.img}" alt="${cat.name}"><span>${cat.name}</span>`;
-    grid.appendChild(div);
-  });
-
-  document.getElementById("subCategoryScreen").style.display = "block";
-}
- 
  function openCategory(catKey) {
     hideAll();
     currentCategory = catKey;

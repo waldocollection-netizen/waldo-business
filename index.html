@@ -481,7 +481,10 @@ button:hover{
 }
     
 /* REVIEWS */
-
+#reviewsDisplay h2{
+  color:#800020;
+}
+ 
 #reviewsDisplay .review{
   background:#800020; /* ivory card */
   border:1px solid rgba(128,0,32,0.2);
@@ -1378,7 +1381,7 @@ onclick="openEmail()" alt="Email">
 </div>  
  <div class="trust-strip">
   <div class="trust-track">
-    <span>⭐ 12+ Happy Customers</span>
+    <span>⭐ 18+ Happy Customers</span>
     <span>• Premium Quality Products</span>
     <span>• Trusted & Verified Store</span>
     <span>• Fast Support & Assistance</span>
@@ -1387,7 +1390,7 @@ onclick="openEmail()" alt="Email">
     <span>• Exclusive Limited Editions</span>
 
     <!-- duplicate for seamless loop -->
-    <span>⭐ 12+ Happy Customers</span>
+    <span>⭐ 18+ Happy Customers</span>
     <span>• Premium Quality Products</span>
     <span>• Trusted & Verified Store</span>
     <span>• Fast Support & Assistance</span>
@@ -2541,12 +2544,10 @@ function confirmOrder(e) {
     { id: "phone1", label: "Phone number" }
   ];
 
-  // Remove previous highlights
   fields.forEach(f =>
     document.getElementById(f.id).classList.remove("input-error")
   );
 
-  // Validate required fields
   let firstEmpty = null;
 
   for (let f of fields) {
@@ -2558,7 +2559,7 @@ function confirmOrder(e) {
   }
 
   if (firstEmpty) {
-    showToast(`Please fill your ${firstEmpty.labels?.[0]?.innerText || firstEmpty.id}`);
+    showToast(`Please fill your ${firstEmpty.id}`);
     firstEmpty.classList.add("input-error");
     firstEmpty.scrollIntoView({ behavior: "smooth", block: "center" });
     firstEmpty.focus();
@@ -2570,7 +2571,6 @@ function confirmOrder(e) {
     return;
   }
 
-  // Customer details
   const name = document.getElementById("name").value;
   const address = document.getElementById("address").value;
   const city = document.getElementById("city").value;
@@ -2580,70 +2580,56 @@ function confirmOrder(e) {
   const phone1 = document.getElementById("phone1").value;
   const phone2 = document.getElementById("phone2").value;
 
-  // Calculate totals
-  let subtotal = cart.reduce(
-    (sum, item) => sum + item.price * item.qty,
-    0
-  );
+  let subtotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
 
   let discount = discountAmount || 0;
   let finalAmount = finalPayable || subtotal;
 
-  // Build WhatsApp message
   let message = "";
 
-  message += "*✨ AETHEL COLLECTIVE — ORDER REQUEST ✨*\n";
-  message += "━━━━━━━━━━━━━━━━━━━━━━━\n";
-  message += "EST. 2025\n";
-  message += "━━━━━━━━━━━━━━━━━━━━━━━\n\n";
+  message += "🧾 *WALDO INN – ORDER REQUEST*\n";
+  message += "━━━━━━━━━━━━━━━━━━━━\n\n";
 
-  message += "*🛍️ ORDER DETAILS*\n";
-  message += "━━━━━━━━━━━━━━━━━━━━━━━\n";
+  message += "🛍 *ORDER ITEMS*\n";
 
   cart.forEach((item, i) => {
     message += `\n${i + 1}. ${item.name}\n`;
-    message += `   Size        : ${item.size}\n`;
-    message += `   Quantity    : ${item.qty}\n`;
-    message += `   Unit Price  : ₹${item.price}\n`;
-    message += `   Subtotal    : ₹${item.price * item.qty}\n`;
-    message += `   Product     : ${item.selectedImage}\n`;
+    message += `• Size : ${item.size}\n`;
+    message += `• Qty  : ${item.qty}\n`;
+    message += `• Price: ₹${item.price}\n`;
+    message += `• Link : ${item.selectedImage}\n`;
   });
 
-  message += "\n━━━━━━━━━━━━━━━━━━━━━━━\n";
-  message += "*💰 PAYMENT SUMMARY*\n";
-  message += "━━━━━━━━━━━━━━━━━━━━━━━\n";
+  message += "\n━━━━━━━━━━━━━━━━━━━━\n";
 
-  message += `Subtotal        : ₹${subtotal}\n`;
+  message += "💰 *PAYMENT SUMMARY*\n";
+  message += `Subtotal : ₹${subtotal}\n`;
 
   if (discount > 0) {
-    message += `Discount        : -₹${discount}\n`;
+    message += `Discount : -₹${discount}\n`;
   }
 
-  message += `*Final Amount:* ₹${finalAmount}\n`;
+  message += `Total    : ₹${finalAmount}\n`;
 
-  message += "━━━━━━━━━━━━━━━━━━━━━━━\n\n";
+  message += "\n━━━━━━━━━━━━━━━━━━━━\n";
 
-  message += "*📦 SHIPPING DETAILS*\n";
-  message += "━━━━━━━━━━━━━━━━━━━━━━━\n";
-
-  message += `*Name:* ${name}\n`;
-  message += `*Address:* ${address}\n`;
-  message += `*City:* ${city}\n`;
-  message += `*District:* ${district}\n`;
-  message += `*State:* ${state}\n`;
-  message += `*PIN Code:* ${pin}\n`;
-  message += `*Phone:* ${phone1}\n`;
+  message += "📦 *DELIVERY DETAILS*\n";
+  message += `Name : ${name}\n`;
+  message += `Address : ${address}\n`;
+  message += `City : ${city}\n`;
+  message += `District : ${district}\n`;
+  message += `State : ${state}\n`;
+  message += `PIN : ${pin}\n`;
+  message += `Phone : ${phone1}\n`;
 
   if (phone2) {
-    message += `*Alternate Phone:* ${phone2}\n`;
+    message += `Alt Phone : ${phone2}\n`;
   }
 
-  message += "━━━━━━━━━━━━━━━━━━━━━━━\n\n";
-  message += "Thank you for choosing Aethel Collective.\n";
-  message += "Where Trust Meets Style.";
+  message += "\n━━━━━━━━━━━━━━━━━━━━\n";
+  message += "Thank you for shopping with *Waldo Inn* ✨";
 
-  // Open WhatsApp
-  const waURL = `https://wa.me/919074002303?text=${encodeURIComponent(message)}`;
+  const waURL = `https://wa.me/919778762507?text=${encodeURIComponent(message)}`;
   window.open(waURL, "_blank");
 }
 
@@ -2660,12 +2646,10 @@ function confirmInstagramOrder(e) {
     { id: "phone1", label: "Phone number" }
   ];
 
-  // Remove previous highlights
   fields.forEach(f =>
     document.getElementById(f.id).classList.remove("input-error")
   );
 
-  // Validate fields
   let firstEmpty = null;
 
   for (let f of fields) {
@@ -2677,7 +2661,7 @@ function confirmInstagramOrder(e) {
   }
 
   if (firstEmpty) {
-    showToast(`Please fill your ${firstEmpty.labels?.[0]?.innerText || firstEmpty.id}`);
+    showToast(`Please fill your ${firstEmpty.id}`);
     firstEmpty.classList.add("input-error");
     firstEmpty.scrollIntoView({ behavior: "smooth", block: "center" });
     firstEmpty.focus();
@@ -2689,7 +2673,6 @@ function confirmInstagramOrder(e) {
     return;
   }
 
-  // Customer details
   const name = document.getElementById("name").value;
   const address = document.getElementById("address").value;
   const city = document.getElementById("city").value;
@@ -2699,75 +2682,52 @@ function confirmInstagramOrder(e) {
   const phone1 = document.getElementById("phone1").value;
   const phone2 = document.getElementById("phone2").value;
 
-  // Calculate totals
-  let subtotal = cart.reduce(
-    (sum, item) => sum + item.price * item.qty,
-    0
-  );
+  let subtotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
 
   let discount = discountAmount || 0;
   let finalAmount = finalPayable || subtotal;
 
-  // Build message
   let message = "";
 
-  message += "*✨ AETHEL COLLECTIVE — ORDER REQUEST ✨*\n";
-  message += "━━━━━━━━━━━━━━━━━━━━━━━\n";
-  message += "EST. 2025\n";
-  message += "━━━━━━━━━━━━━━━━━━━━━━━\n\n";
+  message += "🧾 WALDO INN — ORDER REQUEST\n\n";
 
-  message += "*🛍️ ORDER DETAILS*\n";
-  message += "━━━━━━━━━━━━━━━━━━━━━━━\n";
+  message += "🛍 ORDER ITEMS\n";
 
   cart.forEach((item, i) => {
     message += `\n${i + 1}. ${item.name}\n`;
-    message += `   Size        : ${item.size}\n`;
-    message += `   Quantity    : ${item.qty}\n`;
-    message += `   Unit Price  : ₹${item.price}\n`;
-    message += `   Subtotal    : ₹${item.price * item.qty}\n`;
-    message += `   Product     : ${item.selectedImage}\n`;
+    message += `Size : ${item.size}\n`;
+    message += `Qty  : ${item.qty}\n`;
+    message += `Price: ₹${item.price}\n`;
+    message += `Link : ${item.selectedImage}\n`;
   });
 
-  message += "\n━━━━━━━━━━━━━━━━━━━━━━━\n";
-  message += "*💰 PAYMENT SUMMARY*\n";
-  message += "━━━━━━━━━━━━━━━━━━━━━━━\n";
-
-  message += `Subtotal        : ₹${subtotal}\n`;
+  message += "\n💰 PAYMENT SUMMARY\n";
+  message += `Subtotal : ₹${subtotal}\n`;
 
   if (discount > 0) {
-    message += `Discount        : -₹${discount}\n`;
+    message += `Discount : -₹${discount}\n`;
   }
 
-  message += `*Final Amount:* ₹${finalAmount}\n`;
+  message += `Total : ₹${finalAmount}\n`;
 
-  message += "━━━━━━━━━━━━━━━━━━━━━━━\n\n";
-
-  message += "*📦 SHIPPING DETAILS*\n";
-  message += "━━━━━━━━━━━━━━━━━━━━━━━\n";
-
-  message += `*Name:* ${name}\n`;
-  message += `*Address:* ${address}\n`;
-  message += `*City:* ${city}\n`;
-  message += `*District:* ${district}\n`;
-  message += `*State:* ${state}\n`;
-  message += `*PIN Code:* ${pin}\n`;
-  message += `*Phone:* ${phone1}\n`;
+  message += "\n📦 DELIVERY DETAILS\n";
+  message += `Name : ${name}\n`;
+  message += `Address : ${address}\n`;
+  message += `City : ${city}\n`;
+  message += `District : ${district}\n`;
+  message += `State : ${state}\n`;
+  message += `PIN : ${pin}\n`;
+  message += `Phone : ${phone1}\n`;
 
   if (phone2) {
-    message += `*Alternate Phone:* ${phone2}\n`;
+    message += `Alt Phone : ${phone2}\n`;
   }
 
-  message += "━━━━━━━━━━━━━━━━━━━━━━━\n\n";
-  message += "Thank you for choosing Aethel Collective.\n";
-  message += "Where Trust Meets Style.";
+  message += "\nThank you for choosing WALDO INN ✨";
 
-  // Copy to clipboard & open Instagram
   navigator.clipboard.writeText(message).then(() => {
-    showToast("MESSAGE COPIED — OPENING INSTAGRAM");
-    window.open(
-      "https://www.instagram.com/aethel_collective/",
-      "_blank"
-    );
+    showToast("MESSAGE COPIED — OPEN INSTAGRAM DM");
+    window.open("https://www.instagram.com/waldo.inn", "_blank");
   }).catch(() => {
     showToast("COPY FAILED — PLEASE COPY MANUALLY");
   });

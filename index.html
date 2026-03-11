@@ -2078,14 +2078,14 @@ function goHomeFromHeader() {
 
             <div class="info">
   <b>${p.name}</b>
-  <div class="brand-line">Selected by Aethel Collective</div>
+  <div class="brand-line">Selected by Waldo INN</div>
   <span class="price-tag">
     ${p.oldPrice ? `<span class="old-price">₹${p.oldPrice}</span>` : ""}
     <span class="new-price">₹${p.price}</span>
   </span>
                 ${selector}
                 <button onclick="addToCart(${p.id})">
-                    ${p.price === 0 ? "COMING SOON" : "ADD TO BAG"}
+                    ${p.price === 0 ? "COMING SOON" : "ADD TO CART"}
                 </button>
             </div>
 
@@ -2248,7 +2248,7 @@ function renderProducts(productsArray) {
                 <b>${p.name}</b>
 
                 <div class="brand-line">
-                    Selected by Aethel Collective
+                    Selected by Waldo INN
                 </div>
 
                 <span class="price-tag">
@@ -2269,7 +2269,7 @@ function renderProducts(productsArray) {
 
                 <button onclick='addToCart(${JSON.stringify(p)})'>
 
-                    ${p.price===0?"COMING SOON":"ADD TO BAG"}
+                    ${p.price===0?"COMING SOON":"ADD TO CART"}
 
                 </button>
 
@@ -2928,7 +2928,7 @@ function searchProducts() {
 
         <div class="info">
           <b>${p.name}</b>
-          <div class="brand-line">Selected by Aethel Collective</div>
+          <div class="brand-line">Selected by Waldo INN</div>
           <span class="price-tag">
             ${p.oldPrice ? `<span class="old-price">₹${p.oldPrice}</span>` : ""}
             <span class="new-price">₹${p.price}</span>
@@ -2937,7 +2937,7 @@ function searchProducts() {
           ${selector}
 
           <button onclick='addToCart(${JSON.stringify(p)})'>
-            ADD TO BAG
+            ADD TO CART
           </button>
         </div>
       </div>
@@ -3019,7 +3019,7 @@ function showTrending() {
 
         <div class="info">
           <b>${p.name}</b>
-          <div class="brand-line">Selected by Aethel Collective</div>
+          <div class="brand-line">Selected by Waldo INN</div>
           <span class="price-tag">
             ${p.oldPrice ? `<span class="old-price">₹${p.oldPrice}</span>` : ""}
             <span class="new-price">₹${p.price}</span>
@@ -3035,7 +3035,7 @@ function showTrending() {
           }
 
           <button onclick='addToCart(${JSON.stringify(p)})'>
-            ADD TO BAG
+            ADD TO CART
           </button>
         </div>
       </div>

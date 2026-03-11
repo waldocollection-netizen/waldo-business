@@ -1,106 +1,132 @@
- <!DOCTYPE html>  <html lang="en">  
+ <!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
 
-  <title>AETHEL COLLECTIVE – Premium Accessories Store</title>
-  <!-- Favicon for browser tab -->
-  <link rel="icon" href="/favicon.ico" sizes="any">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Playfair+Display:ital,wght@1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+ 
+<title>WALDO INN – Premium Accessories Store</title>
+
+<!-- Favicon for browser tab -->
+<link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
 <link rel="apple-touch-icon" href="/favicon.png">
 
-  <meta name="description" content="Aethel Collective offers premium fashion accessories and curated collections for modern style lovers. Shop exclusive designs now." />
+<meta name="description" content="Waldo Inn offers premium fashion products and curated accessories for modern style lovers. Discover trending collections today.">
 
-  <meta name="robots" content="index, follow" />  
-  
-  <!-- Add this JSON-LD here -->
-  <script> type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "AETHEL COLLECTIVE",
-    "url": "https://aethelcollective.com",
-    "logo": "/favicon.png" }
-  </script>
-  <style>
-/* PREMIUM BLACK & WHITE THEME */  
-:root {  
-  --gold: #000000;  
-  --dark-grey: #f8f8f8;
-  --border: #e5e5e5;  
-}  
-  
+<meta name="robots" content="index, follow">
+
+<!-- Structured Data for SEO -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Organization",
+ "name": "WALDO INN",
+ "url": "https://waldoinn.vercel.app",
+ "logo": "https://waldoinn.vercel.app/favicon.png"
+}
+</script>
+
+</head>
+
+<style>
+
+/* WALDO INN BURGUNDY THEME */
+
+:root{
+  --primary:#800020;
+  --text:#FFFFF0;
+  --border:rgba(255,255,240,0.25);
+}
+
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family: 'Times New Roman', serif;
-}  
-
-body {  
-  font-family: 'Poppins', sans-serif;  
-  background: #ffffff;  
-  color: #111111;  
-}  
-
-html {  
-  scroll-behavior: smooth;  
-}  
-
-/* HEADER */      
-header{  
-  position: fixed;  
-  top: 0;  
-  left: 0;  
-  width: 100%;  
-  height: 70px;  
-  background:#ffffff;  
-  z-index: 9999;  
-  transform: translateY(0);  
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);  
-  border-bottom: 1px solid var(--border);
-  display: flex;  
-  justify-content: center;  
-  align-items: center;  
-}  
-  
-.store-title{  
-  display: flex;  
-  align-items: center;  
-  gap: 12px;  
-  font-size: 18px;  
-  letter-spacing: 6px;  
-  font-weight: 400;  
-  cursor: pointer;  
-  text-transform: uppercase;  
-  color: #000000;
+  font-family:'Times New Roman', serif;
 }
-  
-.store-logo {  
-  height: 28px;  
-  width: auto;  
-  object-fit: contain;  
-}  
-  
-.cart-btn{  
-  position: absolute;  
-  right: 15px;  
-  font-size: 9px;  
-  letter-spacing: 1px;  
-  text-transform: uppercase;  
-  border: 1px solid #000000;  
-  color: #000000;
-  background: transparent;
-  padding: 5px 10px;  
-  cursor: pointer;  
-  display: none;  
-}  
-  
-header.hide { transform: translateY(-100%); }  
-  
-body{ padding-top: 90px; }  
-  
+
+body{
+  font-family:'Poppins', sans-serif;
+  background:#FFFFF0;
+  color:var(--text);
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+
+/* HEADER */
+
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:70px;
+  background:#800020;
+  z-index:9999;
+  transform:translateY(0);
+  transition:transform 0.4s cubic-bezier(0.4,0,0.2,1);
+  border-bottom:1px solid var(--border);
+
+  display:flex;
+  justify-content:space-between;   /* left + right layout */
+  align-items:center;
+  padding:0 18px;
+}
+
+
+/* STORE TITLE + LOGO (LEFT SIDE) */
+
+.store-title{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-size:18px;
+  letter-spacing:6px;
+  font-weight:400;
+  cursor:pointer;
+  text-transform:uppercase;
+  color:var(--text);
+}
+
+.store-logo{
+  height:28px;
+  width:auto;
+  object-fit:contain;
+}
+
+
+/* CART BUTTON (RIGHT SIDE) */
+
+.cart-btn{
+  font-size:9px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  border:1px solid var(--text);
+  color:var(--text);
+  background:transparent;
+  padding:5px 10px;
+  cursor:pointer;
+  display:none;
+}
+
+
+header.hide{
+  transform:translateY(-100%);
+}
+
+
+body{
+  padding-top:90px;
+}
+ 
 /* HERO TEXT */  
 .welcome-text{   
     text-align:center;   
@@ -191,215 +217,226 @@ body{ padding-top: 90px; }
   
 .category:hover::before { opacity: 1; }
   
-/* AESTHETIC COMING SOON OVERLAY */  
-.coming-soon-overlay {  
-  position: absolute;  
-  top: 50%;  
-  left: 50%;  
-  transform: translate(-50%, -50%);  
-  color: #ffffff;  
-  font-size: 14px;  
-  letter-spacing: 8px;  
-  text-transform: uppercase;  
-  z-index: 5;  
-  font-weight: 300;  
-  white-space: nowrap;  
-  pointer-events: none;  
-}  
-  
-.coming-soon {
-  filter: brightness(40%) !important;  
-}  
+/* AESTHETIC COMING SOON OVERLAY */
 
-/* This hides the explore text specifically for the coming soon category */  
-.coming-soon:hover::before {  
-  display: none;  
+.coming-soon-overlay{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  color:#FFFFF0;   /* ivory text for WALDO INN */
+  font-size:14px;
+  letter-spacing:8px;
+  text-transform:uppercase;
+  z-index:5;
+  font-weight:300;
+  white-space:nowrap;
+  pointer-events:none;
+}
+
+.coming-soon{
+  filter:brightness(40%) !important;
+}
+
+/* Hide explore text for coming soon category */
+
+.coming-soon:hover::before{
+  display:none;
 }
   
-/* PRODUCTS */  
+/* PRODUCTS */
+
 .section{
   padding:15px;
   display:none;
-}  
-
-.products {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
 }
 
-.product {
-  background: #ffffff;
-  border: 1px solid #e5e5e5;
-  border-radius: 6px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.03); /* very soft depth */
-  transition: transform 0.3s ease;
+.products{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
 }
 
-.product:hover {
-  transform: translateY(-3px); /* slight lift only */
+.product{
+  background:#FFFFF0; /* ivory card */
+  border:1px solid rgba(128,0,32,0.15);
+  border-radius:6px;
+  overflow:hidden;
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+  transition:transform 0.3s ease;
 }
 
-.product img {
-  width: 100%;
-  aspect-ratio: 1/1;
-  object-fit: cover;
-  cursor: pointer;
-  opacity: 0;
-  transition: transform 0.3s ease, opacity 0.5s ease;
+.product:hover{
+  transform:translateY(-3px);
 }
 
-.product img.loaded {
-  opacity: 1;
+.product img{
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  cursor:pointer;
+  opacity:0;
+  transition:transform 0.3s ease, opacity 0.5s ease;
 }
 
-.product img:hover {
-  transform: scale(1.04); /* subtle zoom */
+.product img.loaded{
+  opacity:1;
 }
 
-.product button {
-  background: #000000;
-  color: #ffffff;
-  border: none;
-  padding: 8px 14px;
-  margin-top: 8px;
-  cursor: pointer;
-  transition: background 0.2s ease;
-  font-weight: bold;
-  border-radius: 4px;
+.product img:hover{
+  transform:scale(1.04);
 }
 
-.product button:hover {
-  background: #111111;
+.product button{
+  background:#800020;
+  color:#FFFFF0;
+  border:none;
+  padding:8px 14px;
+  margin-top:8px;
+  cursor:pointer;
+  transition:0.25s ease;
+  font-weight:bold;
+  border-radius:4px;
+}
+
+.product button:hover{
+  background:#FFFFF0;
+  color:#800020;
+  border:1px solid #800020;
 }
 
 .info{
-  padding:15px; 
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  padding:15px;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
 }
 
-.info b { 
-  display: block; 
-  font-size: 11px; 
-  text-transform: uppercase; 
-  letter-spacing: 1px; 
-  margin-bottom: 8px; 
-  height: 32px; 
-  overflow: hidden; 
-  font-weight: 400;
-  color: #111111;
-}  
-
-.price-tag {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  white-space: nowrap;
-  margin-left: 8px;
+.info b{
+  display:block;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  margin-bottom:8px;
+  height:32px;
+  overflow:hidden;
+  font-weight:400;
+  color:#800020; /* burgundy text */
 }
 
-.old-price {
-  text-decoration: line-through;
-  color: #999999;
-  font-size: 13px;
+.price-tag{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  white-space:nowrap;
+  margin-left:8px;
 }
 
-.new-price {
-  color: #000000;
-  font-weight: 600;
-  font-size: 14px;
+.old-price{
+  text-decoration:line-through;
+  color:#8a8a8a;
+  font-size:13px;
 }
 
-.thumbs {
-  display: flex;
-  gap: 6px;
-  justify-content: center;
-  margin-top: 8px;
+.new-price{
+  color:#c1121f; /* red accent */
+  font-weight:600;
+  font-size:14px;
 }
 
-.thumb {
-  width: 40px;
-  height: 40px;
-  object-fit: cover;
-  border: 1px solid #e5e5e5;
-  cursor: pointer;
-  opacity: 0.6;
-  border-radius: 4px;
-  transition: transform 0.2s, opacity 0.2s, border-color 0.2s;
+.thumbs{
+  display:flex;
+  gap:6px;
+  justify-content:center;
+  margin-top:8px;
 }
 
-.thumb:hover {
-  opacity: 1;
-  transform: scale(1.08);
-  border-color: #000000;
+.thumb{
+  width:40px;
+  height:40px;
+  object-fit:cover;
+  border:1px solid rgba(128,0,32,0.15);
+  cursor:pointer;
+  opacity:0.6;
+  border-radius:4px;
+  transition:transform 0.2s, opacity 0.2s, border-color 0.2s;
 }
 
-.scrollable-thumbs {
-  overflow-x: auto;
-  justify-content: flex-start !important;
-  padding-bottom: 5px; 
+.thumb:hover{
+  opacity:1;
+  transform:scale(1.08);
+  border-color:#800020;
 }
 
-.scrollable-thumbs::-webkit-scrollbar {
-  height: 6px;
+.scrollable-thumbs{
+  overflow-x:auto;
+  justify-content:flex-start !important;
+  padding-bottom:5px;
 }
 
-.scrollable-thumbs::-webkit-scrollbar-track {
-  background: #f2f2f2;
+.scrollable-thumbs::-webkit-scrollbar{
+  height:6px;
 }
 
-.scrollable-thumbs::-webkit-scrollbar-thumb {
-  background: #cccccc;
-  border-radius: 3px;
+.scrollable-thumbs::-webkit-scrollbar-track{
+  background:#f3eaea;
+}
+
+.scrollable-thumbs::-webkit-scrollbar-thumb{
+  background:#800020;
+  border-radius:3px;
 }
     
-/* INPUTS/BUTTONS */  
-select, input, textarea{  
-  width:100%;  
-  padding:12px;  
-  margin-top:8px;  
-  border: 1px solid #e5e5e5;  
-  background: #ffffff;  
-  color: #111111;  
-  font-size: 10px;  
-  text-transform: uppercase;  
-  border-radius: 0;  
-  letter-spacing: 1px;  
-}  
+/* INPUTS / BUTTONS */
 
-select:focus, input:focus, textarea:focus{
-  outline: none;
-  border-color: #000000;
+select, input, textarea{
+  width:100%;
+  padding:12px;
+  margin-top:8px;
+  border:1px solid rgba(128,0,32,0.25);
+  background:#FFFFF0; /* ivory field */
+  color:#800020; /* burgundy text */
+  font-size:10px;
+  text-transform:uppercase;
+  border-radius:0;
+  letter-spacing:1px;
 }
 
-button {  
-  border: 1px solid #000000;  
-  color: #000000;  
-  background: transparent;  
-  padding: 14px 18px;  
-  font-size: 10px;  
-  letter-spacing: 3px;  
-  text-transform: uppercase;  
-  cursor: pointer;  
-  transition: 0.3s ease;  
-}  
+select:focus, input:focus, textarea:focus{
+  outline:none;
+  border-color:#800020;
+}
 
-button:hover {  
-  background: #000000;  
-  color: #ffffff;  
-  transform: translateY(-1px);  
-}  
 
-/* Container for checkout buttons */
-.checkout-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-top: 30px;
+/* BUTTON */
+
+button{
+  border:1px solid #FFFFF0;
+  color:#FFFFF0;
+  background:transparent;
+  padding:14px 18px;
+  font-size:10px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:0.3s ease;
+}
+
+button:hover{
+  background:#FFFFF0;
+  color:#800020;
+  transform:translateY(-1px);
+}
+
+
+/* CHECKOUT BUTTON CONTAINER */
+
+.checkout-buttons{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  margin-top:30px;
 }
 
 /* WhatsApp button style */
@@ -444,321 +481,328 @@ button:hover {
 }
     
 /* REVIEWS */
-#reviewsDisplay .review {
-  background:#ffffff;
-  border:1px solid #e5e5e5;
+#reviewsDisplay h2{
+  color:#800020;
+}
+ 
+#reviewsDisplay .review{
+  background:#800020; /* ivory card */
+  border:1px solid rgba(128,0,32,0.2);
   padding:15px;
-  color:#111111;
+  color:#FFFFF0;
+  border-radius:4px;
 }
 
-.review .review-name {
+.review .review-name{
   font-weight:600;
-  color:#000000;
+  color:#800020;
   letter-spacing:1px;
 }
 
-.review .review-rating {
+.review .review-rating{
   margin:5px 0;
-  color: #000000; /* clean black stars */
+  color:#c1121f; /* red accent stars */
 }
 
-.review img {
+.review img{
   max-width:100px;
   margin-top:10px;
-  border:1px solid #e5e5e5;
+  border:1px solid rgba(128,0,32,0.2);
   border-radius:4px;
 }
+
+
 /* SUBMIT REVIEW BUTTON */
-#submitReviewBtn {
-  display: inline-block;
-  background: #000000;         /* solid black button */
-  color: #ffffff;              /* white text */
-  border: 1px solid #111111;   /* subtle dark border */
-  padding: 10px 20px;
-  font-size: 12px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-  margin-top: 15px;
+
+#submitReviewBtn{
+  display:inline-block;
+  background:#800020;
+  color:#FFFFF0;
+  border:1px solid #800020;
+  padding:10px 20px;
+  font-size:12px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  cursor:pointer;
+  border-radius:4px;
+  transition:all 0.3s ease;
+  margin-top:15px;
 }
 
-#submitReviewBtn:hover {
-  background: #111111;          /* slightly lighter black on hover */
-  color: #FFD700;               /* subtle gold hint on hover */
-  transform: translateY(-1px);
+#submitReviewBtn:hover{
+  background:#FFFFF0;
+  color:#800020;
+  transform:translateY(-1px);
 }
 
 /* SCREENS */
-.cart, .screen{  
-  position:fixed;  
-  inset:0;  
-  background:#ffffff;  
-  display:none;  
-  overflow:auto;  
-  padding: 30px 20px;  
-  z-index: 10001;  
-}  
 
-.cart h2, .screen h2{  
-    text-align:center;  
-    letter-spacing: 6px;   
-    text-transform: uppercase;   
-    font-size: 16px;   
-    font-weight: 400;  
-    margin: 40px 0;  
-    color:#000000;
-}  
+.cart, .screen{
+  position:fixed;
+  inset:0;
+  background:#FFFFF0; /* Ivory background */
+  display:none;
+  overflow:auto;
+  padding:30px 20px;
+  z-index:10001;
+}
+
+.cart h2, .screen h2{
+  text-align:center;
+  letter-spacing:6px;
+  text-transform:uppercase;
+  font-size:16px;
+  font-weight:400;
+  margin:40px 0;
+  color:#800020; /* burgandy heading */
+}
 
 .cart-item{
-  padding:20px; 
-  border: 1px solid #e5e5e5; 
-  margin-bottom: 10px;
-  background:#ffffff;
+  padding:20px;
+  border:1px solid rgba(128,0,32,0.2);
+  margin-bottom:10px;
+  background:#800020; /* ivory card */
 }
 
-.summary-item-box {  
-    display: flex;  
-    align-items: center;  
-    gap: 15px;  
-    padding: 15px 0;  
-    border-bottom: 1px solid #e5e5e5;  
-}  
+.summary-item-box{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  padding:15px 0;
+  border-bottom:1px solid rgba(128,0,32,0.2);
+}
 
-.summary-thumb {  
-    width: 70px;  
-    height: 70px;  
-    object-fit: cover;  
-    border: 1px solid #e5e5e5;  
-}  
+.summary-thumb{
+  width:70px;
+  height:70px;
+  object-fit:cover;
+  border:1px solid rgba(128,0,32,0.2);
+}
 
-.whatsapp{   
-    background:#000000;   
-    color:#ffffff;   
-    padding:18px;   
-    text-align:center;   
-    margin-top:20px;   
-    cursor:pointer;   
-    text-transform: uppercase;  
-    letter-spacing: 3px;  
-    font-size: 10px;  
-    transition: background 0.3s ease;
-}  
+.whatsapp{
+  background:#800020;
+  color:#FFFFF0;
+  padding:18px;
+  text-align:center;
+  margin-top:20px;
+  cursor:pointer;
+  text-transform:uppercase;
+  letter-spacing:3px;
+  font-size:10px;
+  transition:all 0.3s ease;
+  border:1px solid #FFFFF0;
+}
 
 .whatsapp:hover{
-    background:#111111;
+  background:#FFFFF0;
+  color:#800020;
 }
 
-.whatsapp.disabled{ 
-  opacity:0.3; 
-  pointer-events: none; 
-}  
+.whatsapp.disabled{
+  opacity:0.3;
+  pointer-events:none;
+}
 
-.summary-row{ 
-  display:flex; 
-  justify-content:space-between; 
-  padding:12px 0; 
-  font-size: 11px; 
-  letter-spacing: 2px;
-  color:#111111;
+.summary-row{
+  display:flex;
+  justify-content:space-between;
+  padding:12px 0;
+  font-size:11px;
+  letter-spacing:2px;
+  color:#800020; /* burgundy text */
 }
    
 /* TOAST */
-#toast {  
-  visibility: hidden;  
-  min-width: 250px;  
-  background-color: #007BFF;  /* premium blue background */
-  color: #ffffff;              /* white text */
-  text-align: center;  
-  padding: 16px;  
-  position: fixed;  
-  z-index: 30000;  
-  bottom: 40px;  
-  left: 50%;  
-  transform: translateX(-50%);  
-  font-size: 9px;  
-  letter-spacing: 3px;  
-  text-transform: uppercase;  
-  border: 1px solid #0056b3;  /* slightly darker blue border for depth */
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08); /* soft subtle depth */
-  border-radius: 4px;  
+
+#toast{
+  visibility:hidden;
+  min-width:250px;
+  background-color:#800020; /* burgundy */
+  color:#FFFFF0; /* ivory text */
+  text-align:center;
+  padding:16px;
+  position:fixed;
+  z-index:30000;
+  bottom:40px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:9px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  border:1px solid rgba(255,255,240,0.4);
+  box-shadow:0 8px 20px rgba(0,0,0,0.15);
+  border-radius:4px;
 }
 
-#toast.show { 
-  visibility: visible; 
-  animation: fadein 0.5s, fadeout 0.5s 2.5s; 
+#toast.show{
+  visibility:visible;
+  animation:fadein 0.5s, fadeout 0.5s 2.5s;
 }
 
-@keyframes fadein { 
-  from {bottom: 0; opacity: 0;} 
-  to {bottom: 40px; opacity: 1;} 
+@keyframes fadein{
+  from{bottom:0; opacity:0;}
+  to{bottom:40px; opacity:1;}
 }
 
-@keyframes fadeout { 
-  from {bottom: 40px; opacity: 1;} 
-  to {bottom: 0; opacity: 0;} 
-}
-
-
-/* SOCIAL ICONS */
-.social-home {  
-  display: flex;  
-  justify-content: center;  
-  gap: 25px;  
-  margin: 15px 0 15px 0;  
-  min-height: 40px;           /* ensures container doesn’t collapse */
-  align-items: center;        /* vertically centers the icons */
-}
-
-.social-home.shifted {
-  transform: translateY(15px);
-}
-
-.social-home img {  
-  width: 28px;                /* slightly bigger for visibility */
-  height: 28px;  
-  cursor: pointer;  
-  opacity: 0.8;               /* visible even without hover */
-  transition: transform 0.3s ease, opacity 0.3s ease;  
-  border: 1px solid #000;     /* subtle black border for premium feel */
-  border-radius: 50%;          /* rounded icons */
-  padding: 4px;               /* adds touchable space */
-  background: #fff;           /* white background for contrast */
-}
-
-.social-home img:hover {  
-  opacity: 1;  
-  transform: scale(1.2);      /* subtle zoom on hover */
-  border-color: #FFD700;      /* gold highlight on hover */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25); /* soft shadow for depth */
+@keyframes fadeout{
+  from{bottom:40px; opacity:1;}
+  to{bottom:0; opacity:0;}
 }
 
 
-/* OFFER BANNER */
-#offerBanner {
-  position: fixed;
-  top: 70px;
-  left: -100%;
-  width: 100%;
-  text-align: center;
-  font-size: 11px;
-  letter-spacing: 2px;
-  padding: 10px 0;
-  background: #000000; /* clean black */
-  color: #ffffff;       /* clean white text */
-  z-index: 9999;
-  opacity: 0;
-  animation: slideFade 10s infinite;
-}
-
-@keyframes slideFade {
-  0%   { left:-100%; opacity:0; }
-  15%  { left:0;     opacity:1; }
-  70%  { left:0;     opacity:1; }
-  85%  { left:50%;   opacity:0.5; }
-  100% { left:100%;  opacity:0; }
-}
 
 /* DISCOUNT LINE */
-.discount-line {
-  font-size: 11px;
-  text-align: center;
-  margin-top: 6px;
-  color: #2563eb;          /* bright premium blue */
-  letter-spacing: 1px;
-  font-weight: 600;
+
+.discount-line{
+  font-size:11px;
+  text-align:center;
+  margin-top:6px;
+  color:#800020; /* ivory */
+  letter-spacing:1px;
+  font-weight:600;
 }
+
 
 /* TRUST STRIP */
-.trust-strip {
-  overflow: hidden;
-  border: none;
-  padding: 8px 0;                 /* slightly taller for better visibility */
-  background: #1e40af;             /* royal blue background */
-  min-height: 40px;                 /* prevents collapse */
-  display: flex;                    
-  align-items: center;              /* vertically center the content */
+
+.trust-strip{
+  overflow:hidden;
+  border:none;
+  padding:8px 0;
+  background:#800020; /* burgundy background */
+  min-height:40px;
+  display:flex;
+  align-items:center;
 }
 
-.trust-track {
-  display: flex;
-  width: max-content;
-  animation: scroll-left 22s linear infinite;
-  gap: 50px;                        /* spacing between points */
+.trust-track{
+  display:flex;
+  width:max-content;
+  animation:scroll-left 22s linear infinite;
+  gap:50px;
 }
 
-.trust-track span {
-  white-space: nowrap;
-  font-size: 11px;                  /* slightly bigger for readability */
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #ffffff;                   /* white text for contrast */
-  font-weight: 600;
-  padding: 4px 8px;                 /* adds a little padding for touch feel */
-  background: rgba(0,0,0,0.1);      /* subtle background for premium feel */
-  border-radius: 4px;               /* rounded edges */
-  flex-shrink: 0;                    /* prevent shrinking */
+.trust-track span{
+  white-space:nowrap;
+  font-size:11px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:#FFFFF0; /* Burgundy text */
+  font-weight:600;
+  padding:4px 8px;
+  background:rgba(255,255,240,0.1);
+  border-radius:4px;
+  flex-shrink:0;
 }
+
 
 /* SCROLL ANIMATION */
-@keyframes scroll-left {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+
+@keyframes scroll-left{
+  from{transform:translateX(0);}
+  to{transform:translateX(-50%);}
 }
 
+/* TRUST STRIP 2*/
+
+.trust-strip2{
+  overflow:hidden;
+  border:none;
+  padding:8px 0;
+  background:#FFFFF0; /* Ivory background */
+  min-height:40px;
+  display:flex;
+  align-items:center;
+}
+
+.trust-track2{
+  display:flex;
+  width:max-content;
+  animation:scroll-left 22s linear infinite;
+  gap:50px;
+}
+
+.trust-track2 span{
+  white-space:nowrap;
+  font-size:11px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:#800020; /* Burgundy text */
+  font-weight:600;
+  padding:4px 8px;
+  background:rgba(255,255,240,0.1);
+  border-radius:4px;
+  flex-shrink:0;
+}
+
+
+/* SCROLL ANIMATION */
+
+@keyframes scroll-left{
+  from{transform:translateX(0);}
+  to{transform:translateX(-50%);}
+}
 
 /* CART TRUST TEXT */
-.cart-trust {
-  font-size: 11px;
-  padding: 8px 0;
-  letter-spacing: 1px;
-  color: #2563eb;
+
+.cart-trust{
+  font-size:11px;
+  padding:8px 0;
+  letter-spacing:1px;
+  color:#FFFFF0;
 }
 
-.cart .trust-strip {
-  margin-top: 12px;
+.cart .trust-strip{
+  margin-top:12px;
 }
 
 
 /* CHECKOUT BUTTON SPACING */
-.checkout-btn {
-  margin-top: 10px;
+
+.checkout-btn{
+  margin-top:10px;
 }
-   
+
+
 /* TOTAL BEFORE DISCOUNT */
-.total-before {
-  text-decoration: line-through;
-  color: #b5b5b5;      /* subtle gray */
-  font-weight: 500;
-  font-size: 14px;
-  display: flex;
-  justify-content: space-between;
-  opacity: 0;
-  transform: translateY(-5px);
-  animation: fadeSlideIn 0.6s forwards;
-  animation-delay: 0.1s;
+
+.total-before{
+  text-decoration:line-through;
+  color:#cfcfcf;
+  font-weight:500;
+  font-size:14px;
+  display:flex;
+  justify-content:space-between;
+  opacity:0;
+  transform:translateY(-5px);
+  animation:fadeSlideIn 0.6s forwards;
+  animation-delay:0.1s;
 }
+
 
 /* SUBTOTAL */
-.subtotal-row {
-  font-weight: 600;
-  font-size: 16px;
-  color: #000;
+
+.subtotal-row{
+  font-weight:600;
+  font-size:16px;
+  color:#800020; /* burgundy */
 }
+
 
 /* DISCOUNT ROW */
-#discountRow span {
-  color: #2563eb;      /* same bright blue as discount line */
-  font-weight: 600;
+
+#discountRow span{
+  color:#c1121f; /* red discount accent */
+  font-weight:600;
 }
 
 
-/* Smooth animation */
-@keyframes fadeSlideIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+/* ANIMATION */
+
+@keyframes fadeSlideIn{
+  to{
+    opacity:1;
+    transform:translateY(0);
   }
 }
 
@@ -777,8 +821,8 @@ button:hover {
   padding:12px 0;
   border:none;
   border-radius:8px;
-  background:#1e40af;      /* royal blue */
-  color:#ffffff;           /* white text */
+  background:#800020;      /* Burgundy */
+  color:#fffff0;           /* ivory text */
   font-weight:600;
   letter-spacing:1.5px;
   cursor:pointer;
@@ -787,22 +831,23 @@ button:hover {
 }
 
 .how-understood-btn:hover {
-  background:#2563eb;      /* slightly brighter blue */
+  background:#800025;      /* slightly brighter */
   transform: translateY(-2px);
 }
 
 /* SUGGESTION BOX */
+
 .suggest-box{
   position:absolute;
   top:100%;
   left:0;
   width:100%;
-  background:#ffffff;
-  border:1px solid #e5e5e5;
+  background:#FFFFF0; /* ivory box */
+  border:1px solid rgba(128,0,32,0.2);
   max-height:200px;
   overflow-y:auto;
   z-index:9999;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  box-shadow:0 12px 30px rgba(0,0,0,0.12);
 }
 
 .suggest-item{
@@ -811,73 +856,80 @@ button:hover {
   font-size:10px;
   letter-spacing:2px;
   text-transform:uppercase;
-  color:#000;
-  opacity:.7;
-  transition: all 0.2s ease;
+  color:#800020; /* burgundy text */
+  opacity:.75;
+  transition:all 0.2s ease;
 }
 
 .suggest-item:hover{
-  background:#f5f5f5;
+  background:rgba(128,0,32,0.08); /* soft burgundy hover */
   opacity:1;
 }
 
 
-/* Full-screen loader */
+/* FULL-SCREEN LOADER */
 #pageLoader {
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: #ffffff; /* white luxurious background */
+  background: #800020; /* WALDO burgundy */
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 9999999;
 }
 
-/* Centered content in column */
+
+/* CENTERED CONTENT */
 .loader-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  color: #0B1D3A;
-  font-family: 'Cinzel', serif;
+  color: #FFFFF0; /* ivory text */
+  font-family: 'Playfair Display', serif;
 }
 
-/* Logo animation */
+
+/* LOGO ANIMATION */
 .logo-text {
-  font-size: 4em;
-  letter-spacing: 6px;
+  font-size: 3.2em;
+  letter-spacing: 10px;
+  font-weight: 600;
   opacity: 0;
-  transform: scale(0.7);
-  animation: fadeInLogo 1.5s forwards;
+  transform: scale(0.9);
+  animation: fadeInLogo 1.2s forwards;
 }
 
-/* Tagline animation */
+
+/* TAGLINE */
 .tagline {
-  font-size: 1.5em;
-  margin-top: 15px;
-  letter-spacing: 2px;
+  font-size: 0.9em;
+  margin-top: 18px;
+  letter-spacing: 4px;
   opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInTagline 1.5s forwards;
-  animation-delay: 1.5s; /* appears after logo finishes */
+  transform: translateY(10px);
+  animation: fadeInTagline 1.2s forwards;
+  animation-delay: 1.2s;
+  color: rgba(255,255,240,0.7);
 }
 
-/* Keyframes */
+
+/* KEYFRAMES */
 @keyframes fadeInLogo {
-  0% { opacity: 0; transform: scale(0.7); }
+  0% { opacity: 0; transform: scale(0.9); }
   100% { opacity: 1; transform: scale(1); }
 }
 
 @keyframes fadeInTagline {
-  0% { opacity: 0; transform: translateY(20px); }
+  0% { opacity: 0; transform: translateY(10px); }
   100% { opacity: 1; transform: translateY(0); }
 }
 
-/* Fade out loader */
+
+/* FADE OUT LOADER */
 .fade-out {
-  animation: fadeOutLoader 1s forwards;
+  animation: fadeOutLoader 0.8s forwards;
 }
 
 @keyframes fadeOutLoader {
@@ -885,11 +937,15 @@ button:hover {
   100% { opacity: 0; visibility: hidden; }
 }
 
-    
 
-#aboutAethel {
-  background: #ffffff;
-  padding: 80px 20px 40px 20px; /* top 80px, right 20px, bottom 40px, left 20px */
+/* MAIN FONT SYSTEM */
+body{
+  font-family: 'Poppins', sans-serif;
+}
+
+#aboutWaldo {
+  background: #800020;
+  padding: 80px 20px 40px 20px;
   display: flex;
   justify-content: center;
 }
@@ -897,44 +953,49 @@ button:hover {
 .about-box {
   max-width: 720px;
   text-align: center;
-  color: #000;
+  color: #FFFFF0;
   padding: 60px 40px;
-  border: 1px solid #000;        /* thin black border */
+  border: 1px solid #FFFFF0;
 }
 
 /* TITLE */
 .about-box h1 {
+  font-family: 'Cinzel', serif;
   letter-spacing: 10px;
   font-size: 28px;
   font-weight: 600;
   margin-bottom: 18px;
   text-transform: uppercase;
+  color: #FFFFF0;
 }
 
 /* TAGLINE */
-#aboutAethel .tagline {
+#aboutWaldo .tagline {
   font-family: 'Playfair Display', serif;
   font-size: 17px;
   font-style: italic;
   letter-spacing: 1px;
   margin-bottom: 40px;
-  opacity: 0.7;
+  opacity: 0.85;
+  color: #FFFFF0;
 }
 
 /* RESPONSIVE */
 @media (max-width: 400px) {
-  #aboutAethel .tagline {
+  #aboutWaldo .tagline {
     font-size: 15px;
   }
 }
 
 /* BODY TEXT */
 .about-text {
+  font-family: 'Poppins', sans-serif;
   line-height: 1.9;
   font-size: 14px;
-  opacity: 0.75;
+  opacity: 0.85;
   max-width: 600px;
   margin: 0 auto;
+  color: #FFFFF0;
 }
 
 /* POINTS */
@@ -945,33 +1006,38 @@ button:hover {
 }
 
 .about-points li {
+  font-family: 'Poppins', sans-serif;
   margin: 12px 0;
   letter-spacing: 2px;
   font-size: 11px;
   text-transform: uppercase;
-  opacity: 0.6;
+  opacity: 0.8;
+  color: #FFFFF0;
 }
 
-/* FOUNDER LINE */
 .founder-line {
+  font-family: 'Poppins', sans-serif;
   margin-top: 50px;
   font-size: 11px;
   letter-spacing: 3px;
-  opacity: 0.5;
+  opacity: 0.7;
   text-transform: uppercase;
+  color: #FFFFF0;
 }
 
 /* BRAND LINE */
 .brand-line {
+  font-family: 'Poppins', sans-serif;
   font-size: 10px;
   letter-spacing: 3px;
   text-transform: uppercase;
-  opacity: 0.4;
+  opacity: 0.6;
   margin: 6px 0 10px;
+  color: #FFFFF0;
 }
 
-   
- .reveal {
+/* REVEAL */
+.reveal {
   opacity: 0;
   transition: opacity 0.8s ease;
 }
@@ -980,12 +1046,11 @@ button:hover {
   opacity: 1;
 }
 
-/* Import a premium serif font for headings */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap');
+/* TRUST SECTION */
 
 #trustSection {
-  background: #ffffff;
-  color: #000;
+  background: #800020;
+  color: #FFFFF0;
   padding: 40px 20px;
   text-align: center;
 }
@@ -1000,8 +1065,8 @@ button:hover {
 }
 
 .trust-box {
-  background: #ffffff;
-  border: 1px solid #000;
+  background: #800020;
+  border: 1px solid #FFFFF0;
   padding: 40px 30px;
   flex: 1 1 280px;
   min-width: 260px;
@@ -1014,12 +1079,13 @@ button:hover {
 
 /* HEADINGS */
 .trust-box h2 {
-  margin-bottom: 20px;
   font-family: 'Cinzel', serif;
+  margin-bottom: 20px;
   font-weight: 600;
   letter-spacing: 4px;
   text-transform: uppercase;
   font-size: 16px;
+  color: #FFFFF0;
 }
 
 /* LIST */
@@ -1029,16 +1095,19 @@ button:hover {
 }
 
 .trust-box ul li {
+  font-family: 'Poppins', sans-serif;
   margin: 12px 0;
   font-size: 13px;
   line-height: 1.8;
-  opacity: 0.8;
+  opacity: 0.85;
+  color: #FFFFF0;
 }
 
-/* CLICKABLE LINKS */
+/* LINKS */
 .trust-box a {
-  color: #1f3d2b;                 /* deep premium green */
-  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  color: #FFFFF0;
+  font-weight: 500;
   text-decoration: underline;
   text-underline-offset: 4px;
   text-decoration-thickness: 1.5px;
@@ -1047,9 +1116,10 @@ button:hover {
 }
 
 .trust-box a:hover {
-  color: #000;                    /* strong hover feedback */
+  opacity: 0.7;
   text-decoration-thickness: 2px;
 }
+
 
 /* input error red colour */
 .input-error {
@@ -1063,7 +1133,7 @@ button:hover {
   height:16px;
   border:1px solid #333;
   background:transparent;
-  color:#ccc;
+  color:#FFFFF0;
   font-size:12px;
   cursor:pointer;
   border-radius:2px;
@@ -1128,8 +1198,8 @@ button:hover {
 #enterShippingBtn {
   width: 100%;
   padding: 14px 0;
-  background: #000;             /* black background for premium look */
-  color: #fff;                  /* white text */
+  background: #800020;             /* Burgundy background for premium look */
+  color: #FFFFF0;                  /* Ivory text */
   border: none;
   border-radius: 6px;
   text-transform: uppercase;
@@ -1142,8 +1212,8 @@ button:hover {
 }
 
 #enterShippingBtn:hover {
-  background: #fff;             /* invert colors on hover */
-  color: #000;                  /* black text */
+  background: #fffff0;             /* invert colors on hover */
+  color: #800020;                  /* Burgundy text */
   transform: translateY(-2px);  /* subtle lift */
   box-shadow: 0 6px 15px rgba(0,0,0,0.3);
 }
@@ -1197,13 +1267,13 @@ button:hover {
   padding: 80px 20px;
   font-size: 9px;
   letter-spacing: 3px;
-  color: #ffffff;            /* white text */
+  color: #800020;            /* Burgundy text */
   text-transform: uppercase;
-  background: #000000;       /* solid black background */
+  background: #FFFFF0;       /* solid Ivory background */
 }
 
 .footer a {
-  color: #ffffff;            /* white links */
+  color: #800030;            /* Brighter Burgundy links */
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -1212,18 +1282,19 @@ button:hover {
   color: #FFD700;            /* optional gold hover for premium touch */
 }  
 
-</style>  </head>  <body>
+ </style>
+ </head>  <body>
   <!-- Page Loader -->
 <div id="pageLoader">
   <div class="loader-content">
-    <span class="logo-text">AETHEL</span>
-    <span class="tagline">Where Trust Meets Style</span>
+    <span class="logo-text">WALDO</span>
+    <span class="tagline">Where Value Meets Style</span>
   </div>
 </div>
   <header>  
   <div class="store-title" onclick="goHomeFromHeader()">  
-    <img src="/AETHELCOLLECTIVELOGO1.jpg" alt="Logo" class="store-logo">  
-    <span>AETHEL</span>  
+    <img src="https://i.ibb.co/rR3YmK0p/IMG-20260228-WA0019.jpg" alt="Logo" class="store-logo">  
+    <span>WALDO</span>  
   </div>  
   <div class="cart-btn" id="cartBtn" onclick="openCart()">BAG (<span id="cartCount">0</span>)</div>  
 </header>  <div id="toast"></div>  <div id="homeTopBar">    
@@ -1278,7 +1349,7 @@ onclick="openEmail()" alt="Email">
 </div>  
  <div class="trust-strip">
   <div class="trust-track">
-    <span>⭐ 12+ Happy Customers</span>
+    <span>⭐ 18+ Happy Customers</span>
     <span>• Premium Quality Products</span>
     <span>• Trusted & Verified Store</span>
     <span>• Fast Support & Assistance</span>
@@ -1287,7 +1358,7 @@ onclick="openEmail()" alt="Email">
     <span>• Exclusive Limited Editions</span>
 
     <!-- duplicate for seamless loop -->
-    <span>⭐ 12+ Happy Customers</span>
+    <span>⭐ 18+ Happy Customers</span>
     <span>• Premium Quality Products</span>
     <span>• Trusted & Verified Store</span>
     <span>• Fast Support & Assistance</span>
@@ -1412,7 +1483,7 @@ onclick="openEmail()" alt="Email">
   <div id="discountLine" class="discount-line"></div>
   <div class="trust-strip">
   <div class="trust-track">
-    <span>⭐ 12+ Happy Customers</span>
+    <span>⭐ 18+ Happy Customers</span>
     <span>• Premium Quality Products</span>
     <span>• Trusted & Verified Store</span>
     <span>• Fast Support & Assistance</span>
@@ -1421,7 +1492,7 @@ onclick="openEmail()" alt="Email">
     <span>• Exclusive Limited Editions</span>
 
     <!-- duplicate for seamless loop -->
-    <span>⭐ 12+ Happy Customers</span>
+    <span>⭐ 18+ Happy Customers</span>
     <span>• Premium Quality Products</span>
     <span>• Trusted & Verified Store</span>
     <span>• Fast Support & Assistance</span>
@@ -1514,18 +1585,18 @@ onclick="openEmail()" alt="Email">
 
     <div style="font-size:12px; line-height:1.8; letter-spacing:0.5px; color:#111;">
       <ol style="padding-left:18px;">
-        <li>Explore our curated collection and choose the products you like.</li>
-        <li>Select your product, choose the correct size (if applicable), and add it to your bag.</li>
-        <li>You can add multiple products from different categories in the same order.</li>
-        <li>Choose colours/themes if the product has multiple options.</li>
-        <li>Free shipping is available all over Kerala (orders accepted only from India).</li>
-        <li>Go to your bag and review all selected items carefully.</li>
-        <li>Click "Checkout" and read the order summary thoroughly.</li>
-        <li>Enter your shipping address accurately in the provided fields.</li>
-        <li>Double-check your address and order details to avoid mistakes.</li>
-        <li>Click "Complete via WhatsApp" or "Complete via Instagram" to place your order.</li>
-        <li>Wait for confirmation – our team will contact you shortly after receiving your order.</li>
-        <li>For any queries, reach out via WhatsApp, Instagram, or Email using the icons on the homepage.</li>
+        <li>Browse our curated collection and choose the products you like.</li>
+        <li>Open the product page, select the correct size (if applicable), and add the item to your bag.</li>
+        <li>You can add multiple products from different categories in a single order.</li>
+        <li>If the product offers colour or theme options, select your preferred choice before adding it to the bag.</li>
+        <li>We offer free shipping across Kerala. Orders are currently accepted only from within India.</li>
+        <li>Once you finish selecting items, go to your bag to review all the products you have added.</li>
+        <li>Click “Checkout” and carefully review the order summary.</li>
+        <li>Fill in your shipping details accurately in the provided fields.</li>
+        <li>Please double-check your address, phone number, and order details to avoid delivery issues.</li>
+        <li>Click “Complete via WhatsApp” or “Complete via Instagram” to submit your order request.</li>
+        <li>Your order details will be automatically prepared and sent through the selected platform.</li>
+        <li>After receiving your order request, our team will review it and contact you shortly for confirmation.</li>
       </ol>
     </div>
 
@@ -1567,98 +1638,99 @@ onclick="openEmail()" alt="Email">
     <img id="modalMainImg" style="max-width:90%; max-height:65vh; border:1px solid #222;">  
     <div id="modalThumbs" style="display:flex; gap:10px; margin-top:25px;"></div> 
   </div>
-<div id="offerBanner">
-  EID OFFER🥳🎁 BUY 2+ ITEMS GET ₹100 OFF  
-  <br>
-  + ₹50 EXTRA OFF FOR EACH ADDITIONAL ITEM
-</div> 
-  <section id="aboutAethel" class="reveal">
+  <section id="aboutWaldo" class="reveal">
   <div class="about-box">
-    <h1>AETHEL COLLECTIVE</h1>
-    <p class="tagline">Where trust meets style.</p>
+    <h1>WALDO INN</h1>
+    <p class="tagline">Where premium finds meet everyday style.</p>
 
     <p class="about-text">
-      Aethel Collective was born with a simple vision — to bring premium accessories with honest pricing and real trust.
+      Waldo Inn was created with a clear vision — to make premium fashion and accessories accessible without the premium price tag.
       <br><br>
-      We believe style should feel effortless, not complicated. Every product we curate is chosen for quality, design, and value.
+      We carefully curate trending and quality products that bring style, confidence, and value to your everyday look.
       <br><br>
-      Curated pieces for those who value trust over trends. Your happiness is our responsibility.
+      Every item in our store is selected with attention to quality, practicality, and modern design.
       <br><br>
-      From daily essentials to statement pieces, Aethel is where modern style meets reliability.
+      Our goal is simple: deliver products you’ll love, backed by genuine service you can trust.
       <br><br>
-      Currently curating premium products. Original Aethel designs coming soon.
+      Waldo Inn is currently curating the best trending products — exclusive collections and original designs are coming soon.
     </p>
 
     <ul class="about-points">
-      <li>Exclusive Quality Picks</li>
-      <li>Transparent Pricing</li>
-      <li>Dedicated Customer Support</li>
+      <li>Curated Trending Products</li>
+      <li>Affordable & Transparent Pricing</li>
+      <li>Friendly Customer Support</li>
     </ul>
 
     <p class="founder-line">
-      Founded by a young entrepreneur driven by design and trust.
+      Created by two young entrepreneurs with a shared vision for style and trust.
     </p>
   </div>
-  </section>
- <div class="trust-strip">
-  <div class="trust-track">
-    <span>⭐ 12+ Happy Customers</span>
-    <span>• Premium Quality Products</span>
-    <span>• Trusted & Verified Store</span>
-    <span>• Fast Support & Assistance</span>
-    <span>• Hassle-Free Returns</span>
-    <span>• Secure Payments</span>
-    <span>• Free Shipping Across Kerala</span>
-    <span>• Exclusive Limited Editions</span>
+</section>
+
+<div class="trust-strip2">
+  <div class="trust-track2">
+    <span>⭐ Trusted by Many Happy Customers</span>
+    <span>• Carefully Curated Products</span>
+    <span>• Reliable Customer Support</span>
+    <span>• Secure Order Process</span>
+    <span>• Fast Response Support</span>
+    <span>• Honest Pricing Always</span>
+    <span>• Fast Shipping Across Kerala</span>
+    <span>• New Drops Regularly</span>
 
     <!-- duplicate for seamless loop -->
-    <span>⭐ 12+ Happy Customers</span>
-    <span>• Premium Quality Products</span>
-    <span>• Trusted & Verified Store</span>
-    <span>• Fast Support & Assistance</span>
-    <span>• Hassle-Free Returns</span>
-    <span>• Secure Payments</span>
-    <span>• Free Shipping Across Kerala</span>
-    <span>• Exclusive Limited Editions</span>
+    <span>⭐ Trusted by Many Happy Customers</span>
+    <span>• Carefully Curated Products</span>
+    <span>• Reliable Customer Support</span>
+    <span>• Secure Order Process</span>
+    <span>• Fast Response Support</span>
+    <span>• Honest Pricing Always</span>
+    <span>• Fast Shipping Across Kerala</span>
+    <span>• New Drops Regularly</span>
   </div>
- </div>
-  <section id="trustSection" class="reveal">
+</div>
+
+<section id="trustSection" class="reveal">
   <div class="trust-container">
+
     <div class="trust-box">
-      <h2>Why Aethel?</h2>
+      <h2>Why Waldo INN?</h2>
       <ul>
-        <li>Premium curated products</li>
-        <li>Honest pricing</li>
-        <li>Customer-first support</li>
+        <li>Carefully selected trending products</li>
+        <li>Affordable prices without compromise</li>
+        <li>Customer-first service approach</li>
       </ul>
     </div>
 
     <div class="trust-box">
-      <h2>Shipping & Returns</h2>
+      <h2>Shipping & Orders</h2>
       <ul>
-        <li>Fast, reliable shipping across India</li>
-        <li>We will share the 'Tracking ID' within 24 hours</li>
-        <li>No hidden charges, always transparent</li>
+        <li>Fast and reliable delivery</li>
+        <li>Order updates provided via WhatsApp</li>
+        <li>No hidden charges — transparent pricing</li>
       </ul>
     </div>
 
     <div class="trust-box">
       <h2>Contact & Support</h2>
       <ul>
-        <li>WhatsApp: <a href="https://wa.me/919074002303" target="_blank">Chat Now</a></li>
-        <li>Instagram: <a href="https://www.instagram.com/aethel_collective" target="_blank">@aethel_collective</a></li>
-        <li>Email: <a href="mailto:aethelcollective@gmail.com">support@aethelcollective.com</a></li>
+        <li>WhatsApp: <a href="https://wa.me/919778762507" target="_blank">Chat Now</a></li>
+        <li>Instagram: <a href="https://www.instagram.com/waldo.inn" target="_blank">@waldo.inn</a></li>
+        <li>Email: <a href="mailto:waldocollection@gmail.com">waldocollection@gmail.com</a></li>
       </ul>
     </div>
+
   </div>
-  </section>
+</section>
+  
   <div class="footer reveal">  
-  AETHEL COLLECTIVE © 2025<br><br>  
-  FOUNDED BY <a href="https://www.instagram.com/shua.iibb" target="_blank">SHUAIB</a><br><br>  
+  WALDO INN © 2026<br><br>  
+  FOUNDED BY <a href="https://www.instagram.com/abhyyy.y._" target="_blank">ABHISHEK</a>
+   & 
+<a href="https://www.instagram.com/naaifeeeey" target="_blank">NAAIF</a> <br><br>  
   DEVELOPED BY 
-<a href="https://www.instagram.com/_heyhhh_" target="_blank">HEYHHH</a> 
-& 
-<a href="https://www.instagram.com/shua.iibb" target="_blank">SHUAIB</a> 
+<a href="https://www.instagram.com/shua.iibb" target="_blank">ROADEO</a> 
+
 </div>  
 <script>  
 let recent = [];  

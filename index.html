@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 
 <title>WALDO INN – Premium Accessories Store</title>
 
@@ -679,130 +680,119 @@ button:hover{
 }
 
 
-/* OFFER BANNER */
-#offerBanner {
-  position: fixed;
-  top: 70px;
-  left: -100%;
-  width: 100%;
-  text-align: center;
-  font-size: 11px;
-  letter-spacing: 2px;
-  padding: 10px 0;
-  background: #000000; /* clean black */
-  color: #ffffff;       /* clean white text */
-  z-index: 9999;
-  opacity: 0;
-  animation: slideFade 10s infinite;
-}
-
-@keyframes slideFade {
-  0%   { left:-100%; opacity:0; }
-  15%  { left:0;     opacity:1; }
-  70%  { left:0;     opacity:1; }
-  85%  { left:50%;   opacity:0.5; }
-  100% { left:100%;  opacity:0; }
-}
-
 /* DISCOUNT LINE */
-.discount-line {
-  font-size: 11px;
-  text-align: center;
-  margin-top: 6px;
-  color: #2563eb;          /* bright premium blue */
-  letter-spacing: 1px;
-  font-weight: 600;
+
+.discount-line{
+  font-size:11px;
+  text-align:center;
+  margin-top:6px;
+  color:#FFFFF0; /* ivory */
+  letter-spacing:1px;
+  font-weight:600;
 }
+
 
 /* TRUST STRIP */
-.trust-strip {
-  overflow: hidden;
-  border: none;
-  padding: 8px 0;                 /* slightly taller for better visibility */
-  background: #1e40af;             /* royal blue background */
-  min-height: 40px;                 /* prevents collapse */
-  display: flex;                    
-  align-items: center;              /* vertically center the content */
+
+.trust-strip{
+  overflow:hidden;
+  border:none;
+  padding:8px 0;
+  background:#800020; /* burgundy background */
+  min-height:40px;
+  display:flex;
+  align-items:center;
 }
 
-.trust-track {
-  display: flex;
-  width: max-content;
-  animation: scroll-left 22s linear infinite;
-  gap: 50px;                        /* spacing between points */
+.trust-track{
+  display:flex;
+  width:max-content;
+  animation:scroll-left 22s linear infinite;
+  gap:50px;
 }
 
-.trust-track span {
-  white-space: nowrap;
-  font-size: 11px;                  /* slightly bigger for readability */
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #ffffff;                   /* white text for contrast */
-  font-weight: 600;
-  padding: 4px 8px;                 /* adds a little padding for touch feel */
-  background: rgba(0,0,0,0.1);      /* subtle background for premium feel */
-  border-radius: 4px;               /* rounded edges */
-  flex-shrink: 0;                    /* prevent shrinking */
+.trust-track span{
+  white-space:nowrap;
+  font-size:11px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:#FFFFF0; /* ivory text */
+  font-weight:600;
+  padding:4px 8px;
+  background:rgba(255,255,240,0.1);
+  border-radius:4px;
+  flex-shrink:0;
 }
+
 
 /* SCROLL ANIMATION */
-@keyframes scroll-left {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+
+@keyframes scroll-left{
+  from{transform:translateX(0);}
+  to{transform:translateX(-50%);}
 }
 
 
 /* CART TRUST TEXT */
-.cart-trust {
-  font-size: 11px;
-  padding: 8px 0;
-  letter-spacing: 1px;
-  color: #2563eb;
+
+.cart-trust{
+  font-size:11px;
+  padding:8px 0;
+  letter-spacing:1px;
+  color:#FFFFF0;
 }
 
-.cart .trust-strip {
-  margin-top: 12px;
+.cart .trust-strip{
+  margin-top:12px;
 }
 
 
 /* CHECKOUT BUTTON SPACING */
-.checkout-btn {
-  margin-top: 10px;
+
+.checkout-btn{
+  margin-top:10px;
 }
-   
+
+
 /* TOTAL BEFORE DISCOUNT */
-.total-before {
-  text-decoration: line-through;
-  color: #b5b5b5;      /* subtle gray */
-  font-weight: 500;
-  font-size: 14px;
-  display: flex;
-  justify-content: space-between;
-  opacity: 0;
-  transform: translateY(-5px);
-  animation: fadeSlideIn 0.6s forwards;
-  animation-delay: 0.1s;
+
+.total-before{
+  text-decoration:line-through;
+  color:#cfcfcf;
+  font-weight:500;
+  font-size:14px;
+  display:flex;
+  justify-content:space-between;
+  opacity:0;
+  transform:translateY(-5px);
+  animation:fadeSlideIn 0.6s forwards;
+  animation-delay:0.1s;
 }
+
 
 /* SUBTOTAL */
-.subtotal-row {
-  font-weight: 600;
-  font-size: 16px;
-  color: #000;
+
+.subtotal-row{
+  font-weight:600;
+  font-size:16px;
+  color:#800020; /* burgundy */
 }
+
 
 /* DISCOUNT ROW */
-#discountRow span {
-  color: #2563eb;      /* same bright blue as discount line */
-  font-weight: 600;
+
+#discountRow span{
+  color:#c1121f; /* red discount accent */
+  font-weight:600;
 }
 
 
-/* Smooth animation */
-@keyframes fadeSlideIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+/* ANIMATION */
+
+@keyframes fadeSlideIn{
+  to{
+    opacity:1;
+    transform:translateY(0);
   }
 }
 
@@ -821,8 +811,8 @@ button:hover{
   padding:12px 0;
   border:none;
   border-radius:8px;
-  background:#1e40af;      /* royal blue */
-  color:#ffffff;           /* white text */
+  background:#800020;      /* Burgundy */
+  color:#fffff0;           /* ivory text */
   font-weight:600;
   letter-spacing:1.5px;
   cursor:pointer;
@@ -831,22 +821,23 @@ button:hover{
 }
 
 .how-understood-btn:hover {
-  background:#2563eb;      /* slightly brighter blue */
+  background:#800025;      /* slightly brighter */
   transform: translateY(-2px);
 }
 
 /* SUGGESTION BOX */
+
 .suggest-box{
   position:absolute;
   top:100%;
   left:0;
   width:100%;
-  background:#ffffff;
-  border:1px solid #e5e5e5;
+  background:#FFFFF0; /* ivory box */
+  border:1px solid rgba(128,0,32,0.2);
   max-height:200px;
   overflow-y:auto;
   z-index:9999;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  box-shadow:0 12px 30px rgba(0,0,0,0.12);
 }
 
 .suggest-item{
@@ -855,13 +846,13 @@ button:hover{
   font-size:10px;
   letter-spacing:2px;
   text-transform:uppercase;
-  color:#000;
-  opacity:.7;
-  transition: all 0.2s ease;
+  color:#800020; /* burgundy text */
+  opacity:.75;
+  transition:all 0.2s ease;
 }
 
 .suggest-item:hover{
-  background:#f5f5f5;
+  background:rgba(128,0,32,0.08); /* soft burgundy hover */
   opacity:1;
 }
 
@@ -871,7 +862,7 @@ button:hover{
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: #ffffff; /* clean white */
+  background: #800020; /* WALDO burgundy */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -885,15 +876,16 @@ button:hover{
   flex-direction: column;
   align-items: center;
   text-align: center;
-  color: #000;
-  font-family: 'Cinzel', serif;
+  color: #FFFFF0; /* ivory text */
+  font-family: 'Playfair Display', serif;
 }
 
 
 /* LOGO ANIMATION */
 .logo-text {
-  font-size: 3.5em;
-  letter-spacing: 8px;
+  font-size: 3.2em;
+  letter-spacing: 10px;
+  font-weight: 600;
   opacity: 0;
   transform: scale(0.9);
   animation: fadeInLogo 1.2s forwards;
@@ -904,12 +896,12 @@ button:hover{
 .tagline {
   font-size: 0.9em;
   margin-top: 18px;
-  letter-spacing: 3px;
+  letter-spacing: 4px;
   opacity: 0;
   transform: translateY(10px);
   animation: fadeInTagline 1.2s forwards;
   animation-delay: 1.2s;
-  color: #555;
+  color: rgba(255,255,240,0.7);
 }
 
 

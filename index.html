@@ -649,27 +649,37 @@ button:hover{
   to{bottom:0; opacity:0;}
 }
 
-social-home{  
-  display:flex;  
-  justify-content:center;  
-  gap:25px;  
-  margin: 25px 0 50px 0;  
-}  
-.social-home.shifted {
-  transform: translateY(20px);   /* was 30 or 40, make it subtle */
+/* SOCIAL ICONS */
+.social-home {  
+  display: flex;  
+  justify-content: center;  
+  gap: 25px;  
+  margin: 15px 0 15px 0;  
+  min-height: 40px;           /* ensures container doesn’t collapse */
+  align-items: center;        /* vertically centers the icons */
 }
-  
-.social-home img{  
-  width:22px;  
-  height:22px;  
-  cursor:pointer;  
-  opacity:0.7;  
-  transition:0.3s;  
-}  
-  
-.social-home img:hover{  
-  opacity:1;  
-  transform:scale(1.1);  
+
+.social-home.shifted {
+  transform: translateY(15px);
+}
+
+.social-home img {  
+  width: 28px;                /* slightly bigger for visibility */
+  height: 28px;  
+  cursor: pointer;  
+  opacity: 0.8;               /* visible even without hover */
+  transition: transform 0.3s ease, opacity 0.3s ease;  
+  border: 1px solid #000;     /* subtle black border for premium feel */
+  border-radius: 50%;          /* rounded icons */
+  padding: 4px;               /* adds touchable space */
+  background: #fff;           /* white background for contrast */
+}
+
+.social-home img:hover {  
+  opacity: 1;  
+  transform: scale(1.2);      /* subtle zoom on hover */
+  border-color: #FFD700;      /* gold highlight on hover */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25); /* soft shadow for depth */
 }
  
 /* DISCOUNT LINE */
@@ -1368,6 +1378,7 @@ onclick="openWhatsApp()" alt="WhatsApp">
 
 <img src="https://i.postimg.cc/Kj0Mm9F1/26c7089c48f9bb763e9cca3db502bd57.jpg"  
 onclick="openEmail()" alt="Email">
+</div>
  <div class="trust-strip">
   <div class="trust-track">
     <span>⭐ 18+ Happy Customers</span>

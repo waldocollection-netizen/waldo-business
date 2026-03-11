@@ -733,6 +733,45 @@ button:hover{
   to{transform:translateX(-50%);}
 }
 
+/* TRUST STRIP 2*/
+
+.trust-strip2{
+  overflow:hidden;
+  border:none;
+  padding:8px 0;
+  background:#FFFFF0; /* Ivory background */
+  min-height:40px;
+  display:flex;
+  align-items:center;
+}
+
+.trust-track2{
+  display:flex;
+  width:max-content;
+  animation:scroll-left 22s linear infinite;
+  gap:50px;
+}
+
+.trust-track2 span{
+  white-space:nowrap;
+  font-size:11px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:#800020; /* Burgundy text */
+  font-weight:600;
+  padding:4px 8px;
+  background:rgba(255,255,240,0.1);
+  border-radius:4px;
+  flex-shrink:0;
+}
+
+
+/* SCROLL ANIMATION */
+
+@keyframes scroll-left{
+  from{transform:translateX(0);}
+  to{transform:translateX(-50%);}
+}
 
 /* CART TRUST TEXT */
 
@@ -934,7 +973,7 @@ body{
   font-family: 'Poppins', sans-serif;
 }
 
-#aboutAethel {
+#aboutWaldo {
   background: #800020;
   padding: 80px 20px 40px 20px;
   display: flex;
@@ -961,7 +1000,7 @@ body{
 }
 
 /* TAGLINE */
-#aboutAethel .tagline {
+#aboutWaldo .tagline {
   font-family: 'Playfair Display', serif;
   font-size: 17px;
   font-style: italic;
@@ -973,7 +1012,7 @@ body{
 
 /* RESPONSIVE */
 @media (max-width: 400px) {
-  #aboutAethel .tagline {
+  #aboutWaldo .tagline {
     font-size: 15px;
   }
 }
@@ -1277,7 +1316,7 @@ body{
   <!-- Page Loader -->
 <div id="pageLoader">
   <div class="loader-content">
-    <span class="logo-text">WALDO</span>
+    <span class="logo-text">WALDO INN</span>
     <span class="tagline">Where Value Meets Style</span>
   </div>
 </div>
@@ -1631,74 +1670,76 @@ onclick="openEmail()" alt="Email">
     <img id="modalMainImg" style="max-width:90%; max-height:65vh; border:1px solid #222;">  
     <div id="modalThumbs" style="display:flex; gap:10px; margin-top:25px;"></div> 
   </div>
-
-  <section id="aboutAethel" class="reveal">
+  <section id="aboutWaldo" class="reveal">
   <div class="about-box">
-    <h1>AETHEL COLLECTIVE</h1>
-    <p class="tagline">Where trust meets style.</p>
+    <h1>WALDO INN</h1>
+    <p class="tagline">Where premium finds meet everyday style.</p>
 
     <p class="about-text">
-      Aethel Collective was born with a simple vision — to bring premium accessories with honest pricing and real trust.
+      Waldo Inn was created with a clear vision — to make premium fashion and accessories accessible without the premium price tag.
       <br><br>
-      We believe style should feel effortless, not complicated. Every product we curate is chosen for quality, design, and value.
+      We carefully curate trending and quality products that bring style, confidence, and value to your everyday look.
       <br><br>
-      Curated pieces for those who value trust over trends. Your happiness is our responsibility.
+      Every item in our store is selected with attention to quality, practicality, and modern design.
       <br><br>
-      From daily essentials to statement pieces, Aethel is where modern style meets reliability.
+      Our goal is simple: deliver products you’ll love, backed by genuine service you can trust.
       <br><br>
-      Currently curating premium products. Original Aethel designs coming soon.
+      Waldo Inn is currently curating the best trending products — exclusive collections and original designs are coming soon.
     </p>
 
     <ul class="about-points">
-      <li>Exclusive Quality Picks</li>
-      <li>Transparent Pricing</li>
-      <li>Dedicated Customer Support</li>
+      <li>Curated Trending Products</li>
+      <li>Affordable & Transparent Pricing</li>
+      <li>Friendly Customer Support</li>
     </ul>
 
     <p class="founder-line">
-      Founded by a young entrepreneur driven by design and trust.
+      Created by two young entrepreneurs with a shared vision for style and trust.
     </p>
   </div>
-  </section>
- <div class="trust-strip">
-  <div class="trust-track">
-    <span>⭐ 12+ Happy Customers</span>
-    <span>• Premium Quality Products</span>
-    <span>• Trusted & Verified Store</span>
-    <span>• Fast Support & Assistance</span>
-    <span>• Hassle-Free Returns</span>
-    <span>• Secure Payments</span>
-    <span>• Free Shipping Across Kerala</span>
-    <span>• Exclusive Limited Editions</span>
+</section>
+
+<div class="trust-strip2">
+  <div class="trust-track2">
+    <span>⭐ Trusted by Happy Customers</span>
+    <span>• Carefully Curated Products</span>
+    <span>• Reliable Customer Support</span>
+    <span>• Secure Order Process</span>
+    <span>• Fast Response Support</span>
+    <span>• Honest Pricing Always</span>
+    <span>• Fast Shipping Across Kerala</span>
+    <span>• New Drops Regularly</span>
 
     <!-- duplicate for seamless loop -->
-    <span>⭐ 12+ Happy Customers</span>
-    <span>• Premium Quality Products</span>
-    <span>• Trusted & Verified Store</span>
-    <span>• Fast Support & Assistance</span>
-    <span>• Hassle-Free Returns</span>
-    <span>• Secure Payments</span>
-    <span>• Free Shipping Across Kerala</span>
-    <span>• Exclusive Limited Editions</span>
+    <span>⭐ Trusted by Happy Customers</span>
+    <span>• Carefully Curated Products</span>
+    <span>• Reliable Customer Support</span>
+    <span>• Secure Order Process</span>
+    <span>• Fast Response Support</span>
+    <span>• Honest Pricing Always</span>
+    <span>• Fast Shipping Across Kerala</span>
+    <span>• New Drops Regularly</span>
   </div>
- </div>
-  <section id="trustSection" class="reveal">
+</div>
+
+<section id="trustSection" class="reveal">
   <div class="trust-container">
+
     <div class="trust-box">
-      <h2>Why Aethel?</h2>
+      <h2>Why Waldo INN?</h2>
       <ul>
-        <li>Premium curated products</li>
-        <li>Honest pricing</li>
-        <li>Customer-first support</li>
+        <li>Carefully selected trending products</li>
+        <li>Affordable prices without compromise</li>
+        <li>Customer-first service approach</li>
       </ul>
     </div>
 
     <div class="trust-box">
-      <h2>Shipping & Returns</h2>
+      <h2>Shipping & Orders</h2>
       <ul>
-        <li>Fast, reliable shipping across India</li>
-        <li>We will share the 'Tracking ID' within 24 hours</li>
-        <li>No hidden charges, always transparent</li>
+        <li>Fast and reliable delivery</li>
+        <li>Order updates provided via WhatsApp</li>
+        <li>No hidden charges — transparent pricing</li>
       </ul>
     </div>
 
@@ -1706,12 +1747,14 @@ onclick="openEmail()" alt="Email">
       <h2>Contact & Support</h2>
       <ul>
         <li>WhatsApp: <a href="https://wa.me/919778762507" target="_blank">Chat Now</a></li>
-        <li>Instagram: <a href="https://www.instagram.com/waldo.inn" target="_blank">@Waldo.inn</a></li>
-        <li>Email: <a href="mailto:waldocollection@gmail.com">support@waldocollection.com</a></li>
+        <li>Instagram: <a href="https://www.instagram.com/waldo.inn" target="_blank">@waldo.inn</a></li>
+        <li>Email: <a href="mailto:waldocollection@gmail.com">waldocollection@gmail.com</a></li>
       </ul>
     </div>
+
   </div>
-  </section>
+</section>
+  
   <div class="footer reveal">  
   WALDO INN © 2026<br><br>  
   FOUNDED BY <a href="https://www.instagram.com/abhyyy.y._" target="_blank">ABHISHEK</a>

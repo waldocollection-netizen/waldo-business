@@ -7,7 +7,8 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Playfair+Display:ital,wght@1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+ 
 <title>WALDO INN – Premium Accessories Store</title>
 
 <!-- Favicon for browser tab -->
@@ -927,9 +928,15 @@ button:hover{
   100% { opacity: 0; visibility: hidden; }
 }
 
+
+/* MAIN FONT SYSTEM */
+body{
+  font-family: 'Poppins', sans-serif;
+}
+
 #aboutAethel {
-  background: #ffffff;
-  padding: 80px 20px 40px 20px; /* top 80px, right 20px, bottom 40px, left 20px */
+  background: #800020;
+  padding: 80px 20px 40px 20px;
   display: flex;
   justify-content: center;
 }
@@ -937,18 +944,20 @@ button:hover{
 .about-box {
   max-width: 720px;
   text-align: center;
-  color: #000;
+  color: #FFFFF0;
   padding: 60px 40px;
-  border: 1px solid #000;        /* thin black border */
+  border: 1px solid #FFFFF0;
 }
 
 /* TITLE */
 .about-box h1 {
+  font-family: 'Cinzel', serif;
   letter-spacing: 10px;
   font-size: 28px;
   font-weight: 600;
   margin-bottom: 18px;
   text-transform: uppercase;
+  color: #FFFFF0;
 }
 
 /* TAGLINE */
@@ -958,7 +967,8 @@ button:hover{
   font-style: italic;
   letter-spacing: 1px;
   margin-bottom: 40px;
-  opacity: 0.7;
+  opacity: 0.85;
+  color: #FFFFF0;
 }
 
 /* RESPONSIVE */
@@ -970,11 +980,13 @@ button:hover{
 
 /* BODY TEXT */
 .about-text {
+  font-family: 'Poppins', sans-serif;
   line-height: 1.9;
   font-size: 14px;
-  opacity: 0.75;
+  opacity: 0.85;
   max-width: 600px;
   margin: 0 auto;
+  color: #FFFFF0;
 }
 
 /* POINTS */
@@ -985,33 +997,38 @@ button:hover{
 }
 
 .about-points li {
+  font-family: 'Poppins', sans-serif;
   margin: 12px 0;
   letter-spacing: 2px;
   font-size: 11px;
   text-transform: uppercase;
-  opacity: 0.6;
+  opacity: 0.8;
+  color: #FFFFF0;
 }
 
-/* FOUNDER LINE */
 .founder-line {
+  font-family: 'Poppins', sans-serif;
   margin-top: 50px;
   font-size: 11px;
   letter-spacing: 3px;
-  opacity: 0.5;
+  opacity: 0.7;
   text-transform: uppercase;
+  color: #FFFFF0;
 }
 
 /* BRAND LINE */
 .brand-line {
+  font-family: 'Poppins', sans-serif;
   font-size: 10px;
   letter-spacing: 3px;
   text-transform: uppercase;
-  opacity: 0.4;
+  opacity: 0.6;
   margin: 6px 0 10px;
+  color: #FFFFF0;
 }
 
-   
- .reveal {
+/* REVEAL */
+.reveal {
   opacity: 0;
   transition: opacity 0.8s ease;
 }
@@ -1020,12 +1037,11 @@ button:hover{
   opacity: 1;
 }
 
-/* Import a premium serif font for headings */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap');
+/* TRUST SECTION */
 
 #trustSection {
-  background: #ffffff;
-  color: #000;
+  background: #800020;
+  color: #FFFFF0;
   padding: 40px 20px;
   text-align: center;
 }
@@ -1040,8 +1056,8 @@ button:hover{
 }
 
 .trust-box {
-  background: #ffffff;
-  border: 1px solid #000;
+  background: #800020;
+  border: 1px solid #FFFFF0;
   padding: 40px 30px;
   flex: 1 1 280px;
   min-width: 260px;
@@ -1054,12 +1070,13 @@ button:hover{
 
 /* HEADINGS */
 .trust-box h2 {
-  margin-bottom: 20px;
   font-family: 'Cinzel', serif;
+  margin-bottom: 20px;
   font-weight: 600;
   letter-spacing: 4px;
   text-transform: uppercase;
   font-size: 16px;
+  color: #FFFFF0;
 }
 
 /* LIST */
@@ -1069,16 +1086,19 @@ button:hover{
 }
 
 .trust-box ul li {
+  font-family: 'Poppins', sans-serif;
   margin: 12px 0;
   font-size: 13px;
   line-height: 1.8;
-  opacity: 0.8;
+  opacity: 0.85;
+  color: #FFFFF0;
 }
 
-/* CLICKABLE LINKS */
+/* LINKS */
 .trust-box a {
-  color: #1f3d2b;                 /* deep premium green */
-  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  color: #FFFFF0;
+  font-weight: 500;
   text-decoration: underline;
   text-underline-offset: 4px;
   text-decoration-thickness: 1.5px;
@@ -1087,9 +1107,10 @@ button:hover{
 }
 
 .trust-box a:hover {
-  color: #000;                    /* strong hover feedback */
+  opacity: 0.7;
   text-decoration-thickness: 2px;
 }
+
 
 /* input error red colour */
 .input-error {
@@ -1610,11 +1631,7 @@ onclick="openEmail()" alt="Email">
     <img id="modalMainImg" style="max-width:90%; max-height:65vh; border:1px solid #222;">  
     <div id="modalThumbs" style="display:flex; gap:10px; margin-top:25px;"></div> 
   </div>
-<div id="offerBanner">
-  EID OFFER🥳🎁 BUY 2+ ITEMS GET ₹100 OFF  
-  <br>
-  + ₹50 EXTRA OFF FOR EACH ADDITIONAL ITEM
-</div> 
+
   <section id="aboutAethel" class="reveal">
   <div class="about-box">
     <h1>AETHEL COLLECTIVE</h1>

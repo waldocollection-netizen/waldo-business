@@ -1506,13 +1506,13 @@ onclick="openEmail()" alt="Email">
 </div>
 
 <!-- ===== SUBCATEGORY SCREEN ===== -->
-<div class="subcategories" id="subCategoryScreen" style="display:none;">
+<div class="categories" id="subCategoryScreen" style="display:none;">
   <button class="back-btn" onclick="goBackHome()">← Back</button>
   <h2 id="subCategoryTitle"></h2>
   <div class="subcategory-grid" id="subcategoryGrid"></div>
 </div>
-
- <div class="categories" id="categoryScreen">
+  
+<div class="categories" id="categoryScreen">
   <div class="category reveal" onclick="openCategory('mensWear')">  
     <img src="https://i.ibb.co/ZpZs0r0y/1605feca3b5e85f5f70493bb6b7b015a.jpg">  
     <span>Mens Wear</span>  
@@ -1524,7 +1524,7 @@ onclick="openEmail()" alt="Email">
   <div class="category" onclick="openCategory('mensWatches')">  
     <img src="https://i.ibb.co/DPctDGPc/b42b9953e094fcf4905d0dcdd54dffc9.jpg">  
     <span>Mens Watches</span>  
-  </div>    <div class="category reveal" onclick="openCategory('gadgets')">  
+  </div>    <div class="category revel" onclick="openCategory('gadgets')">  
     <img src="https://i.ibb.co/D0YvHDP/1394b92cd9222ad3827348a2f1728b1a.jpg">  
     <span>Gadgets</span>  
   </div>    <div class="category reveal" onclick="openCategory('ladiesWatches')">  
@@ -1546,6 +1546,7 @@ onclick="openEmail()" alt="Email">
   <div class="coming-soon-overlay">COMING SOON</div>  
   <span>Ladies Wear</span>  
 </div>  
+ 
 <div id="reviewsSection" style="padding:20px;">
   <h2 style="text-align:center; color: var(--gold); letter-spacing:4px; margin-bottom:20px;">Customer Reviews</h2>
   
@@ -2861,6 +2862,52 @@ function goHomeFromHeader() {
   runReveal();
 }
 
+ // Subcategory data
+const subCategories = {
+  men: [
+    { name: "Mens Wear", key: "mensWear", img: "https://i.ibb.co/ZpZs0r0y/1605feca3b5e85f5f70493bb6b7b015a.jpg" },
+    { name: "Mens Shoes", key: "mensShoes", img: "https://i.ibb.co/V0Rnyf16/c5570d8073a509174d1b244bafc05c5e-1.jpg" },
+    { name: "Mens Watches", key: "mensWatches", img: "https://i.ibb.co/DPctDGPc/b42b9953e094fcf4905d0dcdd54dffc9.jpg" },
+  ],
+  women: [
+    { name: "Ladies Watches", key: "ladiesWatches", img: "https://i.postimg.cc/43VB4VWZ/flat-lay-coffee-keyboard-decoration.jpg" },
+    { name: "Ladies Shoes", key: "ladiesShoes", img: "https://i.ibb.co/q3FK5GmR/5abb6b0fe4b6153e506fc30774cd7e9a.jpg" },
+    { name: "Ladies Wear", key: "comingSoon", img: "https://i.ibb.co/SD7bTSYH/0808e1fb7ee460268f8e885c1af1fbba.jpg", comingSoon:true },
+  ],
+  others: [
+    { name: "Gadgets", key: "gadgets", img: "https://i.ibb.co/D0YvHDP/1394b92cd9222ad3827348a2f1728b1a.jpg" },
+    { name: "Accessories", key: "accessories", img: "https://i.ibb.co/HL2SdgZ8/948da70bec8894e8a968fd04cf455a7c.jpg" },
+    { name: "Couple Items", key: "coupleAccessories", img: "https://i.ibb.co/GQGg1rhp/9ee44bd2a1a83107c02332a52a46fd85.jpg" },
+  ]
+};
+
+// Open subcategory for main category
+function openSubCategory(mainCat) {
+  hideAll(); // hide everything first
+
+  const grid = document.getElementById("subcategoryGrid");
+  const title = document.getElementById("subCategoryTitle");
+
+  title.innerText = mainCat.charAt(0).toUpperCase() + mainCat.slice(1);
+  grid.innerHTML = "";
+
+  subCategories[mainCat].forEach(cat => {
+    const div = document.createElement("div");
+    div.className = "category reveal";
+    div.onclick = () => {
+      if (cat.comingSoon) {
+        alert("COMING SOON!");
+      } else {
+        openCategory(cat.key); // your existing product loader
+      }
+    };
+    div.innerHTML = `<img src="${cat.img}" alt="${cat.name}"><span>${cat.name}</span>`;
+    grid.appendChild(div);
+  });
+
+  document.getElementById("subCategoryScreen").style.display = "block";
+}
+ 
  function openCategory(catKey) {
     hideAll();
     currentCategory = catKey;

@@ -259,7 +259,27 @@ body{
   aspect-ratio: 16 / 9;  
   border: 1px solid #e5e5e5; /* premium light border */
 }  
-  
+
+.category-title{
+  font-size:18px;
+  font-weight:700;
+  letter-spacing:3px;
+  margin:25px 0 15px;
+  text-align:center;
+  color:#111;
+  position:relative;
+}
+
+.category-title::after{
+  content:"";
+  display:block;
+  width:35px;
+  height:2px;
+  background:#111;
+  margin:8px auto 0;
+  opacity:.3;
+}
+ 
 .category::after {  
   content: '';  
   position: absolute;  
@@ -1518,14 +1538,17 @@ onclick="openEmail()" alt="Email">
 
 <div class="categories" id="categoryScreen" style="display:none">
 
-   <!-- BACK BUTTON -->
+  <!-- BACK BUTTON -->
   <div style="display:flex; justify-content:flex-start; margin:10px 0;">
     <button class="small-back-btn" onclick="goHomeFromHeader()">
       ← Back
     </button>
   </div>
- 
-  <!-- MEN -->
+
+
+  <!-- ================= MEN ================= -->
+  <h3 class="category-title">MEN</h3>
+
   <div class="category mens reveal" onclick="openCategory('mensWear')">
     <img src="https://i.ibb.co/ZpZs0r0y/1605feca3b5e85f5f70493bb6b7b015a.jpg">
     <span>Mens Wear</span>
@@ -1541,7 +1564,9 @@ onclick="openEmail()" alt="Email">
     <span>Mens Watches</span>
   </div>
 
-  <!-- WOMEN -->
+
+  <!-- ================= WOMEN ================= -->
+  <h3 class="category-title">WOMEN</h3>
 
   <div class="category womens reveal" onclick="openCategory('ladiesWatches')">
     <img src="https://i.postimg.cc/43VB4VWZ/flat-lay-coffee-keyboard-decoration.jpg">
@@ -1559,7 +1584,9 @@ onclick="openEmail()" alt="Email">
     <span>Ladies Wear</span>
   </div>
 
-  <!-- OTHERS -->
+
+  <!-- ================= OTHERS ================= -->
+  <h3 class="category-title">OTHERS</h3>
 
   <div class="category others reveal" onclick="openCategory('gadgets')">
     <img src="https://i.ibb.co/D0YvHDP/1394b92cd9222ad3827348a2f1728b1a.jpg">

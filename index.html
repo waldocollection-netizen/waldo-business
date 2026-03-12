@@ -1958,7 +1958,8 @@ onclick="openEmail()" alt="Email">
 
 </div>  
 <script>  
-let recent = [];  
+let recent = []; 
+let currentMainCategory = "";
 const SHIPPING = 0;  
 let searchCache = [];
 let trendingCache = [];
@@ -2191,7 +2192,30 @@ function goHomeFromHeader() {
   runReveal();
 }
 
+ function exitProducts(){
+
+  hideAll();
+
+  document.getElementById("categoryScreen").style.display = "block";
+
+  // hide all groups
+  document.querySelectorAll(".category-group").forEach(group=>{
+      group.style.display="none";
+  });
+
+  // show previously selected group
+  if(currentMainCategory){
+      document.querySelector("." + currentMainCategory + "-group").style.display="block";
+  }
+
+  window.scrollTo(0,0);
+
+  runReveal();
+ }
+ 
  function openMainCategory(type){
+
+  currentMainCategory = type; // remember selected group
 
   hideAll();
 

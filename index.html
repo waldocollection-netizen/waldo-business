@@ -1402,40 +1402,91 @@ onclick="openEmail()" alt="Email">
 </div>  
 
   
-<div class="categories" id="categoryScreen">
-  <div class="category reveal" onclick="openCategory('mensWear')">  
-    <img src="https://i.ibb.co/ZpZs0r0y/1605feca3b5e85f5f70493bb6b7b015a.jpg">  
-    <span>Mens Wear</span>  
-  </div>  
-  <div class="category reveal" onclick="openCategory('mensShoes')">  
-    <img src="https://i.ibb.co/V0Rnyf16/c5570d8073a509174d1b244bafc05c5e-1.jpg">  
-    <span>Mens Shoes</span>  
-  </div>  
-  <div class="category" onclick="openCategory('mensWatches')">  
-    <img src="https://i.ibb.co/DPctDGPc/b42b9953e094fcf4905d0dcdd54dffc9.jpg">  
-    <span>Mens Watches</span>  
-  </div>    <div class="category revel" onclick="openCategory('gadgets')">  
-    <img src="https://i.ibb.co/D0YvHDP/1394b92cd9222ad3827348a2f1728b1a.jpg">  
-    <span>Gadgets</span>  
-  </div>    <div class="category reveal" onclick="openCategory('ladiesWatches')">  
-  <img src="https://i.postimg.cc/43VB4VWZ/flat-lay-coffee-keyboard-decoration.jpg">  
-  <span>Ladies Watches</span>  
-  </div>    <div class="category reveal" onclick="openCategory('ladiesShoes')">  
-    <img src="https://i.ibb.co/q3FK5GmR/5abb6b0fe4b6153e506fc30774cd7e9a.jpg">  
-    <span>Ladies Shoes</span>  
-  </div>  
-  <div class="category reveal" onclick="openCategory('accessories')">  
-    <img src="https://i.ibb.co/HL2SdgZ8/948da70bec8894e8a968fd04cf455a7c.jpg">  
-    <span>Accessories</span>  
-  </div>  
-  <div class="category reveal" onclick="openCategory('coupleAccessories')">  
-    <img src="https://i.ibb.co/GQGg1rhp/9ee44bd2a1a83107c02332a52a46fd85.jpg">  
-    <span>Couple Items</span>  
-  </div>    <div class="category reveal coming-soon" onclick="showToast('COMING SOON')">  
-  <img src="https://i.ibb.co/SD7bTSYH/0808e1fb7ee460268f8e885c1af1fbba.jpg">  
-  <div class="coming-soon-overlay">COMING SOON</div>  
-  <span>Ladies Wear</span>  
-</div>  
+<!-- ===== MAIN SHOP CATEGORIES ===== -->
+<div class="main-shop">
+
+  <h2 class="shop-title">Shopping for?</h2>
+
+  <div class="shop-card" onclick="openMainCategory('mens')">
+    <img src="https://i.ibb.co/ZpZs0r0y/1605feca3b5e85f5f70493bb6b7b015a.jpg">
+    <div class="shop-text">
+      <span>SHOP FOR</span>
+      <h3>MEN</h3>
+    </div>
+  </div>
+
+  <div class="shop-card" onclick="openMainCategory('womens')">
+    <img src="https://i.postimg.cc/43VB4VWZ/flat-lay-coffee-keyboard-decoration.jpg">
+    <div class="shop-text">
+      <span>SHOP FOR</span>
+      <h3>WOMEN</h3>
+    </div>
+  </div>
+
+  <div class="shop-card" onclick="openMainCategory('others')">
+    <img src="https://i.ibb.co/HL2SdgZ8/948da70bec8894e8a968fd04cf455a7c.jpg">
+    <div class="shop-text">
+      <span>SHOP FOR</span>
+      <h3>OTHERS</h3>
+    </div>
+  </div>
+
+</div>
+
+<div class="categories" id="categoryScreen" style="display:none">
+
+  <!-- MEN -->
+  <div class="category mens reveal" onclick="openCategory('mensWear')">
+    <img src="https://i.ibb.co/ZpZs0r0y/1605feca3b5e85f5f70493bb6b7b015a.jpg">
+    <span>Mens Wear</span>
+  </div>
+
+  <div class="category mens reveal" onclick="openCategory('mensShoes')">
+    <img src="https://i.ibb.co/V0Rnyf16/c5570d8073a509174d1b244bafc05c5e-1.jpg">
+    <span>Mens Shoes</span>
+  </div>
+
+  <div class="category mens reveal" onclick="openCategory('mensWatches')">
+    <img src="https://i.ibb.co/DPctDGPc/b42b9953e094fcf4905d0dcdd54dffc9.jpg">
+    <span>Mens Watches</span>
+  </div>
+
+  <!-- WOMEN -->
+
+  <div class="category womens reveal" onclick="openCategory('ladiesWatches')">
+    <img src="https://i.postimg.cc/43VB4VWZ/flat-lay-coffee-keyboard-decoration.jpg">
+    <span>Ladies Watches</span>
+  </div>
+
+  <div class="category womens reveal" onclick="openCategory('ladiesShoes')">
+    <img src="https://i.ibb.co/q3FK5GmR/5abb6b0fe4b6153e506fc30774cd7e9a.jpg">
+    <span>Ladies Shoes</span>
+  </div>
+
+  <div class="category womens reveal coming-soon" onclick="showToast('COMING SOON')">
+    <img src="https://i.ibb.co/SD7bTSYH/0808e1fb7ee460268f8e885c1af1fbba.jpg">
+    <div class="coming-soon-overlay">COMING SOON</div>
+    <span>Ladies Wear</span>
+  </div>
+
+  <!-- OTHERS -->
+
+  <div class="category others reveal" onclick="openCategory('gadgets')">
+    <img src="https://i.ibb.co/D0YvHDP/1394b92cd9222ad3827348a2f1728b1a.jpg">
+    <span>Gadgets</span>
+  </div>
+
+  <div class="category others reveal" onclick="openCategory('accessories')">
+    <img src="https://i.ibb.co/HL2SdgZ8/948da70bec8894e8a968fd04cf455a7c.jpg">
+    <span>Accessories</span>
+  </div>
+
+  <div class="category others reveal" onclick="openCategory('coupleAccessories')">
+    <img src="https://i.ibb.co/GQGg1rhp/9ee44bd2a1a83107c02332a52a46fd85.jpg">
+    <span>Couple Items</span>
+  </div>
+
+</div>
  
 <div id="reviewsSection" style="padding:20px;">
   <h2 style="text-align:center; color: var(--gold); letter-spacing:4px; margin-bottom:20px;">Customer Reviews</h2>
@@ -2752,7 +2803,25 @@ function goHomeFromHeader() {
   runReveal();
 }
 
+ function openMainCategory(type){
 
+  hideAll()
+
+  document.getElementById("categoryScreen").style.display="grid"
+
+  document.querySelectorAll("#categoryScreen .category").forEach(cat=>{
+      cat.style.display="none"
+  })
+
+  document.querySelectorAll("#categoryScreen ."+type).forEach(cat=>{
+      cat.style.display="block"
+  })
+
+  window.scrollTo(0,0)
+
+  runReveal()
+ }
+ 
  function openCategory(catKey) {
     hideAll();
     currentCategory = catKey;

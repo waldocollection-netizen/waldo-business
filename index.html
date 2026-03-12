@@ -1408,7 +1408,18 @@ body{
   color: #fff;                     /* text inverts to white */
   transform: translateY(-1px);     /* subtle lift for touch feel */
 }
-   
+
+/* BRAND LINE FOR PRODUCT CARDS */
+.brand-line2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin: 6px 0 10px;
+  color: #800020;
+}
+ 
 /* FOOTER */
 .footer {
   text-align: center;
@@ -3016,7 +3027,7 @@ function goHomeFromHeader() {
 
             <div class="info">
   <b>${p.name}</b>
-  <div class="brand-line">Selected by Aethel Collective</div>
+  <div class="brand-line2">Assured by Waldo Inn</div>
   <span class="price-tag">
     ${p.oldPrice ? `<span class="old-price">₹${p.oldPrice}</span>` : ""}
     <span class="new-price">₹${p.price}</span>
@@ -3185,8 +3196,8 @@ function renderProducts(productsArray) {
 
                 <b>${p.name}</b>
 
-                <div class="brand-line">
-                    Selected by Aethel Collective
+                <div class="brand-line2">
+                    Assured by Waldo Inn
                 </div>
 
                 <span class="price-tag">
@@ -3909,7 +3920,7 @@ function searchProducts() {
 
         <div class="info">
           <b>${p.name}</b>
-          <div class="brand-line">Selected by Aethel Collective</div>
+          <div class="brand-line2">Assured by Waldo Inn</div>
           <span class="price-tag">
             ${p.oldPrice ? `<span class="old-price">₹${p.oldPrice}</span>` : ""}
             <span class="new-price">₹${p.price}</span>
@@ -4000,7 +4011,7 @@ function showTrending() {
 
         <div class="info">
           <b>${p.name}</b>
-          <div class="brand-line">Selected by Aethel Collective</div>
+          <div class="brand-line2">Assured by Waldo Inn</div>
           <span class="price-tag">
             ${p.oldPrice ? `<span class="old-price">₹${p.oldPrice}</span>` : ""}
             <span class="new-price">₹${p.price}</span>

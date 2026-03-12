@@ -2888,6 +2888,7 @@ function hideAll() {
   document.getElementById("detailsScreen").style.display = "none";  
   document.getElementById("homeTopBar").style.display = "none";  
   document.querySelector(".social-home").classList.remove("shifted");
+  document.getElementById("reviewsSection").style.display = "none";
 }  
   
 function showToast(msg) {  
@@ -2902,6 +2903,8 @@ function goHomeFromHeader() {
 
   // show MAIN categories
   document.getElementById("mainShop").style.display = "block";
+
+  document.getElementById("reviewsSection").style.display = "block";
 
   // hide subcategories
   document.getElementById("categoryScreen").style.display = "none";

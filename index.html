@@ -1508,7 +1508,7 @@ onclick="openEmail()" alt="Email">
 
   
 <!-- ===== MAIN SHOP CATEGORIES ===== -->
-<div class="main-shop">
+<div class="main-shop" id="mainShop">
 
   <h2 class="shop-title">Shopping for?</h2>
 
@@ -2911,6 +2911,9 @@ function goHomeFromHeader() {
  function openMainCategory(type){
 
   hideAll()
+
+  // hide main categories
+  document.getElementById("mainShop").style.display="none";
 
   document.getElementById("categoryScreen").style.display="grid"
 

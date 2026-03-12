@@ -1658,7 +1658,7 @@ onclick="openEmail()" alt="Email">
 </div>  <div class="section" id="productSection"> 
     <!-- EXIT BUTTON --> 
  <div style="display:flex; justify-content:flex-start; margin:10px 0;">
-  <button class="small-back-btn" onclick="exitProducts2()">
+  <button class="small-back-btn" onclick="exitProducts()">
     ← Back
   </button>
  </div>
@@ -2192,7 +2192,7 @@ function goHomeFromHeader() {
   runReveal();
 }
 
- function exitProducts2(){
+ function exitProducts(){
 
   hideAll();
 
@@ -2986,9 +2986,7 @@ function openHow() { document.getElementById("howModal").style.display = "flex";
 function closeHow() { document.getElementById("howModal").style.display = "none"; }  
 function closeCart() { if(currentCategory) openCategory(currentCategory); else goHomeFromHeader(); }  
 function goProducts() { openCategory(currentCategory); }  
-function exitProducts() {  
-  goHomeFromHeader();  
-}  
+
   
 function openImageModal(imgs) {  
   const m = document.getElementById("imageModal");  

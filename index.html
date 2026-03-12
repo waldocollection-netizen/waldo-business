@@ -156,11 +156,28 @@ body{
   padding:20px;
 }
 
+/* CENTERED TITLE */
+
 .shop-title{
   font-size:22px;
   font-weight:600;
-  margin-bottom:25px;
+  margin-bottom:30px;
   color:#1a1a1a;
+  text-align:center;
+  letter-spacing:1px;
+  position:relative;
+}
+
+/* small premium underline */
+
+.shop-title::after{
+  content:"";
+  display:block;
+  width:40px;
+  height:2px;
+  background:#1a1a1a;
+  margin:10px auto 0;
+  opacity:.3;
 }
 
 
@@ -171,70 +188,46 @@ body{
 .shop-card{
   position:relative;
   width:100%;
-  aspect-ratio: 16/9;
+  aspect-ratio:16/9;
   overflow:hidden;
-  margin-bottom:30px;
+  margin-bottom:28px;
   border-radius:10px;
   cursor:pointer;
   border:1px solid #e5e5e5;
 }
 
 
-/* image */
+/* IMAGE */
 
 .shop-card img{
   width:100%;
   height:100%;
   object-fit:cover;
-  transition: transform 1.2s cubic-bezier(0.2,1,0.3,1);
   filter:brightness(85%);
+  transition:transform 1.3s cubic-bezier(0.2,1,0.3,1),
+             filter .6s ease;
 }
 
 
-/* hover zoom */
+/* HOVER ZOOM */
 
 .shop-card:hover img{
   transform:scale(1.06);
+  filter:brightness(100%);
 }
 
 
-/* overlay gradient */
+/* SUBTLE GRADIENT */
 
 .shop-card::after{
   content:'';
   position:absolute;
   inset:0;
   background:linear-gradient(
-    to right,
-    rgba(0,0,0,0.65),
-    rgba(0,0,0,0.1)
+    to top,
+    rgba(0,0,0,0.5),
+    rgba(0,0,0,0)
   );
-}
-
-
-/* ===============================
-   TEXT ON CARD
-================================*/
-
-.shop-text{
-  position:absolute;
-  left:30px;
-  bottom:30px;
-  z-index:2;
-  color:white;
-}
-
-.shop-text span{
-  font-size:12px;
-  letter-spacing:3px;
-  opacity:.9;
-}
-
-.shop-text h3{
-  font-size:34px;
-  margin-top:5px;
-  font-weight:800;
-  letter-spacing:2px;
 }
 
 
@@ -244,15 +237,12 @@ body{
 
 @media(max-width:600px){
 
-  .shop-text h3{
-    font-size:28px;
-  }
-
   .shop-card{
     margin-bottom:22px;
   }
 
 }
+
  
 /* PREMIUM CATEGORY GRID */  
 .categories{  
@@ -1510,30 +1500,16 @@ onclick="openEmail()" alt="Email">
 <!-- ===== MAIN SHOP CATEGORIES ===== -->
 <div class="main-shop" id="mainShop">
 
-  <h2 class="shop-title">Shopping for?</h2>
-
   <div class="shop-card" onclick="openMainCategory('mens')">
     <img src="https://i.ibb.co/ZpZs0r0y/1605feca3b5e85f5f70493bb6b7b015a.jpg">
-    <div class="shop-text">
-      <span>SHOP FOR</span>
-      <h3>MEN</h3>
-    </div>
   </div>
 
   <div class="shop-card" onclick="openMainCategory('womens')">
     <img src="https://i.postimg.cc/43VB4VWZ/flat-lay-coffee-keyboard-decoration.jpg">
-    <div class="shop-text">
-      <span>SHOP FOR</span>
-      <h3>WOMEN</h3>
-    </div>
   </div>
 
   <div class="shop-card" onclick="openMainCategory('others')">
     <img src="https://i.ibb.co/HL2SdgZ8/948da70bec8894e8a968fd04cf455a7c.jpg">
-    <div class="shop-text">
-      <span>SHOP FOR</span>
-      <h3>OTHERS</h3>
-    </div>
   </div>
 
 </div>

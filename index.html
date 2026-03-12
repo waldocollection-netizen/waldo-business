@@ -2947,24 +2947,25 @@ function goHomeFromHeader() {
 
  function openMainCategory(type){
 
-  hideAll()
+  hideAll();
 
   // hide main categories
-  document.getElementById("mainShop").style.display="none";
+  document.getElementById("mainShop").style.display = "none";
 
-  document.getElementById("categoryScreen").style.display="grid"
+  // show subcategory screen
+  document.getElementById("categoryScreen").style.display = "block";
 
-  document.querySelectorAll("#categoryScreen .category").forEach(cat=>{
-      cat.style.display="none"
-  })
+  // hide all groups
+  document.querySelectorAll(".category-group").forEach(group=>{
+      group.style.display = "none";
+  });
 
-  document.querySelectorAll("#categoryScreen ."+type).forEach(cat=>{
-      cat.style.display="block"
-  })
+  // show selected group
+  document.querySelector("." + type + "-group").style.display = "block";
 
-  window.scrollTo(0,0)
+  window.scrollTo(0,0);
 
-  runReveal()
+  runReveal();
  }
  
  function openCategory(catKey) {

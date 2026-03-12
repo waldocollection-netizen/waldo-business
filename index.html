@@ -2899,19 +2899,28 @@ function showToast(msg) {
   
 function goHomeFromHeader() {  
   hideAll();  
-  document.getElementById("categoryScreen").style.display = "grid";  
+
+  // show MAIN categories
+  document.getElementById("mainShop").style.display = "block";
+
+  // hide subcategories
+  document.getElementById("categoryScreen").style.display = "none";
+
   document.getElementById("homeTopBar").style.display = "block";  
   document.getElementById("cartBtn").style.display = "block";  
+
   window.scrollTo(0,0);  
+
   // Reset sort and filter
   const sortSelect = document.getElementById("sortSelect");
-  if (sortSelect) sortSelect.value = "default"; // back to default
+  if (sortSelect) sortSelect.value = "default";
 
   const priceFilter = document.getElementById("priceFilter");
-  if (priceFilter) priceFilter.value = ""; // reset price filter if needed
-  
+  if (priceFilter) priceFilter.value = "";
+
   currentScreen = "home";  
   history.pushState({ screen: "home" }, "", "");  
+
   runReveal();
 }
 

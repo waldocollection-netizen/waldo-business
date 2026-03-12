@@ -148,6 +148,111 @@ body{
     color: #555555;
 }
 
+/* ===============================
+   MAIN SHOP SECTION
+================================*/
+
+.main-shop{
+  padding:20px;
+}
+
+.shop-title{
+  font-size:22px;
+  font-weight:600;
+  margin-bottom:25px;
+  color:#1a1a1a;
+}
+
+
+/* ===============================
+   MAIN CATEGORY CARD
+================================*/
+
+.shop-card{
+  position:relative;
+  width:100%;
+  aspect-ratio: 16/9;
+  overflow:hidden;
+  margin-bottom:30px;
+  border-radius:10px;
+  cursor:pointer;
+  border:1px solid #e5e5e5;
+}
+
+
+/* image */
+
+.shop-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition: transform 1.2s cubic-bezier(0.2,1,0.3,1);
+  filter:brightness(85%);
+}
+
+
+/* hover zoom */
+
+.shop-card:hover img{
+  transform:scale(1.06);
+}
+
+
+/* overlay gradient */
+
+.shop-card::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to right,
+    rgba(0,0,0,0.65),
+    rgba(0,0,0,0.1)
+  );
+}
+
+
+/* ===============================
+   TEXT ON CARD
+================================*/
+
+.shop-text{
+  position:absolute;
+  left:30px;
+  bottom:30px;
+  z-index:2;
+  color:white;
+}
+
+.shop-text span{
+  font-size:12px;
+  letter-spacing:3px;
+  opacity:.9;
+}
+
+.shop-text h3{
+  font-size:34px;
+  margin-top:5px;
+  font-weight:800;
+  letter-spacing:2px;
+}
+
+
+/* ===============================
+   MOBILE IMPROVEMENTS
+================================*/
+
+@media(max-width:600px){
+
+  .shop-text h3{
+    font-size:28px;
+  }
+
+  .shop-card{
+    margin-bottom:22px;
+  }
+
+}
  
 /* PREMIUM CATEGORY GRID */  
 .categories{  

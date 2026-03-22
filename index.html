@@ -62,7 +62,6 @@ html{
 
 
 /* HEADER */
-
 header{
   position:fixed;
   top:0;
@@ -71,75 +70,97 @@ header{
   height:70px;
   background:#800020;
   z-index:9999;
+
   transform:translateY(0);
   transition:transform 0.4s cubic-bezier(0.4,0,0.2,1);
+
   border-bottom:1px solid var(--border);
 
   display:flex;
-  justify-content:space-between;   /* left + right layout */
+  justify-content:space-between;
   align-items:center;
-  padding:0 18px;
+  padding:0 20px;
 }
 
 
-/* STORE TITLE + LOGO (LEFT SIDE) */
+/* ===============================
+   STORE TITLE + LOGO
+================================*/
 
 .store-title{
   display:flex;
   align-items:center;
-  gap:12px;
-  font-size:18px;
-  letter-spacing:6px;
-  font-weight:400;
-  cursor:pointer;
+  gap:10px;
+
+  font-size:16px;              /* reduced slightly */
+  letter-spacing:4px;
+  font-weight:500;
+
   text-transform:uppercase;
-  color:var(--text);
+  cursor:pointer;
+  color:#fff;                  /* fixed visibility */
 }
 
 .store-logo{
-  height:28px;
+  height:30px;                 /* slightly bigger */
   width:auto;
   object-fit:contain;
 }
 
 
-/* CART BUTTON (RIGHT SIDE) */
+/* ===============================
+   CART BUTTON
+================================*/
 
 .cart-btn{
   position:relative;
-  font-size:9px;
-  letter-spacing:1px;
+
+  display:flex;                /* important for vertical alignment */
+  align-items:center;
+  justify-content:center;
+
+  height:38px;                 /* match header visually */
+  padding:0 18px;
+
+  font-size:12px;              /* increased from 9px */
+  letter-spacing:2px;
+
   text-transform:uppercase;
+
   border:1px solid #fff;
   color:#fff;
   background:transparent;
-  padding:6px 14px;
+
   cursor:pointer;
-  display:none;
   transition:all 0.3s ease;
 }
 
-/* hover effect (premium subtle) */
+/* hover effect */
 .cart-btn:hover{
   background:#fff;
   color:#800020;
 }
 
+
+/* ===============================
+   CART COUNT BADGE
+================================*/
+
 .cart-count{
   position:absolute;
-  top:-6px;
-  right:-6px;
+  top:-8px;
+  right:-8px;
 
   background:#fff;
   color:#800020;
 
-  font-size:9px;
+  font-size:10px;
   font-weight:600;
 
   padding:2px 6px;
   border-radius:50px;
 
-  min-width:16px;
+  min-width:18px;
   text-align:center;
 
   border:1px solid #800020;

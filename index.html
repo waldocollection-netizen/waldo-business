@@ -106,15 +106,43 @@ header{
 /* CART BUTTON (RIGHT SIDE) */
 
 .cart-btn{
+  position:relative;
   font-size:9px;
   letter-spacing:1px;
   text-transform:uppercase;
-  border:1px solid var(--text);
-  color:var(--text);
+  border:1px solid #fff;
+  color:#fff;
   background:transparent;
-  padding:5px 10px;
+  padding:6px 14px;
   cursor:pointer;
   display:none;
+  transition:all 0.3s ease;
+}
+
+/* hover effect (premium subtle) */
+.cart-btn:hover{
+  background:#fff;
+  color:#800020;
+}
+
+.cart-count{
+  position:absolute;
+  top:-6px;
+  right:-6px;
+
+  background:#fff;
+  color:#800020;
+
+  font-size:9px;
+  font-weight:600;
+
+  padding:2px 6px;
+  border-radius:50px;
+
+  min-width:16px;
+  text-align:center;
+
+  border:1px solid #800020;
 }
 
 
@@ -1455,7 +1483,10 @@ body{
     <img src="https://i.ibb.co/rR3YmK0p/IMG-20260228-WA0019.jpg" alt="Logo" class="store-logo">  
     <span>WALDO</span>  
   </div>  
-  <div class="cart-btn" id="cartBtn" onclick="openCart()">BAG (<span id="cartCount">0</span>)</div>  
+<div class="cart-btn" id="cartBtn" onclick="openCart()">
+  <img src="https://cdn-icons-png.flaticon.com/512/4903/4903482.png" alt="Bag">
+  <span id="cartCount">0</span>
+</div>
 </header>  <div id="toast"></div>  <div id="homeTopBar">    
   <div style="position:relative; width:200px; margin:auto;">
   <input   

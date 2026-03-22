@@ -60,110 +60,119 @@ html{
   scroll-behavior:smooth;
 }
 
+/* HEADER */      
+header{  
+  position: fixed;  
+  top: 0;  
+  left: 0; 
 
-/* HEADER */
-header{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:70px;
-  background:#800020;
-  z-index:9999;
+  /* was 26px */
+  margin-top: clamp(24px, 6vw, 28px);
 
-  transform:translateY(0);
-  transition:transform 0.4s cubic-bezier(0.4,0,0.2,1);
+  width: 100%;  
 
-  border-bottom:1px solid var(--border);
+  /* was 50px */
+  height: clamp(48px, 10vw, 56px);
 
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:0 20px;
+  background:#FFFFFF;  
+  z-index: 9999;  
+  transform: translateY(0);  
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);  
+  border-bottom: 1px solid var(--border);
+
+  display: flex;  
+  justify-content: center;  
+  align-items: center;  
+
+  /* prevent edge sticking on small screens */
+  padding: 0 clamp(10px, 4vw, 16px);
+}  
+
+.store-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    gap: 0;
+    padding: 0;
 }
 
-
-/* ===============================
-   STORE TITLE + LOGO
-================================*/
-
-.store-title{
-  display:flex;
-  align-items:center;
-  gap:10px;
-
-  font-size:16px;              /* reduced slightly */
-  letter-spacing:4px;
-  font-weight:500;
-
-  text-transform:uppercase;
-  cursor:pointer;
-  color:#fff;                  /* fixed visibility */
+.store-logo {
+    /* was 40px */
+    height: clamp(32px, 7vw, 42px);
+    width: auto;
+    object-fit: contain;
+    display: block;
 }
 
-.store-logo{
-  height:30px;                 /* slightly bigger */
-  width:auto;
-  object-fit:contain;
-}
 
 
 /* ===============================
    CART BUTTON
 ================================*/
 
-.cart-btn{
-  position:relative;
+.cart-btn {
+    position: absolute;              
 
-  display:flex;                /* important for vertical alignment */
-  align-items:center;
-  justify-content:center;
+    /* FIX vertical alignment */
+    top: 50%;
+    transform: translateY(-50%);
 
-  height:38px;                 /* match header visually */
-  padding:0 18px;
+    /* was 15px */
+    right: clamp(10px, 4vw, 16px);
 
-  font-size:12px;              /* increased from 9px */
-  letter-spacing:2px;
+    width: auto;                  
+    height: auto;
+    border-radius: 0;             
+    background-color: transparent; 
 
-  text-transform:uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  border:1px solid #fff;
-  color:#fff;
-  background:transparent;
+    cursor: pointer;
+    z-index: 999;                 
+    padding: 0;
+    border: none;
+    transition: 0.3s ease;
 
-  cursor:pointer;
-  transition:all 0.3s ease;
+    display: none;                
 }
 
-/* hover effect */
-.cart-btn:hover{
-  background:#fff;
-  color:#800020;
+.cart-btn:hover {
+    background-color: rgba(0,0,0,0.05); 
 }
 
+.cart-icon-wrapper {
+    position: relative;
 
-/* ===============================
-   CART COUNT BADGE
-================================*/
+    /* was 24px */
+    width: clamp(20px, 5vw, 26px);
+    height: clamp(20px, 5vw, 26px);
+}
 
-.cart-count{
-  position:absolute;
-  top:-8px;
-  right:-8px;
+.cart-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
 
-  background:#fff;
-  color:#800020;
+.cart-count {
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    background-color: #FF3B30;    
+    color: #fff;
 
-  font-size:10px;
-  font-weight:600;
+    /* was 9px */
+    font-size: clamp(8px, 2vw, 10px);
 
-  padding:2px 6px;
-  border-radius:50px;
-
-  min-width:18px;
-  text-align:center;
-
-  border:1px solid #800020;
+    font-weight: bold;
+    padding: 1px 4px;
+    border-radius: 50%;
+    min-width: 14px;
+    text-align: center;
+    line-height: 1;
 }
 
 

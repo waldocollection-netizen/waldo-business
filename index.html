@@ -94,19 +94,34 @@ header.hide{
 
 
 /* ===============================
-   STORE LOGO
+   STORE TITLE (LEFT)
 ================================*/
 
 .store-title {
+  position: absolute;
+  left: clamp(12px, 4vw, 18px);
+
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 8px;
+
   cursor: pointer;
+}
+
+/* Brand Name */
+
+.store-title span{
+  font-family: 'Hyperion Light', sans-serif;
+  font-size: clamp(14px, 3.5vw, 18px);
+  letter-spacing: 3px;
+  text-transform: uppercase;
   color: #000;
 }
 
+/* Logo beside text */
+
 .store-logo {
-  height: clamp(34px, 7vw, 44px);
+  height: clamp(26px, 6vw, 32px);
   width: auto;
   object-fit: contain;
 }

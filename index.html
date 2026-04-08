@@ -90,7 +90,7 @@ header{
 
 
 /* ===============================
-   STORE TITLE (LEFT)
+   STORE BANNER (LEFT)
 ================================*/
 
 .store-title {
@@ -99,29 +99,26 @@ header{
 
   display: flex;
   align-items: center;
-  gap: 8px;
-
   cursor: pointer;
 }
 
-/* Brand Name */
+/* Banner Image */
 
-.store-title span{
-  font-family: 'Hyperion Light', sans-serif;
-  font-size: clamp(14px, 3.5vw, 18px);
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: #000;
-}
-
-/* Logo beside text */
-
-.store-logo {
-  height: clamp(26px, 6vw, 32px);
+.store-banner{
+  height: clamp(30px, 7vw, 40px);
   width: auto;
+
   object-fit: contain;
+
+  /* smooth scaling */
+  transition: transform 0.3s ease;
 }
 
+/* subtle hover */
+
+.store-title:hover .store-banner{
+  transform: scale(1.05);
+}
 
 /* ===============================
    CART BUTTON
@@ -1521,9 +1518,8 @@ body{
 </div>
   <header>  
   <div class="store-title" onclick="goHomeFromHeader()">  
-    <img src="https://i.ibb.co/rR3YmK0p/IMG-20260228-WA0019.jpg" alt="Logo" class="store-logo">  
-    <span>WALDO</span>  
-  </div>  
+  <img src="https://i.ibb.co/6cLTyCpQ/IMG-20260409-015459.jpg" class="store-banner" alt="Waldo Inn">
+  </div>
 <div class="cart-btn" id="cartBtn" onclick="openCart()">
   <div class="cart-icon-wrapper">
     <img src="https://cdn-icons-png.flaticon.com/512/4308/4308487.png" class="cart-icon" alt="Bag">

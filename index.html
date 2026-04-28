@@ -3293,7 +3293,37 @@ function levenshtein(a, b) {
   return m[b.length][a.length];
 }
 
+function openSearch(){
 
+const overlay = document.getElementById("searchOverlay");
+
+overlay.style.display = "block";
+overlay.style.pointerEvents = "auto";
+
+document.getElementById("searchInput").focus();
+
+}
+ 
+function closeSearch(){
+
+const overlay = document.getElementById("searchOverlay");
+
+overlay.style.display = "none";
+overlay.style.pointerEvents = "none";
+
+document.getElementById("suggestBox").innerHTML="";
+document.getElementById("searchInput").value="";
+
+}
+
+function clearSearch(){
+
+document.getElementById("searchInput").value="";
+document.getElementById("suggestBox").innerHTML="";
+document.getElementById("searchInput").focus();
+
+ }
+ 
 function searchProducts() {
   const q = document.getElementById("searchInput").value.toLowerCase().trim();
             document.getElementById("suggestBox").innerHTML = "";

@@ -120,6 +120,30 @@ header{
   transform: scale(1.05);
 }
 
+.search-btn {
+    position: absolute;
+
+    /* was 50px */
+    left: clamp(40px, 10vw, 55px);
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    /* was 24px */
+    width: clamp(20px, 5vw, 26px);
+    height: clamp(20px, 5vw, 26px);
+
+    cursor: pointer;
+    user-select: none;
+}
+
+.search-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+ 
 /* ===============================
    CART BUTTON
 ================================*/
@@ -1485,6 +1509,115 @@ body{
   margin: 6px 0 10px;
   color: #800020;
 }
+
+/* SUGGESTION BOX */
+.suggest-box{
+  position:absolute;
+  top:100%;
+  left:0;
+  width:100%;
+  background:#000;
+  border:1px solid #333;
+  max-height:200px;
+  overflow-y:auto;
+  z-index:9999;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+}
+
+.suggest-item{
+  padding:12px 14px;
+  cursor:pointer;
+  font-size:10px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:#ffffff;
+  opacity:.8;
+  transition: all 0.2s ease;
+}
+
+.suggest-item:hover{
+  background:#111;
+  opacity:1;
+}
+
+#searchOverlay{
+display:none;
+pointer-events:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#000;
+color:#fff;
+z-index:9999;
+display:none;
+overflow:auto;
+padding-top:80px;
+}
+
+/* top bar */
+
+.search-top{
+display:flex;
+align-items:center;
+padding:15px;
+gap:10px;
+}
+
+.search-box{
+color:#fff;
+flex:1;
+display:flex;
+align-items:center;
+border:2px solid #fff;
+border-radius:40px;
+padding:10px 15px;
+}
+
+.search-box input{
+flex:1;
+background:none;
+border:none;
+outline:none;
+color:#fff;
+font-size:16px;
+ }
+
+ .clear-btn,
+.go-btn{
+cursor:pointer;
+margin-left:10px;
+font-size:18px;
+}
+
+.close-search{
+font-size:22px;
+cursor:pointer;
+}
+
+.search-content{
+padding:20px;
+}
+
+#suggestTitle{
+color:#aaa;
+letter-spacing:4px;
+font-size:12px;
+letter-spacing:3px;
+opacity:.6;
+margin:20px 0 10px;
+border-bottom:1px solid #333;
+padding-bottom:10px;
+}
+
+.suggest-item{
+color:#fff;
+padding:12px 0;
+font-size:15px;
+cursor:pointer;
+border-bottom:1px solid #222;
+ }
  
 /* FOOTER */
 .footer {
@@ -1520,6 +1653,11 @@ body{
   <div class="store-title" onclick="goHomeFromHeader()">  
   <img src="https://i.ibb.co/6cLTyCpQ/IMG-20260409-015459.jpg" class="store-banner" alt="Waldo Inn">
   </div>
+   
+<div class="search-btn" onclick="openSearch()">
+    <img src="https://cdn-icons-png.flaticon.com/512/5636/5636698.png" alt="Search" class="search-icon">
+</div>
+   
 <div class="cart-btn" id="cartBtn" onclick="openCart()">
   <div class="cart-icon-wrapper">
     <img src="https://cdn-icons-png.flaticon.com/512/4308/4308487.png" class="cart-icon" alt="Bag">
@@ -1527,28 +1665,38 @@ body{
   </div>
 </div>
 </header>  <div id="toast"></div>  <div id="homeTopBar">    
-  <div style="position:relative; width:200px; margin:auto;">
-  <input   
-    type="text"   
-    id="searchInput"   
-    placeholder="SEARCH"  
-    style="  
-      width:100%;  
-      background:rgba(255,255,255,0.03);  
-      border:1px solid rgba(255,255,255,0.25);  
-      color:#fff;  
-      font-size:10px;  
-      padding:6px 12px;  
-      letter-spacing:3px;  
-      text-transform:uppercase;  
-      outline:none;  
-      text-align:center;  
-      backdrop-filter: blur(4px);  
-      margin-top:50px;
-    "  
-    onkeydown="if(event.key==='Enter') searchProducts()"  >
-  <div id="suggestBox" class="suggest-box"></div>
-  </div> 
+  <div id="searchOverlay">
+
+<div class="search-top">
+
+<div class="search-box">
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search products..."
+onkeydown="if(event.key==='Enter') searchProducts()"
+>
+
+<div class="clear-btn" onclick="clearSearch()">✕</div>
+<div class="go-btn" onclick="searchProducts()">🔍</div>
+
+</div>
+
+<div class="close-search" onclick="closeSearch()">✕</div>
+
+</div>
+
+<div class="search-content">
+
+<div id="suggestTitle">SUGGESTIONS</div>
+
+<div id="suggestBox"></div>
+
+</div>
+
+  </div>
+  
   <div id="recentBox" style="text-align:center; font-size:9px; opacity:0.6;"></div>    <div style="text-align:center; margin-top:8px;">  
   <button   
   onclick="showTrending()"  
